@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.form-input {
+  margin: 5px;
+}
+
+.form-attribute-stepper {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  width: 150px;
+}
+
+.form-select {
+  margin: 10px
+}
+
+.form-button {
+  margin: 10px;
+}
+
+.card-container {
+  border: 2px dashed red;
+  width: 200px;
+  height: 400px;
+  padding: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
