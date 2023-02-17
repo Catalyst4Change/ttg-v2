@@ -6,8 +6,8 @@ export const CharProficiencies = ({ chosenProficiencies }) => {
   const proficiencies = () => {
     return chosenProficiencies.map((prof, i) => {
       return (
-        <div>
-          <p key={i}>{prof}</p>
+        <div key={i}>
+          <p>{prof}</p>
         </div>
       );
     });

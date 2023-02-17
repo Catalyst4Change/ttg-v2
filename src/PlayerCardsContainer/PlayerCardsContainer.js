@@ -31,12 +31,26 @@ export const PlayerCardsContainer = ({}) => {
     setDeployNewCharacterForm(false);
   };
 
+  const deletePlayerCharacter = (event) => {
+    const indexToRemove = parseInt(event.target.value);
+    console.log("indexToRemove", indexToRemove);
+
+    const removeCharacter = playerCharacters.filter((char, index) => {
+      if (index != indexToRemove) {
+        return true;
+      }
+    });
+    console.log("removeCharacter", removeCharacter);
+    setPlayerCharacters(removeCharacter);
+  };
+
   const displayCards = () => {
     return playerCharacters.map((card, i) => {
       return (
-        <div className="player-card-container">
+        <div key={i} className="player-card-container">
           <PlayerCharacterCard
-            key={i}
+            playerIndex={i}
+            deletePlayerCharacter={deletePlayerCharacter}
             playerName={card.playerName}
             charName={card.charName}
             charConcept={card.charConcept}
@@ -62,7 +76,10 @@ export const PlayerCardsContainer = ({}) => {
       <section id="cards-row">
         <div className="new-form-container">
           {deployNewCharacterForm && (
-            <NewPlayerCharacterForm addPlayerCharacter={addPlayerCharacter} />
+            <NewPlayerCharacterForm
+              addPlayerCharacter={addPlayerCharacter}
+              setDeployNewCharacterForm={setDeployNewCharacterForm}
+            />
           )}
         </div>
 

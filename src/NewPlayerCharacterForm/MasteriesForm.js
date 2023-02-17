@@ -20,6 +20,7 @@ export const MasteriesForm = ({
         Masteries are skills you have perfected and give you <b>four</b> points
         toward a related action.
       </p>
+      <p></p>
       <div className="column center">
         {chosenMasteries[0] || (
           <select className="form-select" onChange={(e) => chooseMastery(e)}>

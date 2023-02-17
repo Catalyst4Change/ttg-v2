@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
+    "options options"
     "basics health"
     "basics stats"
     "atts atts"
@@ -22,6 +23,10 @@
   min-width: fit-content;
   max-width: 3em;
   height: fit-content;
+
+  .card-options {
+    grid-area: options;
+  }
 
   .basics {
     grid-area: basics;

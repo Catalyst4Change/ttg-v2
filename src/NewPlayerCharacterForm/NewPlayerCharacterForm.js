@@ -6,7 +6,10 @@ import { MasteriesForm } from "./MasteriesForm";
 import { ProficienciesForm } from "./ProficienciesForm";
 import "./NewPlayerCharacterForm.scss";
 
-export const NewPlayerCharacterForm = ({ addPlayerCharacter }) => {
+export const NewPlayerCharacterForm = ({
+  addPlayerCharacter,
+  setDeployNewCharacterForm,
+}) => {
   const [formPage, setFormPage] = useState(0);
 
   const [playerName, setPlayerName] = useState("");
@@ -105,31 +108,41 @@ export const NewPlayerCharacterForm = ({ addPlayerCharacter }) => {
             intelligence={attributes.intelligence}
           />
         )}
-        {formPage < 3 && (
+        <div className="row distribute">
+          {formPage < 3 && (
+            <button
+              className="form-button"
+              type="button"
+              onClick={advanceFormPage}
+            >
+              NEXT
+            </button>
+          )}
+          {formPage === 3 && (
+            <button
+              className="form-button"
+              type="button"
+              onClick={submitNewCharacter}
+            >
+              DONE
+            </button>
+          )}
           <button
             className="form-button"
             type="button"
-            onClick={advanceFormPage}
+            onClick={() => setDeployNewCharacterForm(false)}
           >
-            NEXT
+            CANCEL
           </button>
-        )}
-        {formPage === 3 && (
-          <button
-            className="form-button"
-            type="button"
-            onClick={submitNewCharacter}
-          >
-            DONE
-          </button>
-        )}
+        </div>
 
-        {formPage === 4 &&
+        {/* {formPage === 4 &&
           {
-            /* display character */
-          }}
+          }} */}
       </section>
       <p> reset button</p>
+      <p> delete char button</p>
+      <p> null input error handling</p>
       <div className="badge anti-joker grey">
         🚫
         <p className="tooltip">
@@ -138,8 +151,6 @@ export const NewPlayerCharacterForm = ({ addPlayerCharacter }) => {
         </p>
         <p>use radials for skill choices</p>
         <p>tooltips on ereything</p>
-        <p>profs</p>
-        <p>masters</p>
       </div>
     </main>
   );

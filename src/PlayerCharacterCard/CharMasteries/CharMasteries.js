@@ -6,8 +6,8 @@ export const CharMasteries = ({ chosenMasteries }) => {
   const masteries = () => {
     return chosenMasteries.map((mastery, i) => {
       return (
-        <div>
-          <p key={i}>{mastery}</p>
+        <div key={i}>
+          <p>{mastery}</p>
         </div>
       );
     });

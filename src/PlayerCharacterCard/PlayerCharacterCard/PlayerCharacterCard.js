@@ -7,8 +7,11 @@ import "./PlayerCharacterCard.scss";
 import "../../App.css";
 import { CharMasteries } from "../CharMasteries/CharMasteries";
 import { CharProficiencies } from "../CharProficiencies/CharProficiencies";
+import { CardOptionsMenu } from "../CardOptionsMenu/CardOptionsMenu";
 
 export const PlayerCharacterCard = ({
+  playerIndex,
+  deletePlayerCharacter,
   playerName,
   charName,
   charConcept,
@@ -19,6 +22,12 @@ export const PlayerCharacterCard = ({
 }) => {
   return (
     <main id={charName} className="character-info">
+      <div className="card-options">
+        <CardOptionsMenu
+          playerIndex={playerIndex}
+          deletePlayerCharacter={deletePlayerCharacter}
+        />
+      </div>
       <div className="basics">
         <CharBasics
           playerName={playerName}
