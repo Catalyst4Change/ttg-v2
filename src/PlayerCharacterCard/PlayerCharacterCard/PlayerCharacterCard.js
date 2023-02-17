@@ -38,9 +38,39 @@ export const PlayerCharacterCard = ({
     setHealthBar(bar);
   };
 
+  const [stats, setStatuses] = useState({
+    initiative: attributes.presence + attributes.agility,
+    dodge: attributes.agility + attributes.wit - 2,
+    drive: attributes.wit + attributes.presence,
+    crit: attributes.charm,
+  });
+
+  const statStepUp = (e) => {
+    console.log(e);
+    const { name, value } = e.target;
+    const numValue = parseInt(value);
+    if (stats[name]) {
+      setStatuses({ ...stats, [name]: numValue + 1 });
+    }
+  };
+
+  const statStepDown = (e) => {
+    const { name, value } = e.target;
+    const numValue = parseInt(value);
+    if (stats[name] > 0) {
+      setStatuses({ ...stats, [name]: numValue - 1 });
+    }
+  };
+
   const resetToOriginal = () => {
     setHealth(maxHealth);
     buildHealthBar();
+    setStatuses({
+      initiative: attributes.presence + attributes.agility,
+      dodge: attributes.agility + attributes.wit - 2,
+      drive: attributes.wit + attributes.presence,
+      crit: attributes.charm,
+    });
   };
 
   return (
@@ -74,7 +104,11 @@ export const PlayerCharacterCard = ({
         <CharAttributes attributes={attributes} />
       </div>
       <div className="stats">
-        <CharStats attributes={attributes} />
+        <CharStats
+          stats={stats}
+          statStepUp={statStepUp}
+          statStepDown={statStepDown}
+        />
       </div>
       <div className="masteries">
         <CharMasteries chosenMasteries={chosenMasteries} />

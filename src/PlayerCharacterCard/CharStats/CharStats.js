@@ -1,43 +1,18 @@
 import React from "react";
 import "./CharStats.scss";
-import { useState } from "react";
 
-export const CharStats = ({ attributes }) => {
-  const [statuses, setStatuses] = useState({
-    initiative: attributes.presence + attributes.agility,
-    dodge: attributes.agility + attributes.wit - 2,
-    drive: attributes.wit + attributes.presence,
-    crit: attributes.charm,
-  });
-
-  const statusStepUp = (e) => {
-    console.log(e);
-    const { name, value } = e.target;
-    const numValue = parseInt(value);
-    if (statuses[name]) {
-      setStatuses({ ...statuses, [name]: numValue + 1 });
-    }
-  };
-
-  const statusStepDown = (e) => {
-    const { name, value } = e.target;
-    const numValue = parseInt(value);
-    if (statuses[name] > 0) {
-      setStatuses({ ...statuses, [name]: numValue - 1 });
-    }
-  };
-
+export const CharStats = ({ stats, statStepUp, statStepDown }) => {
   return (
-    <main id="char-status">
+    <main id="char-stats">
       <h3 className="section-title">Stats</h3>
       <div className="initiative badge column center">
-        ⏩ = {statuses.initiative}
+        ⏩ = {stats.initiative}
         <div className="tooltip">
           Initiative determines your turn order in battle.
         </div>
       </div>
       <div className="badge crit column center">
-        ❤️ + {statuses.crit}
+        ❤️ + {stats.crit}
         <div className="tooltip">
           On flipping the Queen of Hearts, Crit gives you successes equal to
           your crit stat.
@@ -47,14 +22,14 @@ export const CharStats = ({ attributes }) => {
         <button
           type="button"
           name="dodge"
-          value={statuses.dodge}
-          onClick={(event) => statusStepDown(event)}
+          value={stats.dodge}
+          onClick={(event) => statStepDown(event)}
         >
           -
         </button>
 
         <div className="badge">
-          👟 = {statuses.dodge}
+          👟 = {stats.dodge}
           <div className="tooltip">
             dodge determines your turn order in battle.
           </div>
@@ -63,8 +38,8 @@ export const CharStats = ({ attributes }) => {
         <button
           type="button"
           name="dodge"
-          value={statuses.dodge}
-          onClick={(event) => statusStepUp(event)}
+          value={stats.dodge}
+          onClick={(event) => statStepUp(event)}
         >
           +
         </button>
@@ -73,14 +48,14 @@ export const CharStats = ({ attributes }) => {
         <button
           type="button"
           name="drive"
-          value={statuses.drive}
-          onClick={(event) => statusStepDown(event)}
+          value={stats.drive}
+          onClick={(event) => statStepDown(event)}
         >
           -
         </button>
 
         <div className="badge drive">
-          ❗️ = {statuses.drive}
+          ❗️ = {stats.drive}
           <div className="tooltip">
             Drive gives you an extra card to flip per point spent.
           </div>
@@ -89,8 +64,8 @@ export const CharStats = ({ attributes }) => {
         <button
           type="button"
           name="drive"
-          value={statuses.drive}
-          onClick={(event) => statusStepUp(event)}
+          value={stats.drive}
+          onClick={(event) => statStepUp(event)}
         >
           +
         </button>

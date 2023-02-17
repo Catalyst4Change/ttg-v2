@@ -61,13 +61,6 @@ export const CharHealth = ({
 
   return (
     <section id="health">
-      <h3 className="section-title">Health</h3>
-      <div className="vitals-health column center">
-        <div className="health-total">
-          <span>Total Health: {maxHealth}</span>
-        </div>
-        <div>{healthBar}</div>
-      </div>
       <div className="row distribute">
         <button
           type="button"
@@ -77,7 +70,24 @@ export const CharHealth = ({
         >
           -
         </button>
+        <h3 className="section-title">Health</h3>
+        <button
+          type="button"
+          name="presence"
+          value={health}
+          onClick={(e) => addHealth(e)}
+        >
+          +
+        </button>
+      </div>
+      <div className="vitals-health column center">
+        <div className="health-total">
+          <span>Total Health: {maxHealth}</span>
+        </div>
 
+        <div>{healthBar}</div>
+      </div>
+      <div className="row distribute">
         <span
           className={
             (condition === "Healthy" && "green") ||
@@ -88,15 +98,6 @@ export const CharHealth = ({
         >
           <b>{condition}</b>
         </span>
-
-        <button
-          type="button"
-          name="presence"
-          value={health}
-          onClick={(e) => addHealth(e)}
-        >
-          +
-        </button>
       </div>
     </section>
   );
