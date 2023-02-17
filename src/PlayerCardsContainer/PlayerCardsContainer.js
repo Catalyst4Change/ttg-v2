@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { NewPlayerCharacterForm } from "./NewPlayerCharacterForm/NewPlayerCharacterForm";
-import "./App.css";
-import { PlayerCharacterCard } from "./PlayerCharacterCard/PlayerCharacterCard/PlayerCharacterCard";
+import { NewPlayerCharacterForm } from "../NewPlayerCharacterForm/NewPlayerCharacterForm";
+import { PlayerCharacterCard } from "../PlayerCharacterCard/PlayerCharacterCard/PlayerCharacterCard";
+import "../App.css";
+import "./PlayerCardsContainer.scss";
 
-export const PlayerCardsContainer = ({ numberOfPlayerCards }) => {
+export const PlayerCardsContainer = ({}) => {
+  const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
   const [playerCharacters, setPlayerCharacters] = useState([
     {
       playerName: "Catalyst",
@@ -26,6 +28,7 @@ export const PlayerCardsContainer = ({ numberOfPlayerCards }) => {
 
   const addPlayerCharacter = (newChar) => {
     setPlayerCharacters([...playerCharacters, newChar]);
+    setDeployNewCharacterForm(false);
   };
 
   const displayCards = () => {
@@ -45,9 +48,22 @@ export const PlayerCardsContainer = ({ numberOfPlayerCards }) => {
     });
   };
 
+  const createNewPlayerCharacter = () => {
+    setDeployNewCharacterForm(true);
+  };
+
   return (
-    <main className="card-container border">
-      <div>{displayCards()}</div>
+    <main className="cards-container border">
+      <button onClick={createNewPlayerCharacter} type="button">
+        + PC
+      </button>
+      <section id="cards-row">
+        {deployNewCharacterForm && (
+          <NewPlayerCharacterForm addPlayerCharacter={addPlayerCharacter} />
+        )}
+
+        {displayCards()}
+      </section>
     </main>
   );
 };

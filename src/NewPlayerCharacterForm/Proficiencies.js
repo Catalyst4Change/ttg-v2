@@ -16,9 +16,9 @@ export const Proficiencies = ({
 
   const generateProficiencySelections = () => {
     let selectors = [];
-    for (let index = 0; index <= intelligence + 2; index++) {
+    for (let index = 0; index < intelligence + 2; index++) {
       selectors.push(
-        <div>
+        <div key={index}>
           {chosenProficiencies[index] || (
             <select
               className="form-select"
@@ -43,7 +43,7 @@ export const Proficiencies = ({
     <div className="column">
       <h3>Choose {intelligence + 2} Skill Proficiencies</h3>
       <p className="center">
-        Proficiencies are skills you dabble in and give you <b>two</b> points
+        Proficiencies are skills you dabble in. They give you <b>two</b> points
         toward a related action.
       </p>
       {generateProficiencySelections()}

@@ -1,22 +1,13 @@
 import "./App.css";
 import React, { useState } from "react";
-import { PlayerCardsContainer } from "./PlayerCardsContainer";
+import { PlayerCardsContainer } from "./PlayerCardsContainer/PlayerCardsContainer";
 
 function App() {
-  const [numberOfPlayerCards, setNumberOfPlayerCards] = useState(0);
-
-  const createNewCard = () => {
-    setNumberOfPlayerCards((numberOfPlayerCards) => numberOfPlayerCards + 1);
-  };
-
   return (
     <div className="App">
       {/* header */}
-      {/* create nav */}
-      <button onClick={createNewCard} type="button">
-        + PC
-      </button>
-      <PlayerCardsContainer numberOfPlayerCards={numberOfPlayerCards} />
+      {/* nav */}
+      <PlayerCardsContainer />
     </div>
   );
 }

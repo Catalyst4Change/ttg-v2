@@ -1,0 +1,11 @@
+.cards-container {
+  width: 100vw;
+  padding: 5%;
+  background-color: cornflowerblue;
+
+  #cards-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
