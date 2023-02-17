@@ -1,9 +1,40 @@
 .character-info {
-  max-width: 60%;
-  margin-right: 3%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "basics health"
+    "basics stats"
+    "atts atts";
+  column-gap: 5%;
+  row-gap: 2%;
+
   border: 1px black solid;
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+
   background-color: white;
-  padding: 5%;
+  margin-right: 3%;
+  padding: 2%;
+  height: auto;
+
+  .basics {
+    grid-area: basics;
+    height: 100%;
+  }
+
+  .health {
+    grid-area: health;
+    height: 100%;
+  }
+
+  .attributes {
+    grid-area: atts;
+    height: 100%;
+    margin-bottom: 5%;
+  }
+
+  .stats {
+    grid-area: stats;
+    height: 100%;
+  }
 }

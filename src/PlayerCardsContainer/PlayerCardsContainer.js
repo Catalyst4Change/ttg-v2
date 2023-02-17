@@ -53,7 +53,7 @@ export const PlayerCardsContainer = ({}) => {
   };
 
   return (
-    <main className="cards-container border">
+    <main className="cards-container">
       <button onClick={createNewPlayerCharacter} type="button">
         + PC
       </button>

@@ -1,5 +1,4 @@
 #char-status {
-  margin-top: 5%;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -8,8 +7,6 @@
     "init crit"
     "dodge dodge"
     "drive drive";
-
-  border-top: 1px black solid;
 
   .section-title {
     margin: auto;

@@ -1,8 +1,8 @@
 import React from "react";
-import "./CharStatus.scss";
+import "./CharStats.scss";
 import { useState } from "react";
 
-export const CharStatus = ({ attributes }) => {
+export const CharStats = ({ attributes }) => {
   const [statuses, setStatuses] = useState({
     initiative: attributes.presence + attributes.agility,
     dodge: attributes.agility + attributes.wit - 2,

@@ -8,13 +8,13 @@ export const CharBasics = ({
   charImage,
 }) => {
   return (
-    <div>
+    <main id="basics" className="column center ">
       <span>{playerName}</span>
       <div className="char-image-container column center">
         {!charImage ? <span>No Image Available</span> : <img src={charImage} />}
       </div>
-      <span style={{ fontSize: "1.5em", fontWeight: "bold" }}>{charName}</span>
+      <h3>{charName}</h3>
       <p>{charConcept}</p>
-    </div>
+    </main>
   );
 };

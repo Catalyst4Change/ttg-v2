@@ -2,7 +2,7 @@ import React from "react";
 import { CharAttributes } from "../CharAttributes/CharAttributes";
 import { CharBasics } from "../CharBasics/CharBasics";
 import { CharHealth } from "../CharHealth/CharHealth";
-import { CharStatus } from "../CharStatus/CharStatus";
+import { CharStats } from "../CharStats/CharStats";
 import "./PlayerCharacterCard.scss";
 import "../../App.css";
 
@@ -15,17 +15,26 @@ export const PlayerCharacterCard = ({
 }) => {
   return (
     <main id={charName} className="character-info column center">
-      <CharBasics
-        playerName={playerName}
-        charName={charName}
-        charConcept={charConcept}
-        charImage={charImage}
-      />
-      <CharHealth attributes={attributes} />
+      <div className="basics">
+        <CharBasics
+          playerName={playerName}
+          charName={charName}
+          charConcept={charConcept}
+          charImage={charImage}
+        />
+      </div>
 
-      <CharAttributes attributes={attributes} />
+      <div className="health">
+        <CharHealth attributes={attributes} />
+      </div>
 
-      <CharStatus attributes={attributes} />
+      <div className="attributes">
+        <CharAttributes attributes={attributes} />
+      </div>
+
+      <div className="stats">
+        <CharStats attributes={attributes} />
+      </div>
 
       {/* masteries */}
       {/* proficiencies */}
