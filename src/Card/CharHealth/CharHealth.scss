@@ -1,7 +1,14 @@
 #health {
   width: 100%;
+  border-top: 1px black solid;
+  margin-top: 5%;
+
+  .section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .vitals-health {
-    border: 1px black solid;
     .health-total {
       background-color: aqua;
       border-radius: 50%;
@@ -19,4 +26,15 @@
       width: 100%;
     }
   }
+}
+.red {
+  color: red;
+}
+
+.yellow {
+  color: orange;
+}
+
+.green {
+  color: green;
 }

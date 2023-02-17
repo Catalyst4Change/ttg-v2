@@ -1,6 +1,5 @@
 import React from "react";
 import "./CharStatus.scss";
-import "../../App.css";
 import { useState } from "react";
 
 export const CharStatus = ({ attributes }) => {
@@ -30,13 +29,13 @@ export const CharStatus = ({ attributes }) => {
 
   return (
     <main id="char-status">
+      <h2 className="section-title">Stats</h2>
       <div className="initiative badge column center">
         ❗️= {statuses.initiative}
         <div className="tooltip">
           Initiative determines your turn order in battle.
         </div>
       </div>
-
       <div className="badge crit column center">
         💥 + {statuses.crit}
         <div className="tooltip">
@@ -44,7 +43,6 @@ export const CharStatus = ({ attributes }) => {
           your crit stat.
         </div>
       </div>
-
       <div className="dodge row distribute">
         <button
           type="button"
@@ -71,7 +69,6 @@ export const CharStatus = ({ attributes }) => {
           +
         </button>
       </div>
-
       <div className="drive row distribute">
         <button
           type="button"
@@ -98,14 +95,6 @@ export const CharStatus = ({ attributes }) => {
           +
         </button>
       </div>
-
-      {/* <div className="badge anti-joker grey">
-        🚫
-        <div className="tooltip">
-          When Jokers and Anti-Jokers meet, they obliterate each other. Use
-          wisely to avoid the chaotic effects of flipping a Joker.
-        </div>
-      </div> */}
     </main>
   );
 };

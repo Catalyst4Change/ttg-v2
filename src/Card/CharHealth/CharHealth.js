@@ -67,11 +67,12 @@ export const CharHealth = ({ attributes }) => {
 
   return (
     <section id="health">
+      <h2 className="section-title">Health</h2>
       <div className="vitals-health column center">
         <div className="health-total">
           <span>Total Health: {maxHealth}</span>
         </div>
-        <div>Health: {healthBar}</div>
+        <div>{healthBar}</div>
       </div>
       <div className="row distribute">
         <button
@@ -83,7 +84,16 @@ export const CharHealth = ({ attributes }) => {
           -
         </button>
 
-        <span>{condition}</span>
+        <span
+          className={
+            (condition === "Healthy" && "green") ||
+            (condition === "Injured" && "yellow") ||
+            (condition === "Unconscious" && "red") ||
+            (condition === "DEAD" && "")
+          }
+        >
+          <b>{condition}</b>
+        </span>
 
         <button
           type="button"

@@ -88,7 +88,7 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
   };
 
   return (
-    <section>
+    <section id="char-sheet">
       {/* create character */}
       <form id="0" className="form column">
         {formPage === 0 && (
@@ -367,6 +367,13 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
         )}
       </form>
       reset button
+      <div className="badge anti-joker grey">
+        🚫
+        <div className="tooltip">
+          When Jokers and Anti-Jokers collide, they obliterate each other. Use
+          wisely to avoid the chaotic effects of flipping a Joker.
+        </div>
+      </div>
     </section>
   );
 };
