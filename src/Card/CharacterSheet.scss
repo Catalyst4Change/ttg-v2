@@ -1,0 +1,31 @@
+.card-container {
+  margin: 5px;
+  width: 200px;
+  height: 400px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+
+  .character-info {
+    .display-vitals {
+      .vitals-health {
+        border: 1px black solid;
+      }
+    }
+    .char-image-container {
+      display: flex;
+      width: 100%;
+      height: auto;
+
+      img {
+        border: 1px black solid;
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .character-badges {
+    }
+  }
+}

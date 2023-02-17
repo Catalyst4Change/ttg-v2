@@ -49,18 +49,11 @@
 }
 
 .form-select {
-  margin: 10px
+  margin: 10px;
 }
 
 .form-button {
   margin: 10px;
-}
-
-.card-container {
-  border: 2px dashed red;
-  width: 200px;
-  height: 400px;
-  padding: 10px;
 }
 
 .column {
@@ -68,4 +61,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.grey {
+  filter: grayscale(100%);
+}
+
+option {
+  font-size: 2em;
 }
