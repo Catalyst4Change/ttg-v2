@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../App.css";
-import { Attributes } from "./Attributes";
-import { Basics } from "./Basics";
-import { Masteries } from "./Masteries";
-import { Proficiencies } from "./Proficiencies";
+import { AttributesForm } from "./AttributesForm";
+import { BasicsForm } from "./BasicsForm";
+import { MasteriesForm } from "./MasteriesForm";
+import { ProficienciesForm } from "./ProficienciesForm";
 import "./NewPlayerCharacterForm.scss";
 
 export const NewPlayerCharacterForm = ({ addPlayerCharacter }) => {
@@ -70,7 +70,7 @@ export const NewPlayerCharacterForm = ({ addPlayerCharacter }) => {
       {/* create character */}
       <section id="0" className="form column center">
         {formPage === 0 && (
-          <Basics
+          <BasicsForm
             playerName={playerName}
             setPlayerName={setPlayerName}
             charName={charName}
@@ -83,10 +83,13 @@ export const NewPlayerCharacterForm = ({ addPlayerCharacter }) => {
           />
         )}
         {formPage === 1 && (
-          <Attributes attributes={attributes} setAttributes={setAttributes} />
+          <AttributesForm
+            attributes={attributes}
+            setAttributes={setAttributes}
+          />
         )}
         {formPage === 2 && (
-          <Masteries
+          <MasteriesForm
             chosenMasteries={chosenMasteries}
             setChosenMasteries={setChosenMasteries}
             skills={skills}
@@ -94,7 +97,7 @@ export const NewPlayerCharacterForm = ({ addPlayerCharacter }) => {
           />
         )}
         {formPage === 3 && (
-          <Proficiencies
+          <ProficienciesForm
             chosenProficiencies={chosenProficiencies}
             setChosenProficiencies={setChosenProficiencies}
             skills={skills}

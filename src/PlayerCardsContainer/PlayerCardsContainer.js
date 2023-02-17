@@ -34,16 +34,18 @@ export const PlayerCardsContainer = ({}) => {
   const displayCards = () => {
     return playerCharacters.map((card, i) => {
       return (
-        <PlayerCharacterCard
-          key={i}
-          playerName={card.playerName}
-          charName={card.charName}
-          charConcept={card.charConcept}
-          charImage={card.charImage}
-          attributes={card.attributes}
-          chosenMasteries={card.chosenMasteries}
-          chosenProficiencies={card.chosenProficiencies}
-        />
+        <div className="player-card-container">
+          <PlayerCharacterCard
+            key={i}
+            playerName={card.playerName}
+            charName={card.charName}
+            charConcept={card.charConcept}
+            charImage={card.charImage}
+            attributes={card.attributes}
+            chosenMasteries={card.chosenMasteries}
+            chosenProficiencies={card.chosenProficiencies}
+          />
+        </div>
       );
     });
   };
@@ -58,9 +60,11 @@ export const PlayerCardsContainer = ({}) => {
         + PC
       </button>
       <section id="cards-row">
-        {deployNewCharacterForm && (
-          <NewPlayerCharacterForm addPlayerCharacter={addPlayerCharacter} />
-        )}
+        <div className="new-form-container">
+          {deployNewCharacterForm && (
+            <NewPlayerCharacterForm addPlayerCharacter={addPlayerCharacter} />
+          )}
+        </div>
 
         {displayCards()}
       </section>

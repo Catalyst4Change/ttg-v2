@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 
-export const Attributes = ({ attributes, setAttributes }) => {
+export const AttributesForm = ({ attributes, setAttributes }) => {
   const [attributesPoints, setAttributesPoints] = useState(7);
 
   const attributeStepUp = (e) => {

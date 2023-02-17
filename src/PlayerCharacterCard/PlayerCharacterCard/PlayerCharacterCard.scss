@@ -4,18 +4,24 @@
   grid-template-areas:
     "basics health"
     "basics stats"
-    "atts atts";
+    "atts atts"
+    "masts masts"
+    "profs profs";
   column-gap: 5%;
   row-gap: 2%;
 
-  border: 1px black solid;
+  border: 1px purple solid;
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
 
   background-color: white;
   margin-right: 3%;
-  padding: 2%;
-  height: auto;
+  padding: 2% 5%;
+  padding-bottom: 15%;
+  width: auto;
+  min-width: fit-content;
+  max-width: 3em;
+  height: fit-content;
 
   .basics {
     grid-area: basics;
@@ -30,11 +36,20 @@
   .attributes {
     grid-area: atts;
     height: 100%;
-    margin-bottom: 5%;
   }
 
   .stats {
     grid-area: stats;
+    height: 100%;
+  }
+
+  .masteries {
+    grid-area: masts;
+    height: 100%;
+  }
+
+  .proficiencies {
+    grid-area: profs;
     height: 100%;
   }
 }

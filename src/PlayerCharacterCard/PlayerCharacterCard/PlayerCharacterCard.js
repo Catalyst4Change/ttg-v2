@@ -5,6 +5,8 @@ import { CharHealth } from "../CharHealth/CharHealth";
 import { CharStats } from "../CharStats/CharStats";
 import "./PlayerCharacterCard.scss";
 import "../../App.css";
+import { CharMasteries } from "../CharMasteries/CharMasteries";
+import { CharProficiencies } from "../CharProficiencies/CharProficiencies";
 
 export const PlayerCharacterCard = ({
   playerName,
@@ -12,9 +14,11 @@ export const PlayerCharacterCard = ({
   charConcept,
   charImage,
   attributes,
+  chosenMasteries,
+  chosenProficiencies,
 }) => {
   return (
-    <main id={charName} className="character-info column center">
+    <main id={charName} className="character-info">
       <div className="basics">
         <CharBasics
           playerName={playerName}
@@ -23,21 +27,23 @@ export const PlayerCharacterCard = ({
           charImage={charImage}
         />
       </div>
-
       <div className="health">
         <CharHealth attributes={attributes} />
       </div>
-
       <div className="attributes">
         <CharAttributes attributes={attributes} />
       </div>
-
       <div className="stats">
         <CharStats attributes={attributes} />
       </div>
+      <div className="masteries">
+        <CharMasteries chosenMasteries={chosenMasteries} />
+      </div>
 
-      {/* masteries */}
-      {/* proficiencies */}
+      <div className="proficiencies">
+        <CharProficiencies chosenProficiencies={chosenProficiencies} />{" "}
+      </div>
+
       {/* ultimates */}
     </main>
   );

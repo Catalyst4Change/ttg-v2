@@ -13,7 +13,7 @@ export const CharAttributes = ({ attributes }) => {
 
   return (
     <main id="char-attributes">
-      <h2 className="section-title">Attributes</h2>
+      <h3 className="section-title">Attributes</h3>
       <div className="attributes-grid">
         <div className="grid-item">Brawn:</div>
         <div className="grid-item">

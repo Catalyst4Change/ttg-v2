@@ -1,11 +1,22 @@
 .cards-container {
   width: 100vw;
-  padding: 5%;
+  height: 100vh;
+  padding: 2%;
   background-color: cornflowerblue;
 
   #cards-row {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    border: 1px red dashed;
+    height: 100%;
+    height: 100%;
+    .new-form-container {
+      max-width: 300px;
+    }
+    .player-card-container {
+      width: 100%;
+      max-width: 300px;
+    }
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Basics = ({
+export const BasicsForm = ({
   playerName,
   setPlayerName,
   charName,

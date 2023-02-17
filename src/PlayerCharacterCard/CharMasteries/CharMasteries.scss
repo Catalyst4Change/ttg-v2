@@ -1,0 +1,12 @@
+#masteries {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 5%;
+  // display: grid;
+  // column-gap: auto;
+  // grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 10%;
+}

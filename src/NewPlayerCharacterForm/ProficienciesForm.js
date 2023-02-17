@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Proficiencies = ({
+export const ProficienciesForm = ({
   skills,
   setSkills,
   chosenProficiencies,
@@ -9,7 +9,6 @@ export const Proficiencies = ({
 }) => {
   const chooseProficiency = (e) => {
     const { value } = e.target;
-    console.log(value);
     setChosenProficiencies([...chosenProficiencies, value]);
     setSkills((skills) => skills.filter((skill) => skill !== value));
   };
@@ -34,6 +33,7 @@ export const Proficiencies = ({
               })}
             </select>
           )}
+          <p></p>
         </div>
       );
     }

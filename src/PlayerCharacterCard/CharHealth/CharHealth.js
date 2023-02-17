@@ -67,7 +67,7 @@ export const CharHealth = ({ attributes }) => {
 
   return (
     <section id="health">
-      <h2 className="section-title">Health</h2>
+      <h3 className="section-title">Health</h3>
       <div className="vitals-health column center">
         <div className="health-total">
           <span>Total Health: {maxHealth}</span>

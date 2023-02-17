@@ -29,15 +29,15 @@ export const CharStats = ({ attributes }) => {
 
   return (
     <main id="char-status">
-      <h2 className="section-title">Stats</h2>
+      <h3 className="section-title">Stats</h3>
       <div className="initiative badge column center">
-        ❗️= {statuses.initiative}
+        ⏩ = {statuses.initiative}
         <div className="tooltip">
           Initiative determines your turn order in battle.
         </div>
       </div>
       <div className="badge crit column center">
-        💥 + {statuses.crit}
+        ❤️ + {statuses.crit}
         <div className="tooltip">
           On flipping the Queen of Hearts, Crit gives you successes equal to
           your crit stat.
@@ -80,7 +80,7 @@ export const CharStats = ({ attributes }) => {
         </button>
 
         <div className="badge drive">
-          ⏩ = {statuses.drive}
+          ❗️ = {statuses.drive}
           <div className="tooltip">
             Drive gives you an extra card to flip per point spent.
           </div>

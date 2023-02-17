@@ -49,6 +49,13 @@ option {
   font-size: 2em;
 }
 
+h3 {
+  margin: 0;
+}
+
+p {
+  margin-bottom: 0;
+}
 .border {
   border: 1px black solid;
   border-radius: 10px;
