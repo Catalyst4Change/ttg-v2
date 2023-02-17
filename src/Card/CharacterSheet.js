@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
+import { Attributes } from "../CharForm/Attributes";
+import { Basics } from "../CharForm/Basics";
+import { Masteries } from "../CharForm/Masteries";
+import { Proficiencies } from "../CharForm/Proficiencies";
 import "./CharacterSheet.scss";
 import { CharAttributes } from "./CharAttributes/CharAttributes";
+import { CharBasics } from "./CharBasics/CharBasics";
 import { CharHealth } from "./CharHealth/CharHealth";
 import { CharStatus } from "./CharStatus/CharStatus";
 
@@ -17,7 +22,6 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
   const [charConcept, setCharConcept] = useState("");
   const [charImage, setCharImage] = useState("");
 
-  const [attributesPoints, setAttributesPoints] = useState(7);
   const [attributes, setAttributes] = useState({
     brawn: 1,
     agility: 1,
@@ -26,24 +30,6 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
     charm: 1,
     presence: 1,
   });
-
-  const attributeStepUp = (e) => {
-    const { name, value } = e.target;
-    const numValue = parseInt(value);
-    if (attributesPoints > 0 && attributes[name] < 4) {
-      setAttributes({ ...attributes, [name]: numValue + 1 });
-      setAttributesPoints((attributesPoints) => attributesPoints - 1);
-    }
-  };
-
-  const attributeStepDown = (e) => {
-    const { name, value } = e.target;
-    const numValue = parseInt(value);
-    if (attributes[name] > 1) {
-      setAttributes({ ...attributes, [name]: numValue - 1 });
-      setAttributesPoints((attributesPoints) => attributesPoints + 1);
-    }
-  };
 
   const [skills, setSkills] = useState([
     "Athletics",
@@ -69,257 +55,46 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
   const [chosenMasteries, setChosenMasteries] = useState([]);
   const [chosenProficiencies, setChosenProficiencies] = useState([]);
 
-  const chooseMastery = (e) => {
-    const { value } = e.target;
-    console.log(value);
-    setChosenMasteries([...chosenMasteries, value]);
-    setSkills((skills) => skills.filter((skill) => skill !== value));
-  };
-
-  const chooseProficiency = (e) => {
-    const { value } = e.target;
-    console.log(value);
-    setChosenProficiencies([...chosenProficiencies, value]);
-    setSkills((skills) => skills.filter((skill) => skill !== value));
-  };
-
-  const advanceFormPage = () => {
+  const advanceFormPage = (event) => {
     setFormPage((formPage) => formPage + 1);
   };
 
   return (
     <section id="char-sheet">
       {/* create character */}
-      <form id="0" className="form column">
+      <form id="0" className="form column center">
         {formPage === 0 && (
-          <div className="form-basics column">
-            <span>Character Basics:</span>
-            <input
-              className="form-input"
-              type="text"
-              placeholder="Player's Name"
-              value={playerName}
-              onChange={(e) => setPlayerName(e.target.value)}
-            />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="Character's Name"
-              value={charName}
-              onChange={(e) => setCharName(e.target.value)}
-            />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="Character Concept"
-              value={charConcept}
-              onChange={(e) => setCharConcept(e.target.value)}
-            />
-            <input
-              className="form-input"
-              type="text"
-              placeholder="Character Image URL"
-              value={charImage}
-              onChange={(e) => setCharImage(e.target.value)}
-            />
-          </div>
+          <Basics
+            playerName={playerName}
+            setPlayerName={setPlayerName}
+            charName={charName}
+            setCharName={setCharName}
+            charConcept={charConcept}
+            setCharConcept={setCharConcept}
+            charImage={charImage}
+            setCharImage={setCharImage}
+            setFormPage={setFormPage}
+          />
         )}
         {formPage === 1 && (
-          <div className="column">
-            <span>Add {attributesPoints} Points to Attributes:</span>
-
-            <div className="form-attribute-stepper">
-              <button
-                type="button"
-                name="brawn"
-                value={attributes.brawn}
-                onClick={(e) => attributeStepDown(e)}
-              >
-                -
-              </button>
-              <span> Brawn: {attributes.brawn} </span>
-              <button
-                type="button"
-                name="brawn"
-                value={attributes.brawn}
-                onClick={(e) => attributeStepUp(e)}
-              >
-                +
-              </button>
-            </div>
-
-            <div className="form-attribute-stepper">
-              <button
-                type="button"
-                name="agility"
-                value={attributes.agility}
-                onClick={(e) => attributeStepDown(e)}
-              >
-                -
-              </button>
-              <span> Agility: {attributes.agility} </span>
-              <button
-                type="button"
-                name="agility"
-                value={attributes.agility}
-                onClick={(e) => attributeStepUp(e)}
-              >
-                +
-              </button>
-            </div>
-
-            <div className="form-attribute-stepper">
-              <button
-                type="button"
-                name="wit"
-                value={attributes.wit}
-                onClick={(e) => attributeStepDown(e)}
-              >
-                -
-              </button>
-              <span> Wit: {attributes.wit} </span>
-              <button
-                type="button"
-                name="wit"
-                value={attributes.wit}
-                onClick={(e) => attributeStepUp(e)}
-              >
-                +
-              </button>
-            </div>
-
-            <div className="form-attribute-stepper">
-              <button
-                type="button"
-                name="intelligence"
-                value={attributes.intelligence}
-                onClick={(e) => attributeStepDown(e)}
-              >
-                -
-              </button>
-              <span> Intelligence: {attributes.intelligence} </span>
-              <button
-                type="button"
-                name="intelligence"
-                value={attributes.intelligence}
-                onClick={(e) => attributeStepUp(e)}
-              >
-                +
-              </button>
-            </div>
-
-            <div className="form-attribute-stepper">
-              <button
-                type="button"
-                name="charm"
-                value={attributes.charm}
-                onClick={(e) => attributeStepDown(e)}
-              >
-                -
-              </button>
-              <span> Charm: {attributes.charm} </span>
-              <button
-                type="button"
-                name="charm"
-                value={attributes.charm}
-                onClick={(e) => attributeStepUp(e)}
-              >
-                +
-              </button>
-            </div>
-
-            <div className="form-attribute-stepper">
-              <button
-                type="button"
-                name="presence"
-                value={attributes.presence}
-                onClick={(e) => attributeStepDown(e)}
-              >
-                -
-              </button>
-              <span> Presence: {attributes.presence} </span>
-              <button
-                type="button"
-                name="presence"
-                value={attributes.presence}
-                onClick={(e) => attributeStepUp(e)}
-              >
-                +
-              </button>
-            </div>
-          </div>
+          <Attributes attributes={attributes} setAttributes={setAttributes} />
         )}
         {formPage === 2 && (
-          <div className="column">
-            <span> Choose 2</span>
-            <span>Skill Masteries</span>
-            {chosenMasteries[0] || (
-              <select
-                className="form-select"
-                onChange={(e) => chooseMastery(e)}
-              >
-                <option value="">Choose one</option>
-                {skills.map((skill, i) => {
-                  return (
-                    <option key={i} value={skill}>
-                      {skill}
-                    </option>
-                  );
-                })}
-              </select>
-            )}
-            {chosenMasteries[1] || (
-              <select
-                className="form-select"
-                onChange={(e) => chooseMastery(e)}
-              >
-                <option value="">Choose one</option>
-                {skills.map((skill, i) => {
-                  return (
-                    <option key={i} value={skill}>
-                      {skill}
-                    </option>
-                  );
-                })}
-              </select>
-            )}
-          </div>
+          <Masteries
+            chosenMasteries={chosenMasteries}
+            setChosenMasteries={setChosenMasteries}
+            skills={skills}
+            setSkills={setSkills}
+          />
         )}
         {formPage === 3 && (
-          <div className="column">
-            <span> Choose 2</span>
-            <span>Skill Proficiencies</span>
-            {chosenProficiencies[0] || (
-              <select
-                className="form-select"
-                onChange={(e) => chooseProficiency(e)}
-              >
-                <option value="">Choose one</option>
-                {skills.map((skill, i) => {
-                  return (
-                    <option key={i} value={skill}>
-                      {skill}
-                    </option>
-                  );
-                })}
-              </select>
-            )}
-            {chosenProficiencies[1] || (
-              <select
-                className="form-select"
-                onChange={(e) => chooseProficiency(e)}
-              >
-                <option value="">Choose one</option>
-                {skills.map((skill, i) => {
-                  return (
-                    <option key={i} value={skill}>
-                      {skill}
-                    </option>
-                  );
-                })}
-              </select>
-            )}
-          </div>
+          <Proficiencies
+            chosenProficiencies={chosenProficiencies}
+            setChosenProficiencies={setChosenProficiencies}
+            skills={skills}
+            setSkills={setSkills}
+            intelligence={attributes.intelligence}
+          />
         )}
         {formPage < 3 && (
           <button
@@ -344,20 +119,12 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
 
         {formPage === 4 && (
           <section className="character-info column">
-            {/* info */}
-            <span>{playerName}</span>
-            <div className="char-image-container column center">
-              {!charImage ? (
-                <span>No Image Available</span>
-              ) : (
-                <img src={charImage} />
-              )}
-            </div>
-            <span style={{ fontSize: "1.5em", fontWeight: "bold" }}>
-              {charName}
-            </span>
-            <span>{charConcept}</span>
-
+            <CharBasics
+              playerName={playerName}
+              charName={charName}
+              charConcept={charConcept}
+              charImage={charImage}
+            />
             <CharHealth attributes={attributes} />
 
             <CharAttributes attributes={attributes} />
@@ -366,13 +133,15 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
           </section>
         )}
       </form>
-      reset button
+      <p> reset button</p>
       <div className="badge anti-joker grey">
         🚫
-        <div className="tooltip">
+        <p className="tooltip">
           When Jokers and Anti-Jokers collide, they obliterate each other. Use
           wisely to avoid the chaotic effects of flipping a Joker.
-        </div>
+        </p>
+        <p>use radials for skill choices</p>
+        <p>tooltips on ereything</p>
       </div>
     </section>
   );

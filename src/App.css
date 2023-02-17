@@ -1,12 +1,13 @@
 .form-input {
+  width: 80%;
   margin: 5px;
 }
 
 .form-attribute-stepper {
+  width: 80%;
   display: flex;
   justify-content: space-between;
-  padding: 5px;
-  width: 150px;
+  margin-top: 10px;
 }
 
 .form-select {
@@ -23,8 +24,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.center {
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .row {

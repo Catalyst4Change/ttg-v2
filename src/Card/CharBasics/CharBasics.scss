@@ -1,0 +1,12 @@
+.char-image-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+
+  img {
+    border: 1px black solid;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+  }
+}
