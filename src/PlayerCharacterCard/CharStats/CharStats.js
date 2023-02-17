@@ -55,7 +55,7 @@ export const CharStats = ({ stats, statStepUp, statStepDown }) => {
         </button>
 
         <div className="badge drive">
-          ❗️ = {stats.drive}
+          🛞 = {stats.drive}
           <div className="tooltip">
             Drive gives you an extra card to flip per point spent.
           </div>

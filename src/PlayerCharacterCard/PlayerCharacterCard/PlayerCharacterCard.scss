@@ -2,16 +2,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "options options"
     "basics health"
     "basics stats"
     "atts atts"
     "masts masts"
-    "profs profs";
+    "profs profs"
+    "options options";
   column-gap: 5%;
   row-gap: 2%;
 
-  border: 1px purple solid;
+  border: 1px black solid;
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
 

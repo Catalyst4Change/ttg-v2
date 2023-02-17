@@ -75,13 +75,6 @@ export const PlayerCharacterCard = ({
 
   return (
     <main id={charName} className="character-info">
-      <div className="card-options">
-        <CardOptionsMenu
-          playerIndex={playerIndex}
-          deletePlayerCharacter={deletePlayerCharacter}
-          resetToOriginal={resetToOriginal}
-        />
-      </div>
       <div className="basics">
         <CharBasics
           playerName={playerName}
@@ -115,9 +108,18 @@ export const PlayerCharacterCard = ({
       </div>
 
       <div className="proficiencies">
-        <CharProficiencies chosenProficiencies={chosenProficiencies} />{" "}
+        <CharProficiencies chosenProficiencies={chosenProficiencies} />
       </div>
 
+      <div className="card-options">
+        <CardOptionsMenu
+          playerIndex={playerIndex}
+          deletePlayerCharacter={deletePlayerCharacter}
+          resetToOriginal={resetToOriginal}
+        />
+      </div>
+
+      <p></p>
       {/* ultimates */}
     </main>
   );

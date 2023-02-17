@@ -1,6 +1,6 @@
 import React from "react";
-import "../../App.css";
 import "./CharMasteries.scss";
+import "../../App.css";
 
 export const CharMasteries = ({ chosenMasteries }) => {
   const masteries = () => {

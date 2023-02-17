@@ -140,18 +140,17 @@ export const NewPlayerCharacterForm = ({
           {
           }} */}
       </section>
-      <p> reset button</p>
-      <p> delete char button</p>
       <p> null input error handling</p>
-      <div className="badge anti-joker grey">
+      <p>use radials for skill choices</p>
+      <p>tooltips on ereything</p>
+      <p>anti-joker</p>
+      {/* <div className="badge anti-joker grey">
         🚫
         <p className="tooltip">
           When Jokers and Anti-Jokers collide, they obliterate each other. Use
           wisely to avoid the chaotic effects of flipping a Joker.
         </p>
-        <p>use radials for skill choices</p>
-        <p>tooltips on ereything</p>
-      </div>
+      </div> */}
     </main>
   );
 };
