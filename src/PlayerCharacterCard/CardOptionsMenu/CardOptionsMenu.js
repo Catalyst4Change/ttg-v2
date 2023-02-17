@@ -1,7 +1,11 @@
 import React from "react";
 import "../../App.css";
 
-export const CardOptionsMenu = ({ playerIndex, deletePlayerCharacter }) => {
+export const CardOptionsMenu = ({
+  playerIndex,
+  deletePlayerCharacter,
+  resetToOriginal,
+}) => {
   return (
     <main>
       <div className="row distribute">
@@ -11,7 +15,7 @@ export const CardOptionsMenu = ({ playerIndex, deletePlayerCharacter }) => {
         >
           ❌
         </button>
-        <div>🔄</div>
+        <button onClick={resetToOriginal}>🔄</button>
       </div>
     </main>
   );

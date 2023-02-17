@@ -1,25 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./CharHealth.scss";
 
-export const CharHealth = ({ attributes }) => {
-  const [maxHealth] = useState(attributes.brawn * 3);
-  const [health, setHealth] = useState(attributes.brawn * 3);
-  const [healthBar, setHealthBar] = useState(["🔴", "🟡", "🟢"]);
+export const CharHealth = ({
+  maxHealth,
+  health,
+  setHealth,
+  buildHealthBar,
+  healthBar,
+  setHealthBar,
+}) => {
   const [condition, setCondition] = useState("Healthy");
-  const healthRatio = (parseInt(healthBar.length) / maxHealth).toFixed(2);
+  const healthRatio = (health / maxHealth).toFixed(2);
 
   useEffect(() => {
-    let red = [];
-    let yellow = [];
-    let green = [];
-    let bar = [];
-    for (let i = 0; i < maxHealth / 3; i++) {
-      red.push("🔴");
-      yellow.push("🟡");
-      green.push("🟢");
-    }
-    bar = red.concat(yellow, green);
-    setHealthBar(bar);
+    buildHealthBar();
   }, []);
 
   const subtractHealth = (e) => {
