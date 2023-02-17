@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "../App.css";
-import { Attributes } from "../CharForm/Attributes";
-import { Basics } from "../CharForm/Basics";
-import { Masteries } from "../CharForm/Masteries";
-import { Proficiencies } from "../CharForm/Proficiencies";
-import "./CharacterSheet.scss";
+import { Attributes } from "./Attributes";
+import { Basics } from "./Basics";
+import { Masteries } from "./Masteries";
+import { Proficiencies } from "./Proficiencies";
+import "./NewPlayerCharacterForm.scss";
 
-export const CharacterSheet = ({ addPlayerCharacter }) => {
+export const NewPlayerCharacterForm = ({ addPlayerCharacter }) => {
   const [formPage, setFormPage] = useState(0);
 
   const [playerName, setPlayerName] = useState("");

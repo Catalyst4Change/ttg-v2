@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import { PlayerCardsContainer } from "./Card/PlayerCardsContainer";
+import { PlayerCardsContainer } from "./PlayerCardsContainer";
 
 function App() {
   const [numberOfPlayerCards, setNumberOfPlayerCards] = useState(0);
