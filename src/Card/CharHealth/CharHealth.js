@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./CharHealth.scss";
 
 export const CharHealth = ({ attributes }) => {
   const [maxHealth] = useState(attributes.brawn * 3);
@@ -65,12 +66,14 @@ export const CharHealth = ({ attributes }) => {
   }, [healthRatio]);
 
   return (
-    <section>
-      <span>Total Health: {maxHealth}</span>
-      <div className="vitals-health">
-        <span>Health: {healthBar}</span>
+    <section id="health">
+      <div className="vitals-health column center">
+        <div className="health-total">
+          <span>Total Health: {maxHealth}</span>
+        </div>
+        <div>Health: {healthBar}</div>
       </div>
-      <div className="form-attribute-stepper">
+      <div className="row distribute">
         <button
           type="button"
           name="health"
@@ -80,12 +83,7 @@ export const CharHealth = ({ attributes }) => {
           -
         </button>
 
-        {/* condition */}
-        <div className="column">
-          <span> Health: {health} </span>
-          <span> Condition: {condition} </span>
-          <span> healthRatio: {healthRatio} </span>
-        </div>
+        <span>{condition}</span>
 
         <button
           type="button"

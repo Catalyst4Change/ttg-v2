@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import "./CharacterSheet.scss";
-import { CharHealth } from "./CharHealth";
+import { CharAttributes } from "./CharAttributes/CharAttributes";
+import { CharHealth } from "./CharHealth/CharHealth";
+import { CharStatus } from "./CharStatus/CharStatus";
 
 // form presents sections one at a time while filling out
 // { formID === formIndex ? ...section... }
@@ -83,14 +85,6 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
 
   const advanceFormPage = () => {
     setFormPage((formPage) => formPage + 1);
-  };
-
-  const showAttributeEmojis = (att, emoji) => {
-    let display = "";
-    for (let i = 0; i < att; i++) {
-      display += emoji;
-    }
-    return display;
   };
 
   return (
@@ -364,85 +358,15 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
             </span>
             <span>{charConcept}</span>
 
-            {/* vitals */}
-            <div className="display-vitals">
-              <CharHealth attributes={attributes} />
-              {/* <span>Total Health: {attributes.brawn * 3}</span>
-              <div className="vitals-health">
-                <span>Health: {healthBar}</span>
-              </div>
-              <div className="form-attribute-stepper">
-                <button
-                  type="button"
-                  name="health"
-                  value={health}
-                  onClick={(e) => subtractHealth(e)}
-                >
-                  -
-                </button>
+            <CharHealth attributes={attributes} />
 
-                <span> Health: {health} </span>
+            <CharAttributes attributes={attributes} />
 
-                <button
-                  type="button"
-                  name="presence"
-                  value={health}
-                  onClick={(e) => addHealth(e)}
-                >
-                  +
-                </button>
-              </div> */}
-            </div>
-
-            {/* attributes */}
-            <span>Brawn: {showAttributeEmojis(attributes.brawn, "💪")}</span>
-            <span>
-              Agility: {showAttributeEmojis(attributes.agility, "👟")}
-            </span>
-            <span>
-              Intelligence: {showAttributeEmojis(attributes.intelligence, "🧠")}
-            </span>
-            <span>Wit: {showAttributeEmojis(attributes.wit, "⚡️")}</span>
-            <span>Charm: {showAttributeEmojis(attributes.charm, "✨")}</span>
-            <span>
-              Presence: {showAttributeEmojis(attributes.presence, "👤")}
-            </span>
-
-            <div className="character-badges">
-              <div className="initiative-badge">
-                ❗️= {attributes.presence + attributes.agility}
-              </div>
-              <div className="hidden">
-                Initiative determines your turn order in battle.
-              </div>
-
-              <div className="badge dodge">
-                👟 = {attributes.agility + attributes.wit - 2}
-              </div>
-              <div className="hidden">Dodge lets you avoid damage.</div>
-
-              <div className="badge drive">
-                ⏩ = {attributes.wit + attributes.presence}
-              </div>
-              <div className="hidden">
-                Drive gives you an extra card to flip per point spent.
-              </div>
-
-              <div className="badge crit">💥 + {attributes.charm + 1}</div>
-              <div className="hidden">
-                On flipping the Queen of Hearts, Crit gives you successes equal
-                to your Charm stat.
-              </div>
-
-              <div className="badge anti-joker grey">🚫</div>
-              <div className="hidden">
-                When Jokers and Anti-Jokers meet, they obliterate each other.
-                Use wisely to avoid the chaotic effects of flipping a Joker.
-              </div>
-            </div>
+            <CharStatus attributes={attributes} />
           </section>
         )}
       </form>
+      reset button
     </section>
   );
 };

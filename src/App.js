@@ -48,7 +48,10 @@ function App() {
   return (
     <div className="App">
       <button onClick={createNewCard} type="button">
-        +
+        + PC
+      </button>
+      <button onClick={createNewCard} type="button">
+        + NPC
       </button>
       {displayCards()}
     </div>

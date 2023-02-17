@@ -1,0 +1,42 @@
+#char-status {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "init crit"
+    "dodge dodge"
+    "drive drive";
+
+  .initiative {
+    grid-area: init;
+  }
+
+  .crit {
+    grid-area: crit;
+  }
+
+  .dodge {
+    grid-area: dodge;
+  }
+
+  .drive {
+    grid-area: drive;
+  }
+
+  .badge {
+    .tooltip {
+      display: none;
+    }
+    &:hover {
+      .tooltip {
+        background-color: aqua;
+        width: 150px;
+        margin: 0 auto;
+        position: absolute;
+        display: block;
+      }
+    }
+  }
+}
+.grey {
+  filter: grayscale(100%);
+}
