@@ -1,12 +1,12 @@
 import "./App.css";
 import React, { useState } from "react";
-import { CardContainer } from "./Card/CardContainer";
+import { PlayerCardsContainer } from "./Card/PlayerCardsContainer";
 
 function App() {
-  const [numberOfCards, setNumberOfCards] = useState(0);
+  const [numberOfPlayerCards, setNumberOfPlayerCards] = useState(0);
 
   const createNewCard = () => {
-    setNumberOfCards((numberOfCards) => numberOfCards + 1);
+    setNumberOfPlayerCards((numberOfPlayerCards) => numberOfPlayerCards + 1);
   };
 
   return (
@@ -16,7 +16,7 @@ function App() {
       <button onClick={createNewCard} type="button">
         + PC
       </button>
-      <CardContainer numberOfCards={numberOfCards} />
+      <PlayerCardsContainer numberOfPlayerCards={numberOfPlayerCards} />
     </div>
   );
 }

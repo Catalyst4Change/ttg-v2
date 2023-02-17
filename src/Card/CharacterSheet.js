@@ -5,10 +5,6 @@ import { Basics } from "../CharForm/Basics";
 import { Masteries } from "../CharForm/Masteries";
 import { Proficiencies } from "../CharForm/Proficiencies";
 import "./CharacterSheet.scss";
-import { CharAttributes } from "./CharAttributes/CharAttributes";
-import { CharBasics } from "./CharBasics/CharBasics";
-import { CharHealth } from "./CharHealth/CharHealth";
-import { CharStatus } from "./CharStatus/CharStatus";
 
 export const CharacterSheet = ({ addPlayerCharacter }) => {
   const [formPage, setFormPage] = useState(0);
@@ -119,33 +115,16 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
           <button
             className="form-button"
             type="button"
-            onClick={advanceFormPage}
+            onClick={submitNewCharacter}
           >
             DONE
           </button>
         )}
 
-        {/* display character */}
-
-        {formPage === 4 && (
-          <section className="character-info column">
-            <CharBasics
-              playerName={playerName}
-              charName={charName}
-              charConcept={charConcept}
-              charImage={charImage}
-            />
-            <CharHealth attributes={attributes} />
-
-            <CharAttributes attributes={attributes} />
-
-            <CharStatus attributes={attributes} />
-
-            {/* masteries */}
-            {/* proficiencies */}
-            {/* ultimates */}
-          </section>
-        )}
+        {formPage === 4 &&
+          {
+            /* display character */
+          }}
       </section>
       <p> reset button</p>
       <div className="badge anti-joker grey">
@@ -156,6 +135,8 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
         </p>
         <p>use radials for skill choices</p>
         <p>tooltips on ereything</p>
+        <p>profs</p>
+        <p>masters</p>
       </div>
     </main>
   );

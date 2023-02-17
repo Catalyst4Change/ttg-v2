@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { CharacterSheet } from "./CharacterSheet";
 import "../App.css";
+import { PlayerCharacterCard } from "./PlayerCharacterCard/PlayerCharacterCard";
 
-export const CardContainer = ({ numberOfCards }) => {
-  // this component contains the form and resulting character sheet
+export const PlayerCardsContainer = ({ numberOfPlayerCards }) => {
   const [playerCharacters, setPlayerCharacters] = useState([
     {
       playerName: "Catalyst",
@@ -27,19 +27,27 @@ export const CardContainer = ({ numberOfCards }) => {
     setPlayerCharacters([...playerCharacters, newChar]);
   };
 
-  const playerCards = () => {};
-
   const displayCards = () => {
-    let cards = [];
-    for (let index = 0; index < numberOfCards; index++) {
-      cards.push({});
-    }
-    return cards;
+    return playerCharacters.map((card, i) => {
+      console.log(card);
+      return (
+        <PlayerCharacterCard
+          key={i}
+          playerName={card.playerName}
+          charName={card.charName}
+          charConcept={card.charConcept}
+          charImage={card.charImage}
+          attributes={card.attributes}
+          chosenMasteries={card.chosenMasteries}
+          chosenProficiencies={card.chosenProficiencies}
+        />
+      );
+    });
   };
 
   return (
-    <div className="card-container">
-      <CharacterSheet addPlayerCharacter={addPlayerCharacter} />
-    </div>
+    <main className="card-container border">
+      <div>{displayCards()}</div>
+    </main>
   );
 };
