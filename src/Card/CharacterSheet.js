@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../App.css";
 import { Attributes } from "../CharForm/Attributes";
 import { Basics } from "../CharForm/Basics";
@@ -10,12 +10,8 @@ import { CharBasics } from "./CharBasics/CharBasics";
 import { CharHealth } from "./CharHealth/CharHealth";
 import { CharStatus } from "./CharStatus/CharStatus";
 
-// form presents sections one at a time while filling out
-// { formID === formIndex ? ...section... }
-
 export const CharacterSheet = ({ addPlayerCharacter }) => {
   const [formPage, setFormPage] = useState(0);
-  console.log(formPage);
 
   const [playerName, setPlayerName] = useState("");
   const [charName, setCharName] = useState("");
@@ -55,14 +51,28 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
   const [chosenMasteries, setChosenMasteries] = useState([]);
   const [chosenProficiencies, setChosenProficiencies] = useState([]);
 
-  const advanceFormPage = (event) => {
+  const advanceFormPage = () => {
     setFormPage((formPage) => formPage + 1);
   };
 
+  const submitNewCharacter = () => {
+    advanceFormPage();
+    const newChar = {
+      playerName: playerName,
+      charName: charName,
+      charConcept: charConcept,
+      charImage: charImage,
+      attributes: attributes,
+      chosenMasteries: chosenMasteries,
+      chosenProficiencies: chosenProficiencies,
+    };
+    addPlayerCharacter(newChar);
+  };
+
   return (
-    <section id="char-sheet">
+    <main id="char-sheet">
       {/* create character */}
-      <form id="0" className="form column center">
+      <section id="0" className="form column center">
         {formPage === 0 && (
           <Basics
             playerName={playerName}
@@ -130,9 +140,13 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
             <CharAttributes attributes={attributes} />
 
             <CharStatus attributes={attributes} />
+
+            {/* masteries */}
+            {/* proficiencies */}
+            {/* ultimates */}
           </section>
         )}
-      </form>
+      </section>
       <p> reset button</p>
       <div className="badge anti-joker grey">
         🚫
@@ -143,6 +157,6 @@ export const CharacterSheet = ({ addPlayerCharacter }) => {
         <p>use radials for skill choices</p>
         <p>tooltips on ereything</p>
       </div>
-    </section>
+    </main>
   );
 };

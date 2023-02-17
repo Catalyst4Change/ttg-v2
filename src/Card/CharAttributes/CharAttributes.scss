@@ -16,4 +16,9 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  .grid-item {
+    flex-direction: row;
+    justify-content: baseline;
+    text-align: left;
+  }
 }
