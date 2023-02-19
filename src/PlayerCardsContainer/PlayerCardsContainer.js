@@ -1,30 +1,15 @@
 import React, { useState } from "react";
 import { NewPlayerCharacterForm } from "../NewPlayerCharacterForm/NewPlayerCharacterForm";
-import { PlayerCharacterCard } from "../PlayerCharacterCard/PlayerCharacterCard/PlayerCharacterCard";
+import { PlayerCharacterCard } from "./PlayerCharacterCard/PlayerCharacterCard/PlayerCharacterCard";
 import "../App.css";
 import "./PlayerCardsContainer.scss";
+import { stockPlayerCharacters } from "./StockCharacters";
 
 export const PlayerCardsContainer = ({}) => {
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
-  const [playerCharacters, setPlayerCharacters] = useState([
-    {
-      playerName: "Catalyst",
-      charName: "Chef O'Lapod",
-      charConcept: "Food Bard",
-      charImage:
-        "https://ih1.redbubble.net/image.1380368364.4611/st,small,845x845-pad,1000x1000,f8f8f8.jpg",
-      attributes: {
-        brawn: 3,
-        agility: 3,
-        intelligence: 1,
-        wit: 2,
-        charm: 2,
-        presence: 2,
-      },
-      chosenMasteries: ["Biology", "Engineering"],
-      chosenProficiencies: ["Melee", "Survival"],
-    },
-  ]);
+  const [playerCharacters, setPlayerCharacters] = useState(
+    stockPlayerCharacters
+  );
 
   const addPlayerCharacter = (newChar) => {
     setPlayerCharacters([...playerCharacters, newChar]);
@@ -73,7 +58,7 @@ export const PlayerCardsContainer = ({}) => {
       <button onClick={createNewPlayerCharacter} type="button">
         + PC
       </button>
-      <section id="cards-row">
+      <section id="player-cards-area">
         <div className="new-form-container">
           {deployNewCharacterForm && (
             <NewPlayerCharacterForm
@@ -82,8 +67,7 @@ export const PlayerCardsContainer = ({}) => {
             />
           )}
         </div>
-
-        {displayCards()}
+        <div id="player-cards-grid">{displayCards()}</div>
       </section>
     </main>
   );

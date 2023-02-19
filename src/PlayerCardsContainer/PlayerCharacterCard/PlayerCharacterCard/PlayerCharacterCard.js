@@ -4,7 +4,7 @@ import { CharBasics } from "../CharBasics/CharBasics";
 import { CharHealth } from "../CharHealth/CharHealth";
 import { CharStats } from "../CharStats/CharStats";
 import "./PlayerCharacterCard.scss";
-import "../../App.css";
+import "../../../App.css";
 import { CharMasteries } from "../CharMasteries/CharMasteries";
 import { CharProficiencies } from "../CharProficiencies/CharProficiencies";
 import { CardOptionsMenu } from "../CardOptionsMenu/CardOptionsMenu";

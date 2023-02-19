@@ -14,7 +14,7 @@ export const CharBasics = ({
         {!charImage ? <span>No Image Available</span> : <img src={charImage} />}
       </div>
       <h3>{charName}</h3>
-      <p>{charConcept}</p>
+      <span>{charConcept}</span>
     </main>
   );
 };
