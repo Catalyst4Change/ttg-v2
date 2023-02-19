@@ -83,6 +83,7 @@ export const PlayerCharacterCard = ({
           charImage={charImage}
         />
       </div>
+
       <div className="health">
         <CharHealth
           maxHealth={maxHealth}
@@ -93,9 +94,11 @@ export const PlayerCharacterCard = ({
           setHealthBar={setHealthBar}
         />
       </div>
+
       <div className="attributes">
         <CharAttributes attributes={attributes} />
       </div>
+
       <div className="stats">
         <CharStats
           stats={stats}
@@ -103,6 +106,7 @@ export const PlayerCharacterCard = ({
           statStepDown={statStepDown}
         />
       </div>
+
       <div className="masteries">
         <CharMasteries chosenMasteries={chosenMasteries} />
       </div>
@@ -118,8 +122,6 @@ export const PlayerCharacterCard = ({
           resetToOriginal={resetToOriginal}
         />
       </div>
-
-      <p></p>
       {/* ultimates */}
     </main>
   );

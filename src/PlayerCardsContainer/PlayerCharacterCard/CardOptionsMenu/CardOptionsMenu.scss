@@ -1,18 +1,22 @@
-.options-icon {
-  width: 40px;
-  height: 40px;
-  background: none;
-  color: inherit;
-  border: 1px black solid;
-  border-radius: 10px;
-  cursor: auto;
+#card-options {
+  height: 90px;
 
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
+  .options-icon {
+    width: 40px;
+    height: 40px;
+    background: none;
+    color: inherit;
+    border: 1px black solid;
+    border-radius: 10px;
+    cursor: auto;
+
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
 }
 
 .delete {

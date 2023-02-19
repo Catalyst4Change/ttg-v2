@@ -14,8 +14,8 @@ export const CardOptionsMenu = ({
   };
 
   return (
-    <main>
-      <div className="row distribute">
+    <main id="card-options">
+      <div className="options-row row distribute">
         <button
           className="options-icon delete"
           value={playerIndex}
@@ -33,7 +33,6 @@ export const CardOptionsMenu = ({
           🃏
         </button>
       </div>
-      <p></p>
     </main>
   );
 };

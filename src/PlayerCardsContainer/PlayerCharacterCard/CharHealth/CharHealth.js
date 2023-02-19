@@ -61,7 +61,6 @@ export const CharHealth = ({
 
   return (
     <section id="health" className="column center">
-      <p></p>
       <div className="row distribute">
         <button
           type="button"
@@ -81,7 +80,6 @@ export const CharHealth = ({
           +
         </button>
       </div>
-      <p></p>
       <div className="vitals-health column center">
         <div className="health-total">
           <span>Total Health: {maxHealth}</span>

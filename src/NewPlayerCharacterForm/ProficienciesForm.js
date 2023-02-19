@@ -33,7 +33,6 @@ export const ProficienciesForm = ({
               })}
             </select>
           )}
-          <p></p>
         </div>
       );
     }
@@ -46,7 +45,6 @@ export const ProficienciesForm = ({
         Proficiencies are skills you dabble in. They give you <b>two</b> points
         toward a related action.
       </p>
-      <p></p>
       {generateProficiencySelections()}
     </div>
   );
