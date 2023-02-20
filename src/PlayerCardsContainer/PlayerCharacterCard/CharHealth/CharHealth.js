@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./CharHealth.scss";
+import { GenerateHealthBar } from "./GenerateHealthBar";
 
 export const CharHealth = ({
   maxHealth,
-  health,
-  setHealth,
-  buildHealthBar,
+  currentHealth,
+  setCurrentHealth,
   healthBar,
   setHealthBar,
 }) => {
   const [condition, setCondition] = useState("Healthy");
-  const healthRatio = (health / maxHealth).toFixed(2);
-
-  useEffect(() => {
-    buildHealthBar();
-  }, []);
+  const healthRatio = (currentHealth / maxHealth).toFixed(2);
 
   const subtractHealth = (e) => {
-    if (health > 1) {
-      setHealth(health - 1);
+    if (currentHealth > 1) {
+      setCurrentHealth(currentHealth - 1);
       setHealthBar(healthBar.slice(0, -1));
-    } else if (health === 1) {
-      setHealth(0);
+    } else if (currentHealth === 1) {
+      setCurrentHealth(0);
       setHealthBar([]);
     }
   };
@@ -37,8 +33,8 @@ export const CharHealth = ({
       emoji = "🟢";
     }
 
-    if (health < maxHealth) {
-      setHealth(health + 1);
+    if (currentHealth < maxHealth) {
+      setCurrentHealth(currentHealth + 1);
       setHealthBar((healthBar) => [...healthBar, emoji]);
     }
   };
@@ -65,7 +61,7 @@ export const CharHealth = ({
         <button
           type="button"
           name="health"
-          value={health}
+          value={currentHealth}
           onClick={(e) => subtractHealth(e)}
         >
           -
@@ -74,7 +70,7 @@ export const CharHealth = ({
         <button
           type="button"
           name="presence"
-          value={health}
+          value={currentHealth}
           onClick={(e) => addHealth(e)}
         >
           +

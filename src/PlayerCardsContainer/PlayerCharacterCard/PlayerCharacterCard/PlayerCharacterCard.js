@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CharAttributes } from "../CharAttributes/CharAttributes";
 import { CharBasics } from "../CharBasics/CharBasics";
 import { CharHealth } from "../CharHealth/CharHealth";
@@ -8,6 +8,7 @@ import "../../../App.css";
 import { CharMasteries } from "../CharMasteries/CharMasteries";
 import { CharProficiencies } from "../CharProficiencies/CharProficiencies";
 import { CardOptionsMenu } from "../CardOptionsMenu/CardOptionsMenu";
+import { GenerateHealthBar } from "../CharHealth/GenerateHealthBar";
 
 export const PlayerCharacterCard = ({
   playerIndex,
@@ -21,22 +22,12 @@ export const PlayerCharacterCard = ({
   chosenProficiencies,
 }) => {
   const [maxHealth] = useState(attributes.brawn * 3);
-  const [health, setHealth] = useState(attributes.brawn * 3);
-  const [healthBar, setHealthBar] = useState(["🔴", "🟡", "🟢"]);
+  const [currentHealth, setCurrentHealth] = useState(attributes.brawn * 3);
+  const [healthBar, setHealthBar] = useState(["❗️"]);
 
-  const buildHealthBar = () => {
-    let red = [];
-    let yellow = [];
-    let green = [];
-    let bar = [];
-    for (let i = 0; i < maxHealth / 3; i++) {
-      red.push("🔴");
-      yellow.push("🟡");
-      green.push("🟢");
-    }
-    bar = red.concat(yellow, green);
-    setHealthBar(bar);
-  };
+  useEffect(() => {
+    GenerateHealthBar(maxHealth, setHealthBar);
+  }, []);
 
   const [stats, setStatuses] = useState({
     initiative: attributes.presence + attributes.agility,
@@ -46,7 +37,6 @@ export const PlayerCharacterCard = ({
   });
 
   const statStepUp = (e) => {
-    console.log(e);
     const { name, value } = e.target;
     const numValue = parseInt(value);
     if (stats[name]) {
@@ -63,8 +53,8 @@ export const PlayerCharacterCard = ({
   };
 
   const resetToOriginal = () => {
-    setHealth(maxHealth);
-    buildHealthBar();
+    setCurrentHealth(maxHealth);
+    GenerateHealthBar(maxHealth, setHealthBar);
     setStatuses({
       initiative: attributes.presence + attributes.agility,
       dodge: attributes.agility + attributes.wit - 2,
@@ -87,9 +77,8 @@ export const PlayerCharacterCard = ({
       <div className="health">
         <CharHealth
           maxHealth={maxHealth}
-          health={health}
-          setHealth={setHealth}
-          buildHealthBar={buildHealthBar}
+          currentHealth={currentHealth}
+          setCurrentHealth={setCurrentHealth}
           healthBar={healthBar}
           setHealthBar={setHealthBar}
         />

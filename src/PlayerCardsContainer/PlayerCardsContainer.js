@@ -18,14 +18,12 @@ export const PlayerCardsContainer = ({}) => {
 
   const deletePlayerCharacter = (event) => {
     const indexToRemove = parseInt(event.target.value);
-    console.log("indexToRemove", indexToRemove);
 
     const removeCharacter = playerCharacters.filter((char, index) => {
       if (index != indexToRemove) {
         return true;
       }
     });
-    console.log("removeCharacter", removeCharacter);
     setPlayerCharacters(removeCharacter);
   };
 

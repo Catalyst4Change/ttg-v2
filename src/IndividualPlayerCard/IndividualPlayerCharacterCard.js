@@ -46,7 +46,6 @@ export const IndividualPlayerCharacterCard = ({
   });
 
   const statStepUp = (e) => {
-    console.log(e);
     const { name, value } = e.target;
     const numValue = parseInt(value);
     if (stats[name]) {

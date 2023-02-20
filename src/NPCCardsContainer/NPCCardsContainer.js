@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { NPCCard } from "./NPCCard";
+import "../App.css";
+import "./NPCCardsContainer.scss";
 
 export const NPCCardsContainer = () => {
   const [combatTraits] = useState({
@@ -409,8 +411,7 @@ export const NPCCardsContainer = () => {
   };
 
   return (
-    <main className="row">
-      NPCCardsContainer
+    <main id="NPC-cards-container" className="">
       {displayNPCs()}
     </main>
   );
