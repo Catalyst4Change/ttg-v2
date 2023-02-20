@@ -1,6 +1,6 @@
 import React from "react";
 import "./CharBasics.scss";
-import "../../../App.css";
+import "../../../App.scss";
 
 export const CharBasics = ({
   playerName,
@@ -10,16 +10,16 @@ export const CharBasics = ({
 }) => {
   return (
     <main id="basics" className="column center">
-      <span>{playerName}</span>
+      <div>{playerName}</div>
       <div className="char-image-container column center">
         {!charImage ? (
-          <span>No Image Available</span>
+          <div>No Image Available</div>
         ) : (
           <img src={charImage} alt="character" />
         )}
       </div>
       <h3>{charName}</h3>
-      <span>{charConcept}</span>
+      <div>{charConcept}</div>
     </main>
   );
 };

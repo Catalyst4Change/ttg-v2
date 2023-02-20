@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../App.css";
+import "../App.scss";
 
 export const AttributesForm = ({ attributes, setAttributes }) => {
   const [attributesPoints, setAttributesPoints] = useState(7);
@@ -35,7 +35,7 @@ export const AttributesForm = ({ attributes, setAttributes }) => {
         >
           -
         </button>
-        <span> Brawn: {attributes.brawn} </span>
+        <div> Brawn: {attributes.brawn} </div>
         <button
           type="button"
           name="brawn"
@@ -55,7 +55,7 @@ export const AttributesForm = ({ attributes, setAttributes }) => {
         >
           -
         </button>
-        <span> Agility: {attributes.agility} </span>
+        <div> Agility: {attributes.agility} </div>
         <button
           type="button"
           name="agility"
@@ -75,7 +75,7 @@ export const AttributesForm = ({ attributes, setAttributes }) => {
         >
           -
         </button>
-        <span> Wit: {attributes.wit} </span>
+        <div> Wit: {attributes.wit} </div>
         <button
           type="button"
           name="wit"
@@ -95,7 +95,7 @@ export const AttributesForm = ({ attributes, setAttributes }) => {
         >
           -
         </button>
-        <span> Intelligence: {attributes.intelligence} </span>
+        <div> Intelligence: {attributes.intelligence} </div>
         <button
           type="button"
           name="intelligence"
@@ -115,7 +115,7 @@ export const AttributesForm = ({ attributes, setAttributes }) => {
         >
           -
         </button>
-        <span> Charm: {attributes.charm} </span>
+        <div> Charm: {attributes.charm} </div>
         <button
           type="button"
           name="charm"
@@ -135,7 +135,7 @@ export const AttributesForm = ({ attributes, setAttributes }) => {
         >
           -
         </button>
-        <span> Presence: {attributes.presence} </span>
+        <div> Presence: {attributes.presence} </div>
         <button
           type="button"
           name="presence"

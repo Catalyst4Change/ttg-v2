@@ -1,17 +1,8 @@
 #npc-card {
   width: 200px;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "title title"
-    "health health"
-    "power init"
-    "masts masts"
-    "flavor flavor"
-    "options options";
-  column-gap: 5%;
-  row-gap: 2%;
+  display: flex;
+  flex-direction: column;
 
   border: 1px lightgrey solid;
   border-radius: 10px;
@@ -26,6 +17,7 @@
   }
 
   .health {
+    margin: 10px 0;
     text-align: center;
     grid-area: health;
   }
@@ -35,7 +27,7 @@
   }
 
   .flavor {
-    grid-area: flavor;
+    width: 100%;
   }
 
   .trait {

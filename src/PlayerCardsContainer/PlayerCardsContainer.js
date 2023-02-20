@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NewPlayerCharacterForm } from "../NewPlayerCharacterForm/NewPlayerCharacterForm";
 import { PlayerCharacterCard } from "./PlayerCharacterCard/PlayerCharacterCard/PlayerCharacterCard";
-import "../App.css";
+import "../App.scss";
 import "./PlayerCardsContainer.scss";
 import { stockPlayerCharacters } from "./StockCharacters";
 

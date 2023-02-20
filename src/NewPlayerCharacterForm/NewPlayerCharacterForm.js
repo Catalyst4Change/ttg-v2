@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../App.css";
+import "../App.scss";
 import { AttributesForm } from "./AttributesForm";
 import { BasicsForm } from "./BasicsForm";
 import { MasteriesForm } from "./MasteriesForm";

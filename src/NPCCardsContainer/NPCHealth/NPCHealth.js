@@ -41,7 +41,7 @@ export const NPCHealth = ({
           -
         </button>
         <div className="health-total">
-          <span>Total Health: {maxHealth}</span>{" "}
+          <div>Total Health: {maxHealth}</div>{" "}
         </div>{" "}
         <button
           type="button"
@@ -52,10 +52,10 @@ export const NPCHealth = ({
           +
         </button>
       </div>
-      <span className="NPC-health-bar">
+      <div className="NPC-health-bar">
         {healthBar}
-        {!healthBar.length && <span className="dead">DEAD!</span>}
-      </span>
+        {!healthBar.length && <div className="dead">DEAD!</div>}
+      </div>
     </section>
   );
 };

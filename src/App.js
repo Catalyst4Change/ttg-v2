@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import React, { useState } from "react";
 import { PlayerCardsContainer } from "./PlayerCardsContainer/PlayerCardsContainer";
 import { NPCCardsContainer } from "./NPCCardsContainer/NPCCardsContainer";

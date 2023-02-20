@@ -1,6 +1,6 @@
 import React from "react";
 import "./CharAttributes.scss";
-import "../../../App.css";
+import "../../../App.scss";
 
 export const CharAttributes = ({ attributes }) => {
   const showAttributeEmojis = (att, emoji) => {

@@ -4,7 +4,7 @@ import { CharBasics } from "../PlayerCardsContainer/PlayerCharacterCard/CharBasi
 import { CharHealth } from "../PlayerCardsContainer/PlayerCharacterCard/CharHealth/CharHealth";
 import { CharStats } from "../PlayerCardsContainer/PlayerCharacterCard/CharStats/CharStats";
 import "./PlayerCharacterCard.scss";
-import "../../../App.css";
+import "../../../App.scss";
 import { CharMasteries } from "../PlayerCardsContainer/PlayerCharacterCard/CharMasteries/CharMasteries";
 import { CharProficiencies } from "../PlayerCardsContainer/PlayerCharacterCard/CharProficiencies/CharProficiencies";
 import { CardOptionsMenu } from "../PlayerCardsContainer/PlayerCharacterCard/CardOptionsMenu/CardOptionsMenu";

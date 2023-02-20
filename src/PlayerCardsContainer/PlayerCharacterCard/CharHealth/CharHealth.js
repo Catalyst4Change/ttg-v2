@@ -78,12 +78,12 @@ export const CharHealth = ({
       </div>
       <div className="vitals-health column center">
         <div className="health-total">
-          <span>Total Health: {maxHealth}</span>
+          <div>Total Health: {maxHealth}</div>
         </div>
         <div>{healthBar}</div>
       </div>
       <div className="row distribute">
-        <span
+        <div
           className={
             (condition === "Healthy" && "green") ||
             (condition === "Injured" && "yellow") ||
@@ -92,7 +92,7 @@ export const CharHealth = ({
           }
         >
           <b>{condition}</b>
-        </span>
+        </div>
       </div>
     </section>
   );

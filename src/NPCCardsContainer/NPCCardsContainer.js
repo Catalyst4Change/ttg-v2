@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NPCCard } from "./NPCCard";
-import "../App.css";
+import "../App.scss";
 import "./NPCCardsContainer.scss";
 
 export const NPCCardsContainer = () => {

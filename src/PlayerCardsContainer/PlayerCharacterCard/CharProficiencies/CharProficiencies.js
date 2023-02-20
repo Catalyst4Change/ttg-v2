@@ -1,6 +1,6 @@
 import React from "react";
 import "./CharProficiencies.scss";
-import "../../../App.css";
+import "../../../App.scss";
 
 export const CharProficiencies = ({ chosenProficiencies }) => {
   const proficiencies = () => {

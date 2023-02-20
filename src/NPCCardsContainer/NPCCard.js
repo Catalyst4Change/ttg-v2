@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
+import "../App.scss";
 import { GenerateNPCHealthBar } from "./NPCHealth/GenerateNPCHealthBar";
 import "./NPCCard.scss";
 import { NPCHealth } from "./NPCHealth/NPCHealth.js";
@@ -18,14 +18,15 @@ export const NPCCard = ({ npc }) => {
     return combatTraits.map((trait, i) => {
       return (
         <div key={i}>
-          <p className="trait">
+          <p>
             <b>{trait.name}</b>
           </p>
-          {/* <p>{trait.text}</p> */}
+          <span className="tooltip">{trait.text}</span>
         </div>
       );
     });
   };
+
   return (
     <main id="npc-card">
       <h3 className="title">{type}</h3>
@@ -40,10 +41,11 @@ export const NPCCard = ({ npc }) => {
           />
         }
       </div>
-      <span className="power">Power: {power}</span>
-      <span className="init">Initiative: {initiative}</span>
-      <span className="flavor">{flavorText}</span>
-      {displayCombatTraits()}
+      <div className="row distribute">
+        <span>Power: {power}</span> <span>Initiative: {initiative}</span>
+      </div>
+      <p className="flavor column ">{flavorText}</p>
+      <p className="column center">Combat Traits: {displayCombatTraits()}</p>
     </main>
   );
 };
