@@ -18,10 +18,10 @@ export const NPCCard = ({ npc }) => {
     return combatTraits.map((trait, i) => {
       return (
         <div key={i}>
-          <p>
-            <b>{trait.name}</b>
+          <p className="row tooltip">
+            <b>{trait.name}</b>{" "}
+            <span className="tooltip-text">{trait.text}</span>
           </p>
-          <span className="tooltip">{trait.text}</span>
         </div>
       );
     });
@@ -45,7 +45,12 @@ export const NPCCard = ({ npc }) => {
         <span>Power: {power}</span> <span>Initiative: {initiative}</span>
       </div>
       <p className="flavor column ">{flavorText}</p>
-      <p className="column center">Combat Traits: {displayCombatTraits()}</p>
+      {combatTraits.length > 0 && (
+        <div>
+          <p className="column center">Combat Traits:</p>
+          <span className="row distribute">{displayCombatTraits()}</span>
+        </div>
+      )}
     </main>
   );
 };

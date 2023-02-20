@@ -11,6 +11,7 @@
     height: 100%;
 
     .new-form-container {
+      z-index: 1 !important;
       position: absolute;
       width: 300px;
       top: 25%;

@@ -41,7 +41,7 @@ export const BasicsForm = ({
       <input
         className="form-input"
         type="text"
-        placeholder="Character Image URL"
+        placeholder="Character Image URL (optional)"
         value={charImage}
         onChange={(e) => setCharImage(e.target.value)}
       />

@@ -37,6 +37,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .distribute {
@@ -62,4 +63,29 @@ p {
 
 .hilite {
   filter: hue-rotate(180deg);
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px black dotted;
+
+  .tooltip-text {
+    position: absolute;
+    z-index: 1;
+    width: 200px;
+    top: 100%;
+    left: 50%;
+    margin-left: -100px;
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-weight: 800;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  &:hover .tooltip-text {
+    visibility: visible;
+  }
 }
