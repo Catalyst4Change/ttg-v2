@@ -5,15 +5,15 @@ export const CharStats = ({ stats, statStepUp, statStepDown }) => {
   return (
     <main id="char-stats">
       <h3 className="section-title">Stats</h3>
-      <div className="initiative badge column center">
+      <div className="badge initiative column center tooltip">
         ⏩ = {stats.initiative}
-        <div className="tooltip">
+        <div className="tooltip-text">
           Initiative determines your turn order in battle.
         </div>
       </div>
-      <div className="badge crit column center">
+      <div className="badge crit column center tooltip">
         ❤️ + {stats.crit}
-        <div className="tooltip">
+        <div className="tooltip-text">
           On flipping the Queen of Hearts, Crit gives you successes equal to
           your crit stat.
         </div>
@@ -28,9 +28,9 @@ export const CharStats = ({ stats, statStepUp, statStepDown }) => {
           -
         </button>
 
-        <div className="badge">
+        <div className="badge tooltip">
           👟 = {stats.dodge}
-          <div className="tooltip">
+          <div className="tooltip-text">
             dodge determines your turn order in battle.
           </div>
         </div>
@@ -54,9 +54,9 @@ export const CharStats = ({ stats, statStepUp, statStepDown }) => {
           -
         </button>
 
-        <div className="badge drive">
+        <div className="badge drive tooltip">
           🛞 = {stats.drive}
-          <div className="tooltip">
+          <div className="tooltip-text">
             Drive gives you an extra card to flip per point spent.
           </div>
         </div>

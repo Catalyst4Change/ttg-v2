@@ -145,9 +145,6 @@ export const NewPlayerCharacterForm = ({
           {
           }} */}
       </section>
-      <p> null input error handling</p>
-      <p>use radials for skill choices</p>
-      <p>tooltips on ereything</p>
       <p>anti-joker</p>
       {/* <div className="badge anti-joker grey">
         🚫
