@@ -27,8 +27,6 @@ export const NPCHealth = ({
     }
   };
 
-  console.log(healthBar.length);
-
   return (
     <section id="health" className="column center">
       <div className="vitals-health row center">

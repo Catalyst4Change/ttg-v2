@@ -115,7 +115,7 @@ export const NPCCardsContainer = () => {
     finalForm,
   } = combatTraits;
 
-  const [npcList, setNpcList] = useState([
+  const [npcList] = useState([
     {
       trooper: {
         type: "Trooper",

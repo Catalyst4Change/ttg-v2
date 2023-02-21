@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../App.scss";
 
-export const AttributesForm = ({ attributes, setAttributes }) => {
+export const AttributesForm = ({
+  attributes,
+  setAttributes,
+  advanceFormPage,
+  setDeployNewCharacterForm,
+}) => {
   const [attributesPoints, setAttributesPoints] = useState(7);
 
   const attributeStepUp = (e) => {
@@ -19,6 +24,13 @@ export const AttributesForm = ({ attributes, setAttributes }) => {
     if (attributes[name] > 1) {
       setAttributes({ ...attributes, [name]: numValue - 1 });
       setAttributesPoints((attributesPoints) => attributesPoints + 1);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (attributesPoints === 0) {
+      advanceFormPage();
     }
   };
 
@@ -207,6 +219,19 @@ export const AttributesForm = ({ attributes, setAttributes }) => {
           onClick={(e) => attributeStepUp(e)}
         >
           +
+        </button>
+      </div>
+      <div className="row distribute">
+        <button className="form-button" type="button" onClick={handleSubmit}>
+          NEXT
+        </button>
+
+        <button
+          className="form-button"
+          type="button"
+          onClick={() => setDeployNewCharacterForm(false)}
+        >
+          CANCEL
         </button>
       </div>
     </div>

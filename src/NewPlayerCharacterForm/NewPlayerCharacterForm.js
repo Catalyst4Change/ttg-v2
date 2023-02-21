@@ -82,13 +82,16 @@ export const NewPlayerCharacterForm = ({
             setCharConcept={setCharConcept}
             charImage={charImage}
             setCharImage={setCharImage}
-            setFormPage={setFormPage}
+            advanceFormPage={advanceFormPage}
+            setDeployNewCharacterForm={setDeployNewCharacterForm}
           />
         )}
         {formPage === 1 && (
           <AttributesForm
             attributes={attributes}
             setAttributes={setAttributes}
+            advanceFormPage={advanceFormPage}
+            setDeployNewCharacterForm={setDeployNewCharacterForm}
           />
         )}
         {formPage === 2 && (
@@ -97,6 +100,8 @@ export const NewPlayerCharacterForm = ({
             setChosenMasteries={setChosenMasteries}
             skills={skills}
             setSkills={setSkills}
+            advanceFormPage={advanceFormPage}
+            setDeployNewCharacterForm={setDeployNewCharacterForm}
           />
         )}
         {formPage === 3 && (

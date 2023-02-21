@@ -10,12 +10,18 @@ export const BasicsForm = ({
   charImage,
   setCharImage,
   advanceFormPage,
+  setDeployNewCharacterForm,
 }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    advanceFormPage();
+  };
+
   return (
-    <form className="form-basics column center">
+    <form onSubmit={handleSubmit} className="form-basics column center">
       <h2>Character Basics:</h2>
       <input
-        required
+        // required
         className="form-input"
         type="text"
         placeholder="Player's Name"
@@ -23,7 +29,7 @@ export const BasicsForm = ({
         onChange={(e) => setPlayerName(e.target.value)}
       />
       <input
-        required
+        // required
         className="form-input"
         type="text"
         placeholder="Character's Name"
@@ -31,7 +37,7 @@ export const BasicsForm = ({
         onChange={(e) => setCharName(e.target.value)}
       />
       <textarea
-        required
+        // required
         className="form-input"
         type="text"
         placeholder="Character Concept"
@@ -45,6 +51,19 @@ export const BasicsForm = ({
         value={charImage}
         onChange={(e) => setCharImage(e.target.value)}
       />
+      <div className="row distribute">
+        <button className="form-button" type="submit">
+          NEXT
+        </button>
+
+        <button
+          className="form-button"
+          type="button"
+          onClick={() => setDeployNewCharacterForm(false)}
+        >
+          CANCEL
+        </button>
+      </div>
     </form>
   );
 };

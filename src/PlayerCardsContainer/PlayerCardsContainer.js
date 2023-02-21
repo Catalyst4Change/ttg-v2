@@ -52,7 +52,7 @@ export const PlayerCardsContainer = ({}) => {
   };
 
   return (
-    <main className="cards-container">
+    <main id="player-cards-container">
       <button onClick={createNewPlayerCharacter} type="button">
         + PC
       </button>
