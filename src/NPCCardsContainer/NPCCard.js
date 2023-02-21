@@ -15,7 +15,9 @@ export const NPCCard = ({ npc }) => {
   }, []);
 
   const displayCombatTraits = () => {
-    return combatTraits.map((trait, i) => {
+    return combatTraits.map((traitObject, i) => {
+      const traitArray = Object.values(traitObject);
+      const trait = traitArray[0];
       return (
         <div key={i}>
           <p className="row tooltip">
