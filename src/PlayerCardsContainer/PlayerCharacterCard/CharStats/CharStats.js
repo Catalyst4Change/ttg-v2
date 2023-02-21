@@ -29,9 +29,9 @@ export const CharStats = ({ stats, statStepUp, statStepDown }) => {
         </button>
 
         <div className="badge tooltip">
-          👟 = {stats.dodge}
+          🥷 = {stats.dodge}
           <div className="tooltip-text">
-            dodge determines your turn order in battle.
+            Dodge determines your turn order in battle.
           </div>
         </div>
 

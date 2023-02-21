@@ -7,7 +7,10 @@ export const CharMasteries = ({ chosenMasteries }) => {
     return chosenMasteries.map((mastery, i) => {
       return (
         <div key={i}>
-          <p>{mastery}</p>
+          <span className="tooltip">
+            {mastery}
+            <span className="tooltip-text"></span>
+          </span>
         </div>
       );
     });
