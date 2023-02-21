@@ -29,7 +29,7 @@ function App() {
         />
       </div>
       <div id="npc-cards-container-container">
-        <NPCCardsContainer NPCs={NPCs} />
+        <NPCCardsContainer NPCs={NPCs} setNPCs={setNPCs} />
       </div>
     </div>
   );

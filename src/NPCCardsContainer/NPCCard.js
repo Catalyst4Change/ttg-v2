@@ -4,7 +4,7 @@ import { GenerateNPCHealthBar } from "./NPCHealth/GenerateNPCHealthBar";
 import "./NPCCard.scss";
 import { NPCHealth } from "./NPCHealth/NPCHealth.js";
 
-export const NPCCard = ({ npc }) => {
+export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
   const { type, health, power, initiative, combatTraits, flavorText } = npc[0];
   const [maxHealth] = useState(health);
   const [currentHealth, setCurrentHealth] = useState(health);
@@ -31,7 +31,16 @@ export const NPCCard = ({ npc }) => {
 
   return (
     <main id="npc-card">
-      <h3 className="title">{type}</h3>
+      <h3 className="title row distribute">
+        {type}{" "}
+        <button
+          className="delete-npc-button"
+          value={NPCindex}
+          onClick={(event) => deleteNPC(event)}
+        >
+          ❌
+        </button>
+      </h3>
       <div className="health">
         {
           <NPCHealth
