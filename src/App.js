@@ -6,6 +6,11 @@ import { PCMenu } from "./NavBar/PCMenu";
 import { NPCMenu } from "./NavBar/NPCMenu";
 
 function App() {
+  const [NPCs, setNPCs] = useState([]);
+  const addNPC = (newNPC) => {
+    setNPCs([...NPCs, newNPC]);
+  };
+
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
 
   return (
@@ -15,7 +20,7 @@ function App() {
         <PCMenu setDeployNewCharacterForm={setDeployNewCharacterForm} />
       </div>
       <div id="npcs-menu-container">
-        <NPCMenu />
+        <NPCMenu addNPC={addNPC} />
       </div>
       <div id="player-cards-container-container">
         <PlayerCardsContainer
@@ -24,20 +29,10 @@ function App() {
         />
       </div>
       <div id="npc-cards-container-container">
-        <NPCCardsContainer />
+        <NPCCardsContainer NPCs={NPCs} />
       </div>
     </div>
   );
 }
 
 export default App;
-
-/*
-playerName,
-charName,
-charConcept,
-charImage,
-attributes,
-chosenMasteries,
-chosenProficiencies,
-*/

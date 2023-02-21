@@ -24,7 +24,7 @@ const [
   finalForm,
 ] = NPCCombatTraits;
 
-export const NPCList = [
+export const StockNPCs = [
   {
     trooper: {
       type: "Trooper",

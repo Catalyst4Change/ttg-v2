@@ -1,14 +1,18 @@
 import React from "react";
 import "../App.scss";
 import "./NavBar.scss";
-import { NPCList } from "../NPCCardsContainer/NPCList";
+import { StockNPCs } from "../NPCCardsContainer/StockNPCs";
 
-export const NPCMenu = () => {
+export const NPCMenu = ({ addNPC }) => {
   const generateNPCButtons = () => {
-    return NPCList.map((npcObject, i) => {
+    return StockNPCs.map((npcObject, i) => {
       const npcArray = Object.values(npcObject);
       const npc = npcArray[0];
-      return <button key={i}>{npc.type}</button>;
+      return (
+        <button key={i} onClick={() => addNPC(npcObject)}>
+          {npc.type}
+        </button>
+      );
     });
   };
 

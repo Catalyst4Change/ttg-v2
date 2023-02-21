@@ -6,7 +6,7 @@ export const PCMenu = ({ setDeployNewCharacterForm }) => {
   return (
     <main id="PC-menu" className="navbar center">
       <button onClick={() => setDeployNewCharacterForm(true)} type="button">
-        + PC
+        NEW PC
       </button>
     </main>
   );

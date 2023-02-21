@@ -3,7 +3,7 @@ import { NewPlayerCharacterForm } from "../NewPlayerCharacterForm/NewPlayerChara
 import { PlayerCharacterCard } from "./PlayerCharacterCard/PlayerCharacterCard/PlayerCharacterCard";
 import "../App.scss";
 import "./PlayerCardsContainer.scss";
-import { stockPlayerCharacters } from "./StockCharacters";
+import { stockPlayerCharacters } from "./StockPlayerCharacters";
 
 export const PlayerCardsContainer = ({
   deployNewCharacterForm,

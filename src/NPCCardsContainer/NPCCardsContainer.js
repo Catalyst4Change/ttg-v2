@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import { NPCCard } from "./NPCCard";
 import "../App.scss";
 import "./NPCCardsContainer.scss";
-import { NPCList } from "./NPCList";
+import { StockNPCs } from "./StockNPCs";
 import { NPCCombatTraits } from "./NPCCombatTraits";
 
-export const NPCCardsContainer = () => {
+export const NPCCardsContainer = ({ NPCs }) => {
   const displayNPCs = () => {
-    return NPCList.map((npc, i) => {
+    return NPCs.map((npc, i) => {
       return <NPCCard key={i} npc={Object.values(npc)} />;
     });
   };
 
   return (
     <main id="NPC-cards-container" className="">
-      {displayNPCs()}
+      {NPCs.length > 0 ? displayNPCs() : ""}
     </main>
   );
 };
