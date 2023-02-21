@@ -6,41 +6,12 @@ export const ProficienciesForm = ({
   chosenProficiencies,
   setChosenProficiencies,
   intelligence,
+  submitNewCharacter,
 }) => {
-  const chooseProficiency = (e) => {
-    const { value } = e.target;
-    setChosenProficiencies([...chosenProficiencies, value]);
-    setSkills((skills) => skills.filter((skill) => skill !== value));
-  };
-
-  const generateProficiencySelections = () => {
-    let selectors = [];
-    for (let index = 0; index < intelligence + 2; index++) {
-      selectors.push(
-        <div key={index}>
-          {chosenProficiencies[index] || (
-            <select
-              className="form-select"
-              onChange={(e) => chooseProficiency(e)}
-            >
-              <option value="">Choose one</option>
-              {skills.map((skill, i) => {
-                return (
-                  <option key={i} value={skill}>
-                    {skill}
-                  </option>
-                );
-              })}
-            </select>
-          )}
-        </div>
-      );
-    }
-    return selectors;
-  };
+  const availableProficiencies = intelligence + 2;
 
   const disableCheckbox = () => {
-    if (chosenProficiencies.length >= intelligence + 2) {
+    if (chosenProficiencies.length >= availableProficiencies) {
       return true;
     } else {
       return false;
@@ -69,6 +40,13 @@ export const ProficienciesForm = ({
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (chosenProficiencies.length >= availableProficiencies) {
+      submitNewCharacter();
+    }
+  };
+
   return (
     <div className="column">
       <h3>Choose {intelligence + 2} Skill Proficiencies</h3>
@@ -77,6 +55,19 @@ export const ProficienciesForm = ({
         toward a related action.
       </p>
       <div className="choose-skills">{displayProficienciesSelection()}</div>
+      <div className="row distribute">
+        <button className="form-button" type="button" onClick={handleSubmit}>
+          NEXT
+        </button>
+
+        <button
+          className="form-button"
+          type="button"
+          onClick={(event) => handleSubmit(event)}
+        >
+          CANCEL
+        </button>
+      </div>
     </div>
   );
 };

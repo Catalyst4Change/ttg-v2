@@ -140,6 +140,8 @@ export const NewPlayerCharacterForm = ({
       chosenMasteries: chosenMasteries,
       chosenProficiencies: chosenProficiencies,
     };
+    setDeployNewCharacterForm(false);
+
     addPlayerCharacter(newChar);
   };
 
@@ -186,35 +188,9 @@ export const NewPlayerCharacterForm = ({
             skills={skills}
             setSkills={setSkills}
             intelligence={attributes.intelligence}
+            submitNewCharacter={submitNewCharacter}
           />
         )}
-        <div className="row distribute">
-          {formPage < 3 && (
-            <button
-              className="form-button"
-              type="button"
-              onClick={advanceFormPage}
-            >
-              NEXT
-            </button>
-          )}
-          {formPage === 3 && (
-            <button
-              className="form-button"
-              type="button"
-              onClick={submitNewCharacter}
-            >
-              DONE
-            </button>
-          )}
-          <button
-            className="form-button"
-            type="button"
-            onClick={() => setDeployNewCharacterForm(false)}
-          >
-            CANCEL
-          </button>
-        </div>
 
         {/* {formPage === 4 &&
           {

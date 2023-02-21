@@ -97,16 +97,25 @@ p {
     position: absolute;
     z-index: 1;
     width: 200px;
-    top: 100%;
-    left: 50%;
-    margin-left: -100px;
+    top: -25px;
+    left: 120%;
     visibility: hidden;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     text-align: center;
     font-weight: 800;
     padding: 10px;
     border-radius: 10px;
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 35px;
+      right: 100%;
+      margin-top: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent black transparent transparent;
+    }
   }
   &:hover .tooltip-text {
     visibility: visible;

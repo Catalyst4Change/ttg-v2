@@ -6,17 +6,22 @@ import { PCMenu } from "./NavBar/PCMenu";
 import { NPCMenu } from "./NavBar/NPCMenu";
 
 function App() {
+  const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
+
   return (
     <div id="App">
       {/* header */}
       <div id="pcs-menu-container">
-        <PCMenu />
+        <PCMenu setDeployNewCharacterForm={setDeployNewCharacterForm} />
       </div>
       <div id="npcs-menu-container">
         <NPCMenu />
       </div>
       <div id="player-cards-container-container">
-        <PlayerCardsContainer />
+        <PlayerCardsContainer
+          deployNewCharacterForm={deployNewCharacterForm}
+          setDeployNewCharacterForm={setDeployNewCharacterForm}
+        />
       </div>
       <div id="npc-cards-container-container">
         <NPCCardsContainer />

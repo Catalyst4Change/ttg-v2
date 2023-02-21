@@ -5,8 +5,10 @@ import "../App.scss";
 import "./PlayerCardsContainer.scss";
 import { stockPlayerCharacters } from "./StockCharacters";
 
-export const PlayerCardsContainer = ({}) => {
-  const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
+export const PlayerCardsContainer = ({
+  deployNewCharacterForm,
+  setDeployNewCharacterForm,
+}) => {
   const [playerCharacters, setPlayerCharacters] = useState(
     stockPlayerCharacters
   );
@@ -53,9 +55,6 @@ export const PlayerCardsContainer = ({}) => {
 
   return (
     <main id="player-cards-container">
-      <button onClick={createNewPlayerCharacter} type="button">
-        + PC
-      </button>
       <section id="player-cards-area">
         <div className="new-form-container">
           {deployNewCharacterForm && (

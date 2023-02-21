@@ -2,6 +2,13 @@
 }
 
 #NPC-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  &button {
+    width: 100%;
+  }
 }
 
 .navbar {
