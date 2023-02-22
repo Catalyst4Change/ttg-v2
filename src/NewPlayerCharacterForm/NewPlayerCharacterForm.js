@@ -104,6 +104,8 @@ export const NewPlayerCharacterForm = ({
             setChosenProficiencies={setChosenProficiencies}
             skills={skills}
             setSkills={setSkills}
+            skillCheckboxes={skillCheckboxes}
+            setSkillCheckboxes={setSkillCheckboxes}
             intelligence={attributes.intelligence}
             submitNewCharacter={submitNewCharacter}
           />

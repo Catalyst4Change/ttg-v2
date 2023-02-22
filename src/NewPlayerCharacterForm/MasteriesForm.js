@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../App.scss";
 
 export const MasteriesForm = ({
@@ -7,34 +7,18 @@ export const MasteriesForm = ({
   chosenMasteries,
   setChosenMasteries,
   skills,
-  setSkills,
   advanceFormPage,
   setDeployNewCharacterForm,
 }) => {
-  const disableCheckbox = () => {
-    if (chosenMasteries.length >= 2) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (chosenMasteries.length >= 2) {
-      let newSkills = skills.filter(
-        (skill) => !chosenMasteries.includes(skill)
-      );
-      setSkills(newSkills);
-      advanceFormPage();
-    }
+    advanceFormPage();
   };
 
   const displayMasterySelection = () => {
     return skills.map((skill, i) => {
-      console.log(skill, i);
       return (
-        <div className="mastery" key={i}>
+        <div className="checkbox-selection" key={i}>
           <label className="tooltip">
             <input
               type="checkbox"

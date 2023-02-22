@@ -1,39 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const ProficienciesForm = ({
   skills,
-  setSkills,
+  skillCheckboxes,
+  setSkillCheckboxes,
   chosenProficiencies,
   setChosenProficiencies,
   intelligence,
   submitNewCharacter,
 }) => {
-  const availableProficiencies = intelligence + 2;
-
-  const disableCheckbox = () => {
-    if (chosenProficiencies.length >= availableProficiencies) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  const addProficiency = (e) => {
-    const { value } = e.target;
-    setChosenProficiencies([...chosenProficiencies, value]);
-  };
+  const availableProficiencies = intelligence + 4;
+  const [unavailableSkills] = useState(skillCheckboxes);
 
   const displayProficienciesSelection = () => {
     return skills.map((skill, i) => {
       return (
-        <div className="mastery" key={i}>
-          <input
-            type="checkbox"
-            id={i}
-            value={skill}
-            onChange={(event) => addProficiency(event)}
-          />
-          <label className="tooltip" htmlFor={skill}>
+        <div className="checkbox-selection" key={i}>
+          <label className="tooltip">
+            <input
+              type="checkbox"
+              id={i}
+              value={skill}
+              checked={skillCheckboxes[i]}
+              disabled={unavailableSkills[i]}
+              onChange={(event) => checkSkill(event)}
+            />
             {skill.name}
             <span className="tooltip-text">{skill.text}</span>
           </label>
@@ -42,11 +33,41 @@ export const ProficienciesForm = ({
     });
   };
 
+  const checkSkill = (event) => {
+    const position = parseInt(event.target.id);
+    let updatedSkillCheckboxes = [];
+
+    if (chosenProficiencies.length < availableProficiencies) {
+      updatedSkillCheckboxes = skillCheckboxes.map((trait, index) =>
+        index === position ? !trait : trait
+      );
+    } else if (chosenProficiencies.length >= availableProficiencies) {
+      updatedSkillCheckboxes = skillCheckboxes.map((trait, index) =>
+        index === position ? false : trait
+      );
+    }
+    setSkillCheckboxes(updatedSkillCheckboxes);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (chosenProficiencies.length >= availableProficiencies) {
       submitNewCharacter();
     }
+  };
+
+  useEffect(() => {
+    addCheckedSkill();
+  }, [skillCheckboxes]);
+
+  const addCheckedSkill = () => {
+    const selectedSkill = [];
+    skillCheckboxes.forEach((checkbox, checkboxIndex) => {
+      if (skillCheckboxes[checkboxIndex]) {
+        selectedSkill.push(skills[checkboxIndex]);
+      }
+    });
+    setChosenProficiencies(selectedSkill);
   };
 
   return (
