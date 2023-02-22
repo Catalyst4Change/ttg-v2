@@ -7,7 +7,10 @@ export const CharProficiencies = ({ chosenProficiencies }) => {
     return chosenProficiencies.map((prof, i) => {
       return (
         <div key={i}>
-          <p>{prof}</p>
+          <p className="tooltip">
+            {prof.name}
+            <span className="tooltip-text">{prof.text}</span>
+          </p>
         </div>
       );
     });

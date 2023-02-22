@@ -45,7 +45,6 @@ export const NewPlayerCharacterForm = ({
   };
 
   const submitNewCharacter = () => {
-    advanceFormPage();
     const newChar = {
       playerName: playerName,
       charName: charName,
@@ -55,7 +54,6 @@ export const NewPlayerCharacterForm = ({
       chosenMasteries: chosenMasteries,
       chosenProficiencies: chosenProficiencies,
     };
-    setDeployNewCharacterForm(false);
 
     addPlayerCharacter(newChar);
   };
