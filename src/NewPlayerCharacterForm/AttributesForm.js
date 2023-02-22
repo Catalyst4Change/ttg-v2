@@ -29,9 +29,9 @@ export const AttributesForm = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (attributesPoints === 0) {
-      advanceFormPage();
-    }
+    // if (attributesPoints === 0) {
+    advanceFormPage();
+    // }
   };
 
   return (

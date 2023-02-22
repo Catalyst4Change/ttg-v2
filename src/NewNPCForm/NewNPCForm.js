@@ -51,16 +51,15 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
       const trait = Object.values(traitObject)[0];
       return (
         <div className="combat-trait" key={i}>
-          <input
-            type="checkbox"
-            id={i}
-            name={trait.name}
-            value={trait}
-            checked={combatTraitsCheckboxes[i]}
-            onChange={(event) => checkCombatTrait(event)}
-            // disabled={disableCheckbox()}
-          />
-          <label className="tooltip" htmlFor={i}>
+          <label className="tooltip">
+            <input
+              type="checkbox"
+              id={i}
+              value={trait}
+              checked={combatTraitsCheckboxes[i]}
+              onChange={(event) => checkCombatTrait(event)}
+              // disabled={disableCheckbox()}
+            />
             {trait.name}
             <p className="tooltip-text">{trait.text}</p>
           </label>

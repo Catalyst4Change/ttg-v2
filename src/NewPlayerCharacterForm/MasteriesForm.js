@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../App.scss";
 
 export const MasteriesForm = ({
+  skillCheckboxes,
+  setSkillCheckboxes,
   chosenMasteries,
   setChosenMasteries,
   skills,
@@ -9,11 +11,6 @@ export const MasteriesForm = ({
   advanceFormPage,
   setDeployNewCharacterForm,
 }) => {
-  const addMastery = (e) => {
-    const { value } = e.target;
-    setChosenMasteries([...chosenMasteries, value]);
-  };
-
   const disableCheckbox = () => {
     if (chosenMasteries.length >= 2) {
       return true;
@@ -35,19 +32,53 @@ export const MasteriesForm = ({
 
   const displayMasterySelection = () => {
     return skills.map((skill, i) => {
+      console.log(skill, i);
       return (
         <div className="mastery" key={i}>
-          <input
-            type="checkbox"
-            id={skill}
-            value={skill}
-            onChange={(event) => addMastery(event)}
-            disabled={disableCheckbox()}
-          />
-          <label htmlFor={skill}>{skill}</label>
+          <label className="tooltip">
+            <input
+              type="checkbox"
+              id={i}
+              value={skill}
+              checked={skillCheckboxes[i]}
+              onChange={(event) => checkSkill(event)}
+            />
+            {skill.name}
+            <span className="tooltip-text">{skill.text}</span>
+          </label>
         </div>
       );
     });
+  };
+
+  const checkSkill = (event) => {
+    const position = parseInt(event.target.id);
+    let updatedSkillCheckboxes = [];
+
+    if (chosenMasteries.length < 2) {
+      updatedSkillCheckboxes = skillCheckboxes.map((trait, index) =>
+        index === position ? !trait : trait
+      );
+    } else if (chosenMasteries.length >= 2) {
+      updatedSkillCheckboxes = skillCheckboxes.map((trait, index) =>
+        index === position ? false : trait
+      );
+    }
+    setSkillCheckboxes(updatedSkillCheckboxes);
+  };
+
+  useEffect(() => {
+    addCheckedSkill();
+  }, [skillCheckboxes]);
+
+  const addCheckedSkill = () => {
+    const selectedSkill = [];
+    skillCheckboxes.forEach((checkbox, checkboxIndex) => {
+      if (skillCheckboxes[checkboxIndex]) {
+        selectedSkill.push(skills[checkboxIndex]);
+      }
+    });
+    setChosenMasteries(selectedSkill);
   };
 
   return (

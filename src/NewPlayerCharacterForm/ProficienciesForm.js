@@ -29,12 +29,14 @@ export const ProficienciesForm = ({
         <div className="mastery" key={i}>
           <input
             type="checkbox"
-            id={skill}
+            id={i}
             value={skill}
             onChange={(event) => addProficiency(event)}
-            disabled={disableCheckbox()}
           />
-          <label htmlFor={skill}>{skill}</label>
+          <label className="tooltip" htmlFor={skill}>
+            {skill.name}
+            <span className="tooltip-text">{skill.text}</span>
+          </label>
         </div>
       );
     });
