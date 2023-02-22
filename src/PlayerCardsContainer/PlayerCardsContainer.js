@@ -22,7 +22,7 @@ export const PlayerCardsContainer = ({
     const indexToRemove = parseInt(event.target.value);
 
     const removeCharacter = playerCharacters.filter((char, index) => {
-      if (index != indexToRemove) {
+      if (index !== indexToRemove) {
         return true;
       }
     });

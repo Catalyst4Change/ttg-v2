@@ -3,7 +3,7 @@ import "../App.scss";
 import "./NavBar.scss";
 import { StockNPCs } from "../NPCCardsContainer/StockNPCs";
 
-export const NPCMenu = ({ addNPC }) => {
+export const NPCMenu = ({ addNPC, setDeployNewNPCForm }) => {
   const generateNPCButtons = () => {
     return StockNPCs.map((npcObject, i) => {
       const npcArray = Object.values(npcObject);
@@ -18,7 +18,7 @@ export const NPCMenu = ({ addNPC }) => {
 
   return (
     <main id="NPC-menu" className="navbar">
-      <button>NEW NPC</button>
+      <button onClick={() => setDeployNewNPCForm(true)}>NEW NPC</button>
       {generateNPCButtons()}
     </main>
   );

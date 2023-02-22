@@ -8,10 +8,11 @@ import { NPCMenu } from "./NavBar/NPCMenu";
 function App() {
   const [NPCs, setNPCs] = useState([]);
   const addNPC = (newNPC) => {
-    setNPCs([...NPCs, newNPC]);
+    setNPCs([...NPCs, newNPC], console.log("app", NPCs));
   };
 
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
+  const [deployNewNPCForm, setDeployNewNPCForm] = useState(false);
 
   return (
     <div id="App">
@@ -20,7 +21,7 @@ function App() {
         <PCMenu setDeployNewCharacterForm={setDeployNewCharacterForm} />
       </div>
       <div id="npcs-menu-container">
-        <NPCMenu addNPC={addNPC} />
+        <NPCMenu addNPC={addNPC} setDeployNewNPCForm={setDeployNewNPCForm} />
       </div>
       <div id="player-cards-container-container">
         <PlayerCardsContainer
@@ -29,7 +30,13 @@ function App() {
         />
       </div>
       <div id="npc-cards-container-container">
-        <NPCCardsContainer NPCs={NPCs} setNPCs={setNPCs} />
+        <NPCCardsContainer
+          addNPC={addNPC}
+          NPCs={NPCs}
+          setNPCs={setNPCs}
+          deployNewNPCForm={deployNewNPCForm}
+          setDeployNewNPCForm={setDeployNewNPCForm}
+        />
       </div>
     </div>
   );

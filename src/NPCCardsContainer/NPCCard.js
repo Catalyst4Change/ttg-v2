@@ -10,6 +10,8 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
   const [currentHealth, setCurrentHealth] = useState(health);
   const [healthBar, setHealthBar] = useState("❗️");
 
+  console.log("NPCCARD", npc);
+
   useEffect(() => {
     GenerateNPCHealthBar(maxHealth, setHealthBar);
   }, []);

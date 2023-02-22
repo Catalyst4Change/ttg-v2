@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import { NPCCard } from "./NPCCard";
 import "../App.scss";
 import "./NPCCardsContainer.scss";
-import { StockNPCs } from "./StockNPCs";
-import { NPCCombatTraits } from "./NPCCombatTraits";
+import { NewNPCForm } from "../NewNPCForm/NewNPCForm";
 
-export const NPCCardsContainer = ({ NPCs, setNPCs }) => {
+export const NPCCardsContainer = ({
+  addNPC,
+  NPCs,
+  setNPCs,
+  deployNewNPCForm,
+  setDeployNewNPCForm,
+}) => {
   const deleteNPC = (event) => {
     const indexToRemove = parseInt(event.target.value);
 
     const removeCharacter = NPCs.filter((char, index) => {
-      if (index != indexToRemove) {
+      if (index !== indexToRemove) {
         return true;
       }
     });
+
+    console.log("removeCharacter", removeCharacter);
     setNPCs(removeCharacter);
   };
 
@@ -32,6 +39,15 @@ export const NPCCardsContainer = ({ NPCs, setNPCs }) => {
 
   return (
     <main id="NPC-cards-container" className="">
+      <div className="new-npc-form-container">
+        {deployNewNPCForm && (
+          <NewNPCForm
+            setDeployNewNPCForm={setDeployNewNPCForm}
+            addNPC={addNPC}
+          />
+        )}
+      </div>
+
       {NPCs.length > 0 ? displayNPCs() : ""}
     </main>
   );

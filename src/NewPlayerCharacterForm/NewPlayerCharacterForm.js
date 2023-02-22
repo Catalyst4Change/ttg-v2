@@ -197,6 +197,11 @@ export const NewPlayerCharacterForm = ({
           }} */}
       </section>
       <p>anti-joker</p>
+      <p>move skills/tips</p>
+      <p>add tooltips to m/p menus</p>
+      <p>change masteries/profs to state-held checkboxes</p>
+      <p>back buttons</p>
+      <p>widen navbar</p>
       {/* <div className="badge anti-joker grey">
         🚫
         <p className="tooltip">
