@@ -1,4 +1,7 @@
-.character-info {
+#character-info {
+  height: 100%;
+  width: 100%;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -20,6 +23,7 @@
 
   .card-options {
     grid-area: options;
+    height: 100%;
   }
 
   .basics {

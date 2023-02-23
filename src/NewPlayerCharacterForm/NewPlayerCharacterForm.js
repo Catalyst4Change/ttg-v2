@@ -11,37 +11,15 @@ export const NewPlayerCharacterForm = ({
   addPlayerCharacter,
   setDeployNewCharacterForm,
 }) => {
+  // form itself
   const [formPage, setFormPage] = useState(0);
-
-  const [playerName, setPlayerName] = useState("");
-  const [charName, setCharName] = useState("");
-  const [charConcept, setCharConcept] = useState("");
-  const [charImage, setCharImage] = useState("");
-
-  const [skillCheckboxes, setSkillCheckboxes] = useState(
-    new Array(skillList.length).fill(false)
-  );
-
-  const [attributes, setAttributes] = useState({
-    brawn: 1,
-    agility: 1,
-    intelligence: 1,
-    wit: 1,
-    charm: 1,
-    presence: 1,
-  });
-
-  const [skills, setSkills] = useState(
-    Object.values(skillList).map((skill) => {
-      return Object.values(skill)[0];
-    })
-  );
-
-  const [chosenMasteries, setChosenMasteries] = useState([]);
-  const [chosenProficiencies, setChosenProficiencies] = useState([]);
 
   const advanceFormPage = () => {
     setFormPage((formPage) => formPage + 1);
+  };
+
+  const retardFormPage = () => {
+    setFormPage((formPage) => formPage - 1);
   };
 
   const submitNewCharacter = () => {
@@ -54,14 +32,41 @@ export const NewPlayerCharacterForm = ({
       chosenMasteries: chosenMasteries,
       chosenProficiencies: chosenProficiencies,
     };
-
     addPlayerCharacter(newChar);
   };
+
+  // basics
+  const [playerName, setPlayerName] = useState("");
+  const [charName, setCharName] = useState("");
+  const [charConcept, setCharConcept] = useState("");
+  const [charImage, setCharImage] = useState("");
+  // attributes
+  const [attributes, setAttributes] = useState({
+    brawn: 1,
+    agility: 1,
+    intelligence: 1,
+    wit: 1,
+    charm: 1,
+    presence: 1,
+  });
+  // skills
+  const [skills, setSkills] = useState(
+    Object.values(skillList).map((skill) => {
+      return Object.values(skill)[0];
+    })
+  );
+
+  const [skillCheckboxes, setSkillCheckboxes] = useState(
+    new Array(skillList.length).fill(false)
+  );
+
+  const [chosenMasteries, setChosenMasteries] = useState([]);
+  const [chosenProficiencies, setChosenProficiencies] = useState([]);
 
   return (
     <main id="char-sheet">
       {/* create character */}
-      <section id="0" className="form column center">
+      <section id="0" className="column center">
         {formPage === 0 && (
           <BasicsForm
             playerName={playerName}
@@ -81,6 +86,7 @@ export const NewPlayerCharacterForm = ({
             attributes={attributes}
             setAttributes={setAttributes}
             advanceFormPage={advanceFormPage}
+            retardFormPage={retardFormPage}
             setDeployNewCharacterForm={setDeployNewCharacterForm}
           />
         )}
@@ -93,11 +99,13 @@ export const NewPlayerCharacterForm = ({
             skills={skills}
             setSkills={setSkills}
             advanceFormPage={advanceFormPage}
+            retardFormPage={retardFormPage}
             setDeployNewCharacterForm={setDeployNewCharacterForm}
           />
         )}
         {formPage === 3 && (
           <ProficienciesForm
+            chosenMasteries={chosenMasteries}
             chosenProficiencies={chosenProficiencies}
             setChosenProficiencies={setChosenProficiencies}
             skills={skills}
@@ -106,19 +114,12 @@ export const NewPlayerCharacterForm = ({
             setSkillCheckboxes={setSkillCheckboxes}
             intelligence={attributes.intelligence}
             submitNewCharacter={submitNewCharacter}
+            retardFormPage={retardFormPage}
+            setDeployNewCharacterForm={setDeployNewCharacterForm}
           />
         )}
-
-        {/* {formPage === 4 &&
-          {
-          }} */}
       </section>
       <p>anti-joker</p>
-      <p>move skills/tips</p>
-      <p>add tooltips to m/p menus</p>
-      <p>change masteries/profs to state-held Checkboxes</p>
-      <p>back buttons</p>
-      <p>widen navbar</p>
       {/* <div className="badge anti-joker grey">
         🚫
         <p className="tooltip">

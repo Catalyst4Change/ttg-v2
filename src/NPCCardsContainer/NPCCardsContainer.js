@@ -38,7 +38,7 @@ export const NPCCardsContainer = ({
   };
 
   return (
-    <main id="NPC-cards-container" className="">
+    <main id="NPC-cards-container">
       <div className="new-npc-form-container">
         {deployNewNPCForm && (
           <NewNPCForm

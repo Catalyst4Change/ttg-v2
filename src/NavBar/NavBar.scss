@@ -1,18 +1,18 @@
-#PC-menu {
-}
-
-#NPC-menu {
-  width: 100%;
+.navbar {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  &button {
-    width: 100%;
-  }
-}
-
-.navbar {
+  align-items: center;
   color: white;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  padding: 5px 0 0 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  gap: 5px;
+
+  button {
+    width: 90%;
+    margin: 0 auto;
+    &.new-character-button {
+      height: 50px;
+    }
+  }
 }

@@ -49,10 +49,6 @@ export const PlayerCardsContainer = ({
     });
   };
 
-  const createNewPlayerCharacter = () => {
-    setDeployNewCharacterForm(true);
-  };
-
   return (
     <main id="player-cards-container">
       <section id="player-cards-area">

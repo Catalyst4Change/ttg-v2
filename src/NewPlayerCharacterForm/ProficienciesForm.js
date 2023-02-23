@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import "../App.scss";
+import "./NewPlayerCharacterForm.scss";
 
 export const ProficienciesForm = ({
+  chosenMasteries,
   skills,
   skillCheckboxes,
   setSkillCheckboxes,
@@ -8,9 +11,15 @@ export const ProficienciesForm = ({
   setChosenProficiencies,
   intelligence,
   submitNewCharacter,
+  retardFormPage,
+  setDeployNewCharacterForm,
 }) => {
-  const availableProficiencies = intelligence + 4;
+  const availableProficiencies = intelligence + 2;
+  const remainingProficiencies = () => {
+    return availableProficiencies - chosenProficiencies.length;
+  };
   const [unavailableSkills] = useState(skillCheckboxes);
+  const [submissionError, setSubmissionError] = useState(false);
 
   const displayProficienciesSelection = () => {
     return skills.map((skill, i) => {
@@ -33,6 +42,10 @@ export const ProficienciesForm = ({
     });
   };
 
+  const cancelNewCharacter = () => {
+    setDeployNewCharacterForm(false);
+  };
+
   const checkSkill = (event) => {
     const position = parseInt(event.target.id);
     let updatedSkillCheckboxes = [];
@@ -53,6 +66,8 @@ export const ProficienciesForm = ({
     e.preventDefault();
     if (chosenProficiencies.length >= availableProficiencies) {
       submitNewCharacter();
+    } else {
+      setSubmissionError(true);
     }
   };
 
@@ -61,18 +76,23 @@ export const ProficienciesForm = ({
   }, [skillCheckboxes]);
 
   const addCheckedSkill = () => {
-    const selectedSkill = [];
+    const selectedSkills = [];
     skillCheckboxes.forEach((checkbox, checkboxIndex) => {
-      if (skillCheckboxes[checkboxIndex]) {
-        selectedSkill.push(skills[checkboxIndex]);
+      if (
+        skillCheckboxes[checkboxIndex] &&
+        !chosenMasteries.includes(skills[checkboxIndex])
+      ) {
+        console.log("addChecked", chosenMasteries, skills[checkboxIndex]);
+
+        selectedSkills.push(skills[checkboxIndex]);
       }
     });
-    setChosenProficiencies(selectedSkill);
+    setChosenProficiencies(selectedSkills);
   };
 
   return (
-    <div className="column">
-      <h3>Choose {intelligence + 2} Skill Proficiencies</h3>
+    <div className="column center">
+      <h3>Choose {remainingProficiencies()} Skill Proficiencies</h3>
       <p className="center">
         Proficiencies are skills you dabble in. They give you <b>two</b> points
         toward a related action.
@@ -80,16 +100,23 @@ export const ProficienciesForm = ({
       <div className="choose-skills">{displayProficienciesSelection()}</div>
       <div className="row distribute">
         <button className="form-button" type="button" onClick={handleSubmit}>
-          NEXT
+          DONE
+        </button>
+
+        <button className="form-button" type="button" onClick={retardFormPage}>
+          BACK
         </button>
 
         <button
           className="form-button"
           type="button"
-          onClick={(event) => handleSubmit(event)}
+          onClick={(event) => cancelNewCharacter(event)}
         >
           CANCEL
         </button>
+        {submissionError && (
+          <p>You must select {remainingProficiencies()} more Proficiencies.</p>
+        )}
       </div>
     </div>
   );

@@ -5,9 +5,21 @@ export const AttributesForm = ({
   attributes,
   setAttributes,
   advanceFormPage,
+  retardFormPage,
   setDeployNewCharacterForm,
 }) => {
-  const [attributesPoints, setAttributesPoints] = useState(7);
+  const [submissionError, setSubmissionError] = useState(false);
+
+  const currentAttributePoints = () => {
+    return Object.values(attributes).reduce((acc, cur) => {
+      acc += cur;
+      return acc;
+    }, 0);
+  };
+
+  const [attributesPoints, setAttributesPoints] = useState(
+    13 - currentAttributePoints()
+  );
 
   const attributeStepUp = (e) => {
     const { name, value } = e.target;
@@ -29,9 +41,12 @@ export const AttributesForm = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (attributesPoints === 0) {
-    advanceFormPage();
-    // }
+    if (attributesPoints === 0) {
+      advanceFormPage();
+    } else {
+      setSubmissionError(true);
+      // error handling
+    }
   };
 
   return (
@@ -224,6 +239,10 @@ export const AttributesForm = ({
       <div className="row distribute">
         <button className="form-button" type="button" onClick={handleSubmit}>
           NEXT
+        </button>
+
+        <button className="form-button" type="button" onClick={retardFormPage}>
+          BACK
         </button>
 
         <button

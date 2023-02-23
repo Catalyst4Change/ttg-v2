@@ -18,7 +18,13 @@ export const NPCMenu = ({ addNPC, setDeployNewNPCForm }) => {
 
   return (
     <main id="NPC-menu" className="navbar">
-      <button onClick={() => setDeployNewNPCForm(true)}>NEW NPC</button>
+      <button
+        className="new-character-button"
+        onClick={() => setDeployNewNPCForm(true)}
+      >
+        NPC
+      </button>
+      <b>Deploy NPC:</b>
       {generateNPCButtons()}
     </main>
   );

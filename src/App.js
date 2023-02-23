@@ -17,10 +17,8 @@ function App() {
   return (
     <div id="App">
       {/* header */}
-      <div id="pcs-menu-container">
+      <div id="navbar">
         <PCMenu setDeployNewCharacterForm={setDeployNewCharacterForm} />
-      </div>
-      <div id="npcs-menu-container">
         <NPCMenu addNPC={addNPC} setDeployNewNPCForm={setDeployNewNPCForm} />
       </div>
       <div id="player-cards-container-container">

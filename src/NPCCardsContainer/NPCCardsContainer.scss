@@ -5,10 +5,11 @@
   gap: 20px;
 
   width: 100vw;
-  height: 100vh;
+  height: auto;
   padding: 2%;
 
   transition: all 1s ease-in-out;
+  z-index: 0;
 
   #player-cards-area {
     display: flex;
@@ -18,11 +19,14 @@
     height: 100%;
 
     .new-npc-form-container {
+      border: 2px black dashed;
       position: absolute;
       width: 300px;
       top: 25%;
       left: 25%;
       transform: translate(-50% -50%);
+      z-index: 10 !important;
+      background-color: white;
     }
     .player-card-container {
       width: 100%;

@@ -26,12 +26,7 @@ export const CardOptionsMenu = ({
         <button onClick={resetToOriginal} className="options-icon refresh">
           🔄
         </button>
-        <button
-          onClick={toggleAntiJoker}
-          className={`options-icon joker ${antiJoker && "grey"}`}
-        >
-          🃏
-        </button>
+        <button onClick={toggleAntiJoker}>🃏</button>
       </div>
     </main>
   );

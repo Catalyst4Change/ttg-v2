@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../App.scss";
+import "./NewPlayerCharacterForm.scss";
 
 export const MasteriesForm = ({
   skillCheckboxes,
@@ -8,11 +9,29 @@ export const MasteriesForm = ({
   setChosenMasteries,
   skills,
   advanceFormPage,
+  retardFormPage,
   setDeployNewCharacterForm,
 }) => {
+  const [submissionError, setSubmissionError] = useState(false);
+  const availableMasteries = 2;
+
+  const remainingMasteries = () => {
+    return availableMasteries - chosenMasteries.length;
+  };
+
+  useEffect(() => {
+    setChosenMasteries([]);
+    setSkillCheckboxes(new Array(skills.length).fill(false));
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    advanceFormPage();
+    if (chosenMasteries.length === 2) {
+      advanceFormPage();
+    } else {
+      // error handling
+      setSubmissionError(true);
+    }
   };
 
   const displayMasterySelection = () => {
@@ -67,7 +86,7 @@ export const MasteriesForm = ({
 
   return (
     <main className="column center">
-      <h3>Choose 2 Skill Masteries:</h3>
+      <h3>Choose {remainingMasteries()} Skill Masteries:</h3>
       <p className="center">
         Masteries are skills you have perfected and give you <b>four</b> points
         toward a related action.
@@ -80,6 +99,10 @@ export const MasteriesForm = ({
           NEXT
         </button>
 
+        <button className="form-button" type="button" onClick={retardFormPage}>
+          BACK
+        </button>
+
         <button
           className="form-button"
           type="button"
@@ -88,6 +111,9 @@ export const MasteriesForm = ({
           CANCEL
         </button>
       </div>
+      {submissionError && (
+        <p>You must select {remainingMasteries()} more Masteries.</p>
+      )}
     </main>
   );
 };

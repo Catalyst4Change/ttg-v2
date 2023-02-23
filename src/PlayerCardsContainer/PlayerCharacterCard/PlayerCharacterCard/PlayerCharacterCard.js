@@ -64,7 +64,7 @@ export const PlayerCharacterCard = ({
   };
 
   return (
-    <main id={charName} className="character-info">
+    <main id="character-info">
       <div className="basics">
         <CharBasics
           playerName={playerName}
