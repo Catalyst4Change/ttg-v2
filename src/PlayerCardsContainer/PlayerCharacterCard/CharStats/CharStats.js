@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CharStats.scss";
 
 export const CharStats = ({ stats, statStepUp, statStepDown }) => {
+  const [antiJoker, setAntiJoker] = useState(false);
+  const toggleAntiJoker = () => {
+    setAntiJoker(!antiJoker);
+  };
   return (
     <main id="char-stats">
-      <h3 className="section-title">Stats</h3>
-      <div className="badge initiative column center tooltip">
+      <h3 className="stats-title">Stats</h3>
+      <div className="badge initiative tooltip">
         ⏩ = {stats.initiative}
         <div className="tooltip-text">
           Initiative determines your turn order in battle.
         </div>
       </div>
-      <div className="badge crit column center tooltip">
+      <div className="badge crit tooltip">
         ❤️ + {stats.crit}
         <div className="tooltip-text">
           On flipping the Queen of Hearts, Crit gives you successes equal to
@@ -70,6 +74,15 @@ export const CharStats = ({ stats, statStepUp, statStepDown }) => {
           +
         </button>
       </div>
+
+      <label id="anti-joker" className="tooltip">
+        <input type="checkbox" checked={antiJoker} onChange={toggleAntiJoker} />
+        Anti-Joker
+        <span className="tooltip-text">
+          When Jokers and Anti-Jokers collide, they obliterate each other. Use
+          wisely to avoid the chaotic effects of flipping a Joker.
+        </span>
+      </label>
     </main>
   );
 };

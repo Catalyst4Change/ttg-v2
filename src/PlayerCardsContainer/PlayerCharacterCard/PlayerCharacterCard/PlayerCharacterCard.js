@@ -64,7 +64,7 @@ export const PlayerCharacterCard = ({
   };
 
   return (
-    <main id="character-info" className="hilite">
+    <main className="character-card">
       <div className="basics">
         <CharBasics
           playerName={playerName}
@@ -74,7 +74,7 @@ export const PlayerCharacterCard = ({
         />
       </div>
 
-      <div className="health">
+      <div className="health top-border">
         <CharHealth
           maxHealth={maxHealth}
           currentHealth={currentHealth}
@@ -84,23 +84,19 @@ export const PlayerCharacterCard = ({
         />
       </div>
 
-      <div className="attributes">
-        <CharAttributes attributes={attributes} />
-      </div>
-
-      <div className="stats">
+      <div className="attributes top-border">
         <CharStats
           stats={stats}
           statStepUp={statStepUp}
           statStepDown={statStepDown}
         />
+        <CharAttributes attributes={attributes} />
       </div>
 
-      <div className="masteries">
+      <div className="masteries top-border">
         <CharMasteries chosenMasteries={chosenMasteries} />
       </div>
-
-      <div className="proficiencies">
+      <div className="proficiencies ">
         <CharProficiencies chosenProficiencies={chosenProficiencies} />
       </div>
 

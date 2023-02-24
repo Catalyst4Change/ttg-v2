@@ -1,5 +1,5 @@
 import React from "react";
-import { NPCCard } from "./NPCCard";
+import { NPCCard } from "./NPCCard/NPCCard";
 import "../App.scss";
 import "./NPCCardsContainer.scss";
 import "../CardsContainer.scss";

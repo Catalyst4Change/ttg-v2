@@ -1,4 +1,4 @@
-#health {
+#npc-health {
   justify-content: space-around;
   width: 100%;
   height: 100%;
@@ -12,7 +12,7 @@
   .vitals-health {
     width: 100%;
     .health-total {
-      background-color: limegreen;
+      background-color: rgb(63, 50, 205);
       border-radius: 10px;
       padding: 2% 5%;
       margin: auto;

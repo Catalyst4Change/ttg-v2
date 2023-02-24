@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./CharHealth.scss";
-import { GenerateHealthBar } from "./GenerateHealthBar";
 
 export const CharHealth = ({
   maxHealth,
@@ -42,12 +41,12 @@ export const CharHealth = ({
   const displayCondition = () => {
     if (healthRatio == 0.0) {
       setCondition("DEAD");
-    } else if (healthRatio <= 0.33) {
+    } else if (healthRatio > 0.0 && healthRatio <= 0.33) {
       setCondition("Unconscious");
     } else if (healthRatio >= 0.34 && healthRatio <= 0.67) {
       setCondition("Injured");
     } else if (healthRatio >= 0.68 || healthRatio === 1.0) {
-      setCondition("Healthy");
+      setCondition("Healthy (+1)");
     }
   };
 
@@ -56,8 +55,20 @@ export const CharHealth = ({
   }, [healthRatio]);
 
   return (
-    <section id="health" className="column center">
-      <div className="row distribute">
+    <section id="char-health">
+      <div id="health-title">
+        <h3 className="section-title">Health</h3>
+      </div>
+
+      <div id="health-display">
+        <div id="health-total">
+          <span>{maxHealth}</span>
+        </div>
+        <div id="health-bar">{healthBar}</div>
+      </div>
+
+      <div id="health-condition">
+        {" "}
         <button
           type="button"
           name="health"
@@ -66,7 +77,17 @@ export const CharHealth = ({
         >
           -
         </button>
-        <h3 className="section-title">Health</h3>
+        <span>Condition:</span>
+        <div
+          className={
+            (condition === "Healthy (+1)" && "green") ||
+            (condition === "Injured" && "yellow") ||
+            (condition === "Unconscious" && "red") ||
+            (condition === "DEAD" && "purple")
+          }
+        >
+          <b>{condition}</b>{" "}
+        </div>
         <button
           type="button"
           name="presence"
@@ -75,24 +96,6 @@ export const CharHealth = ({
         >
           +
         </button>
-      </div>
-      <div className="vitals-health column center">
-        <div className="health-total">
-          <div>Total Health: {maxHealth}</div>
-        </div>
-        <div>{healthBar}</div>
-      </div>
-      <div className="row distribute">
-        <div
-          className={
-            (condition === "Healthy" && "green") ||
-            (condition === "Injured" && "yellow") ||
-            (condition === "Unconscious" && "red") ||
-            (condition === "DEAD" && "")
-          }
-        >
-          <b>{condition}</b>
-        </div>
       </div>
     </section>
   );

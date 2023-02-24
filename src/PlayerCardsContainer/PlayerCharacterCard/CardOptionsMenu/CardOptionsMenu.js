@@ -14,20 +14,15 @@ export const CardOptionsMenu = ({
   };
 
   return (
-    <main id="card-options">
-      <div className="options-row row distribute">
-        <button
-          className="options-icon delete"
-          value={playerIndex}
-          onClick={(event) => deletePlayerCharacter(event)}
-        >
-          ❌
-        </button>
-        <button onClick={resetToOriginal} className="options-icon refresh">
-          🔄
-        </button>
-        <button onClick={toggleAntiJoker}>🃏</button>
-      </div>
+    <main id="card-options" className="options-row row distribute">
+      <button
+        value={playerIndex}
+        onClick={(event) => deletePlayerCharacter(event)}
+      >
+        DELETE
+      </button>
+      <button onClick={resetToOriginal}>REFRESH</button>
+      <button onClick={toggleAntiJoker}>ANTI-JOKER</button>
     </main>
   );
 };

@@ -9,17 +9,19 @@ export const CharBasics = ({
   charImage,
 }) => {
   return (
-    <main id="basics" className="column center">
-      <div>{playerName}</div>
-      <div className="char-image-container column center">
+    <main id="basics">
+      <div id="char-image-container">
         {!charImage ? (
-          <div>No Image Available</div>
+          <div id="no-image-text">No Image Available</div>
         ) : (
           <img src={charImage} alt="character" />
         )}
       </div>
-      <h3>{charName}</h3>
-      <div>{charConcept}</div>
+      <div id="char-info">
+        <span>{playerName}</span>
+        <h3>{charName}</h3>
+        <span>{charConcept}</span>
+      </div>
     </main>
   );
 };

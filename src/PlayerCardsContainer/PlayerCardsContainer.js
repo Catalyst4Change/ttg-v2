@@ -32,25 +32,24 @@ export const PlayerCardsContainer = ({
   const displayCards = () => {
     return playerCharacters.map((card, i) => {
       return (
-        <div key={i} className="player-card-container">
-          <PlayerCharacterCard
-            playerIndex={i}
-            deletePlayerCharacter={deletePlayerCharacter}
-            playerName={card.playerName}
-            charName={card.charName}
-            charConcept={card.charConcept}
-            charImage={card.charImage}
-            attributes={card.attributes}
-            chosenMasteries={card.chosenMasteries}
-            chosenProficiencies={card.chosenProficiencies}
-          />
-        </div>
+        <PlayerCharacterCard
+          key={i}
+          playerIndex={i}
+          deletePlayerCharacter={deletePlayerCharacter}
+          playerName={card.playerName}
+          charName={card.charName}
+          charConcept={card.charConcept}
+          charImage={card.charImage}
+          attributes={card.attributes}
+          chosenMasteries={card.chosenMasteries}
+          chosenProficiencies={card.chosenProficiencies}
+        />
       );
     });
   };
 
   return (
-    <main id="player-cards-container">
+    <main className="cards-container">
       <div className="new-form-container">
         {deployNewCharacterForm && (
           <NewPlayerCharacterForm

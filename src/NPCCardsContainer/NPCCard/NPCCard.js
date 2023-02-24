@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../App.scss";
+import "../../App.scss";
 import { GenerateNPCHealthBar } from "./NPCHealth/GenerateNPCHealthBar";
 import "./NPCCard.scss";
 import { NPCHealth } from "./NPCHealth/NPCHealth.js";
@@ -20,10 +20,10 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
       const trait = traitArray[0];
       return (
         <div key={i}>
-          <p className="row tooltip">
-            <b>{trait.name}</b>{" "}
+          <span className="row tooltip">
+            <b>{trait.name}</b>
             <span className="tooltip-text">{trait.text}</span>
-          </p>
+          </span>
         </div>
       );
     });
@@ -59,7 +59,7 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
       {combatTraits.length > 0 && (
         <div>
           <p className="column center">Combat Traits:</p>
-          <span className="row distribute">{displayCombatTraits()}</span>
+          <div className="row distribute">{displayCombatTraits()}</div>
         </div>
       )}
     </main>

@@ -119,14 +119,6 @@ export const NewPlayerCharacterForm = ({
           />
         )}
       </section>
-      {/* <p>anti-joker</p> */}
-      {/* <div className="badge anti-joker grey">
-        🚫
-        <p className="tooltip">
-          When Jokers and Anti-Jokers collide, they obliterate each other. Use
-          wisely to avoid the chaotic effects of flipping a Joker.
-        </p>
-      </div> */}
     </main>
   );
 };

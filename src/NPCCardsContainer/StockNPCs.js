@@ -1,4 +1,4 @@
-import { NPCCombatTraits } from "./NPCCombatTraits";
+import { NPCCombatTraits } from "./NPCCombatTraitsList";
 
 const [
   lethal,

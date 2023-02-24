@@ -6,12 +6,10 @@ export const CharProficiencies = ({ chosenProficiencies }) => {
   const proficiencies = () => {
     return chosenProficiencies.map((prof, i) => {
       return (
-        <div key={i}>
-          <p className="tooltip">
-            {prof.name}
-            <span className="tooltip-text">{prof.text}</span>
-          </p>
-        </div>
+        <span className="tooltip" key={i}>
+          {prof.name}
+          <span className="tooltip-text">{prof.text}</span>
+        </span>
       );
     });
   };

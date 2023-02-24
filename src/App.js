@@ -24,21 +24,17 @@ function App() {
         <NPCMenu addNPC={addNPC} setDeployNewNPCForm={setDeployNewNPCForm} />
       </section>
       <section id="cards-section" className="column">
-        <div>
-          <PlayerCardsContainer
-            deployNewCharacterForm={deployNewCharacterForm}
-            setDeployNewCharacterForm={setDeployNewCharacterForm}
-          />
-        </div>
-        <div>
-          <NPCCardsContainer
-            addNPC={addNPC}
-            NPCs={NPCs}
-            setNPCs={setNPCs}
-            deployNewNPCForm={deployNewNPCForm}
-            setDeployNewNPCForm={setDeployNewNPCForm}
-          />
-        </div>
+        <PlayerCardsContainer
+          deployNewCharacterForm={deployNewCharacterForm}
+          setDeployNewCharacterForm={setDeployNewCharacterForm}
+        />
+        <NPCCardsContainer
+          addNPC={addNPC}
+          NPCs={NPCs}
+          setNPCs={setNPCs}
+          deployNewNPCForm={deployNewNPCForm}
+          setDeployNewNPCForm={setDeployNewNPCForm}
+        />
       </section>
     </main>
   );

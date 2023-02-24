@@ -14,7 +14,7 @@ export const CharAttributes = ({ attributes }) => {
   return (
     <main id="char-attributes">
       <h3 className="section-title">Attributes</h3>
-      <div className="attributes-grid">
+      <section className="attributes-grid">
         <div className="grid-item">
           <span className="tooltip">
             Brawn:
@@ -86,7 +86,7 @@ export const CharAttributes = ({ attributes }) => {
         <div className="grid-item">
           {showAttributeEmojis(attributes.presence, "👤")}
         </div>
-      </div>
+      </section>
     </main>
   );
 };

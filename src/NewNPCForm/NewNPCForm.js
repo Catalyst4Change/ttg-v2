@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../App.scss";
 import "./NewPlayerCharacterForm.scss";
-import { NPCCombatTraits } from "../NPCCardsContainer/NPCCombatTraits";
+import { NPCCombatTraits } from "../NPCCardsContainer/NPCCombatTraitsList";
 
 export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
   const [type, setType] = useState("");
