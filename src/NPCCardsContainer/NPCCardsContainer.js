@@ -1,7 +1,6 @@
 import React from "react";
 import { NPCCard } from "./NPCCard/NPCCard";
 import "../App.scss";
-import "./NPCCardsContainer.scss";
 import "../CardsContainer.scss";
 
 import { NewNPCForm } from "../NewNPCForm/NewNPCForm";
@@ -39,8 +38,8 @@ export const NPCCardsContainer = ({
   };
 
   return (
-    <main id="player-cards-container">
-      <div className="new-form-container">
+    <main className="cards-container">
+      <div>
         {deployNewNPCForm && (
           <NewNPCForm
             setDeployNewNPCForm={setDeployNewNPCForm}

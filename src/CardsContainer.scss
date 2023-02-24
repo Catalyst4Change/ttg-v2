@@ -3,13 +3,30 @@
   flex-flow: row wrap;
 
   .new-form-container {
-    z-index: 1 !important;
+    z-index: 10 !important;
     position: absolute;
-    width: 350px;
-    min-height: 500px;
+    width: 300px;
+    min-height: 420px;
     top: 5%;
     left: 150px;
     transform: translate(-50% -50%);
+    border: 1px lightgrey solid;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+    background-color: white;
+    padding: 10px;
+
+    .choose-skills {
+      margin: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10px;
+      row-gap: 10px;
+
+      .checkbox-selection {
+        text-align: left;
+      }
+    }
   }
 
   .player-card-container {

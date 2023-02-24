@@ -39,9 +39,7 @@ export const PlayerCharacterCard = ({
   const statStepUp = (e) => {
     const { name, value } = e.target;
     const numValue = parseInt(value);
-    if (stats[name]) {
-      setStatuses({ ...stats, [name]: numValue + 1 });
-    }
+    setStatuses({ ...stats, [name]: numValue + 1 });
   };
 
   const statStepDown = (e) => {

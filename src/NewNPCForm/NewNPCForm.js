@@ -112,7 +112,7 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
   };
 
   return (
-    <main id="char-sheet">
+    <main className="new-form-container">
       <form onSubmit={(event) => submitNewNPC(event)} className="column center">
         <input
           required
@@ -133,11 +133,11 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
           </button>
           <div>
             <span className="tooltip">
-              Health:
+              Health:{" "}
               <span className="tooltip-text">
                 How much damage this NPC takes before being deaded.
               </span>
-            </span>
+            </span>{" "}
             {health}
           </div>
           <button
@@ -210,6 +210,7 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
           value={flavorText}
           onChange={(event) => setFlavorText(event.target.value)}
         />
+        <p></p>
         <div className="row distribute">
           <button type="submit">ADD NPC</button>
           <button onClick={handleCancel}>DONE</button>

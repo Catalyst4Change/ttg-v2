@@ -50,7 +50,7 @@ export const PlayerCardsContainer = ({
 
   return (
     <main className="cards-container">
-      <div className="new-form-container">
+      <div>
         {deployNewCharacterForm && (
           <NewPlayerCharacterForm
             addPlayerCharacter={addPlayerCharacter}

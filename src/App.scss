@@ -88,6 +88,11 @@ p {
   padding: 5%;
 }
 
+.top-border {
+  border-top: 1px black solid;
+  padding-top: 5px;
+}
+
 .white {
   border: 1px white solid;
   padding: 5px;
@@ -102,13 +107,12 @@ p {
 }
 
 .tooltip {
+  position: relative;
   display: inline-block;
   border-bottom: 1px black dotted;
-  z-index: 0 !important;
 
   .tooltip-text {
     position: absolute;
-    z-index: 1;
     width: 200px;
     top: -25px;
     left: 120%;
@@ -119,6 +123,7 @@ p {
     font-weight: 800;
     padding: 10px;
     border-radius: 10px;
+    z-index: 10 !important;
 
     &::after {
       content: " ";

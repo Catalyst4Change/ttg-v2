@@ -1,20 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../App.scss";
-import "./CardOptionsMenu.scss";
 
 export const CardOptionsMenu = ({
   playerIndex,
   deletePlayerCharacter,
   resetToOriginal,
 }) => {
-  const [antiJoker, setAntiJoker] = useState(true);
-
-  const toggleAntiJoker = () => {
-    setAntiJoker(!antiJoker);
-  };
-
   return (
-    <main id="card-options" className="options-row row distribute">
+    <main id="card-options" className="row distribute top-border">
       <button
         value={playerIndex}
         onClick={(event) => deletePlayerCharacter(event)}
@@ -22,7 +15,6 @@ export const CardOptionsMenu = ({
         DELETE
       </button>
       <button onClick={resetToOriginal}>REFRESH</button>
-      <button onClick={toggleAntiJoker}>ANTI-JOKER</button>
     </main>
   );
 };

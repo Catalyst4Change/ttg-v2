@@ -64,7 +64,7 @@ export const NewPlayerCharacterForm = ({
   const [chosenProficiencies, setChosenProficiencies] = useState([]);
 
   return (
-    <main id="char-sheet">
+    <main className="new-form-container">
       {/* create character */}
       <section id="0" className="column center">
         {formPage === 0 && (
