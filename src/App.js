@@ -7,36 +7,40 @@ import { NPCMenu } from "./NavBar/NPCMenu";
 
 function App() {
   const [NPCs, setNPCs] = useState([]);
+
   const addNPC = (newNPC) => {
     setNPCs([...NPCs, newNPC], console.log("app", NPCs));
   };
 
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
+
   const [deployNewNPCForm, setDeployNewNPCForm] = useState(false);
 
   return (
-    <div id="App">
+    <main id="App">
       {/* header */}
-      <div id="navbar">
+      <section id="navbar">
         <PCMenu setDeployNewCharacterForm={setDeployNewCharacterForm} />
         <NPCMenu addNPC={addNPC} setDeployNewNPCForm={setDeployNewNPCForm} />
-      </div>
-      <div id="player-cards-container-container">
-        <PlayerCardsContainer
-          deployNewCharacterForm={deployNewCharacterForm}
-          setDeployNewCharacterForm={setDeployNewCharacterForm}
-        />
-      </div>
-      <div id="npc-cards-container-container">
-        <NPCCardsContainer
-          addNPC={addNPC}
-          NPCs={NPCs}
-          setNPCs={setNPCs}
-          deployNewNPCForm={deployNewNPCForm}
-          setDeployNewNPCForm={setDeployNewNPCForm}
-        />
-      </div>
-    </div>
+      </section>
+      <section id="cards-section" className="column">
+        <div>
+          <PlayerCardsContainer
+            deployNewCharacterForm={deployNewCharacterForm}
+            setDeployNewCharacterForm={setDeployNewCharacterForm}
+          />
+        </div>
+        <div>
+          <NPCCardsContainer
+            addNPC={addNPC}
+            NPCs={NPCs}
+            setNPCs={setNPCs}
+            deployNewNPCForm={deployNewNPCForm}
+            setDeployNewNPCForm={setDeployNewNPCForm}
+          />
+        </div>
+      </section>
+    </main>
   );
 }
 

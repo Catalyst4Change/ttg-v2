@@ -1,31 +1,26 @@
 #App {
-  height: 100vh;
-  width: 100vw;
-  // overflow: hidden;
-
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  display: grid;
-  grid-template-columns: 150px auto;
-  grid-template-rows: 50vh 50vh;
-  grid-template-areas:
-    "nav pcs"
-    "nav npcs";
+  display: flex;
+  flex-direction: row;
+
+  // display: grid;
+  // grid-template-columns: 150px auto;
+  // grid-template-rows: 50vh 50vh;
+  // grid-template-areas:
+  //   "nav pcs"
+  //   "nav npcs";
 
   #navbar {
     color: white;
-    grid-area: nav;
+    min-width: 13vw;
   }
 
-  #player-cards-container-container {
-    grid-area: pcs;
-  }
-
-  #npc-cards-container-container {
-    grid-area: npcs;
+  #cards-section {
+    max-width: 85vw;
   }
 }
 
@@ -93,8 +88,17 @@ p {
   padding: 5%;
 }
 
+.white {
+  border: 1px white solid;
+  padding: 5px;
+}
+.purps {
+  border: 1px purple solid;
+  padding: 5px;
+}
 .hilite {
-  filter: hue-rotate(180deg);
+  border: 1px fuchsia solid;
+  padding: 5px;
 }
 
 .tooltip {

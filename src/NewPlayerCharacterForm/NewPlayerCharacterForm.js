@@ -119,7 +119,7 @@ export const NewPlayerCharacterForm = ({
           />
         )}
       </section>
-      <p>anti-joker</p>
+      {/* <p>anti-joker</p> */}
       {/* <div className="badge anti-joker grey">
         🚫
         <p className="tooltip">

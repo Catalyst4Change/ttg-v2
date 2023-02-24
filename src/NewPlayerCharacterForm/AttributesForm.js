@@ -50,7 +50,7 @@ export const AttributesForm = ({
   };
 
   return (
-    <div className="column center">
+    <main className="column center">
       <h3>Add {attributesPoints} Points to Attributes:</h3>
 
       <div className="form-attribute-stepper ">
@@ -253,6 +253,9 @@ export const AttributesForm = ({
           CANCEL
         </button>
       </div>
-    </div>
+      {submissionError && (
+        <p>You must spend {attributesPoints} more Attribute Points.</p>
+      )}
+    </main>
   );
 };

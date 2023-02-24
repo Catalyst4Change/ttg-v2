@@ -20,7 +20,6 @@ export const NPCCardsContainer = ({
       }
     });
 
-    console.log("removeCharacter", removeCharacter);
     setNPCs(removeCharacter);
   };
 

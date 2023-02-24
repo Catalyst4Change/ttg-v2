@@ -51,17 +51,15 @@ export const PlayerCardsContainer = ({
 
   return (
     <main id="player-cards-container">
-      <section id="player-cards-area">
-        <div className="new-form-container">
-          {deployNewCharacterForm && (
-            <NewPlayerCharacterForm
-              addPlayerCharacter={addPlayerCharacter}
-              setDeployNewCharacterForm={setDeployNewCharacterForm}
-            />
-          )}
-        </div>
-        <div id="player-cards-grid">{displayCards()}</div>
-      </section>
+      <div className="new-form-container">
+        {deployNewCharacterForm && (
+          <NewPlayerCharacterForm
+            addPlayerCharacter={addPlayerCharacter}
+            setDeployNewCharacterForm={setDeployNewCharacterForm}
+          />
+        )}
+      </div>
+      {displayCards()}
     </main>
   );
 };

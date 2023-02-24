@@ -1,7 +1,4 @@
 #character-info {
-  height: 100%;
-  width: 100%;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -13,10 +10,6 @@
     "options options";
   column-gap: 5%;
   row-gap: 2%;
-
-  border: 1px lightgrey solid;
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
 
   background-color: white;
   padding: 10% 5%;
