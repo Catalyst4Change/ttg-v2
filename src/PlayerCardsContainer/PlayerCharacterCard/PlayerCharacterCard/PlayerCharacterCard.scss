@@ -2,14 +2,13 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: 325px;
+  width: 300px;
   // max-width: 25%;
   height: min-content;
   transition: 1s;
   margin: 5px;
 
-  border: 1px lightgrey solid;
-  border-radius: 10px;
+  border: 1px rgb(25, 0, 255) solid;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
 
   // display: grid;
@@ -24,7 +23,9 @@
   // column-gap: 10px;
   // row-gap: 10px;
 
-  background-color: white;
+  color: white;
+  background-color: rgba(0, 55, 255, 0.5);
+
   padding: 10px;
 
   .basics {

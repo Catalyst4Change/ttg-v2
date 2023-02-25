@@ -9,6 +9,16 @@
     max-height: 10em;
     border-radius: 10px;
     background-color: darkgray;
+    clip-path: polygon(
+      0% 15%,
+      15% 0%,
+      85% 0%,
+      100% 15%,
+      100% 85%,
+      85% 100%,
+      15% 100%,
+      0% 85%
+    );
 
     #no-image-text {
       margin: auto;
