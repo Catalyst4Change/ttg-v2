@@ -4,7 +4,7 @@ export const GenerateNPCHealthBar = (maxHealth, setHealthBar) => {
   let green = [];
   let bar = [];
   for (let i = 0; i < maxHealth; i++) {
-    green.push("⚫️");
+    green.push("🔴");
   }
   setHealthBar(green);
 };

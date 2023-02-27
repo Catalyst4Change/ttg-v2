@@ -5,9 +5,16 @@ import "../../../App.scss";
 export const CharProficiencies = ({ chosenProficiencies }) => {
   const proficiencies = () => {
     return chosenProficiencies.map((prof, i) => {
+      const lastIndex = () => {
+        if (chosenProficiencies[chosenProficiencies.length - 1] === prof) {
+          return "true";
+        }
+      };
+
       return (
         <span className="tooltip" key={i}>
           {prof.name}
+          {lastIndex() ? "" : ","}
           <span className="tooltip-text">{prof.text}</span>
         </span>
       );

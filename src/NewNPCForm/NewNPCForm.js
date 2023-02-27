@@ -112,7 +112,8 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
   };
 
   return (
-    <main className="new-form-container">
+    <main className="new-form-container column center">
+      <h3>New NPC</h3>
       <form onSubmit={(event) => submitNewNPC(event)} className="column center">
         <input
           required

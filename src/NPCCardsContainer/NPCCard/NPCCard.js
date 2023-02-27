@@ -17,11 +17,17 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
   const displayCombatTraits = () => {
     return combatTraits.map((traitObject, i) => {
       const traitArray = Object.values(traitObject);
+      const lastIndex = () => {
+        if (combatTraits[combatTraits.length - 1] === traitObject) {
+          return "true";
+        }
+      };
       const trait = traitArray[0];
       return (
         <div key={i}>
           <span className="row tooltip">
-            <b>{trait.name}</b>
+            {trait.name}
+            {lastIndex() ? "" : ","}
             <span className="tooltip-text">{trait.text}</span>
           </span>
         </div>
@@ -31,16 +37,7 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
 
   return (
     <main className="npc-card">
-      <h3 className="title row space-evenly">
-        {type}
-        <button
-          className="delete-npc-button"
-          value={NPCindex}
-          onClick={(event) => deleteNPC(event)}
-        >
-          ❌
-        </button>
-      </h3>
+      <h3 className="title row space-evenly">{type}</h3>
       <div className="health">
         {
           <NPCHealth
@@ -70,10 +67,21 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
       <p className="flavor column ">{flavorText}</p>
       {combatTraits.length > 0 && (
         <div>
-          <p className="column center">Combat Traits:</p>
+          <p className="column center">
+            <b>Combat Traits:</b>
+          </p>
           <div className="row space-evenly">{displayCombatTraits()}</div>
         </div>
       )}
+      <div className="top-border column center">
+        <button
+          className="delete-npc-button"
+          value={NPCindex}
+          onClick={(event) => deleteNPC(event)}
+        >
+          <b>DELETE</b>
+        </button>
+      </div>
     </main>
   );
 };

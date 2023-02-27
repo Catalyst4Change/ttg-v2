@@ -280,7 +280,7 @@ export const StockNPCs = [
   },
   {
     huntress: {
-      type: "Rat",
+      type: "Huntress",
       health: 7,
       power: 7,
       initiative: 6,

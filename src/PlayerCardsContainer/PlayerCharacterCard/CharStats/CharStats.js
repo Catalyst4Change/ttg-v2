@@ -51,6 +51,7 @@ export const CharStats = ({ stats, statStepUp, statStepDown }) => {
           🔼
         </button>
       </div>
+
       <div className="drive row space-evenly">
         <button
           className="stepper-button"

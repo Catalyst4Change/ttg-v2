@@ -21,7 +21,7 @@ export const NPCHealth = ({
   const addHealth = () => {
     if (currentHealth < maxHealth) {
       setCurrentHealth(currentHealth + 1);
-      setHealthBar((healthBar) => [...healthBar, "⚫️"]);
+      setHealthBar((healthBar) => [...healthBar, "🔴"]);
     }
   };
 

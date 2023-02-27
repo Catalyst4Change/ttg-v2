@@ -5,9 +5,16 @@ import "../../../App.scss";
 export const CharMasteries = ({ chosenMasteries }) => {
   const masteries = () => {
     return chosenMasteries.map((mastery, i) => {
+      const lastIndex = () => {
+        if (chosenMasteries[chosenMasteries.length - 1] === mastery) {
+          return "true";
+        }
+      };
+
       return (
         <span className="tooltip" key={i}>
           {mastery.name}
+          {lastIndex() ? "" : ","}
           <span className="tooltip-text">{mastery.text}</span>
         </span>
       );

@@ -32,9 +32,8 @@ export const PlayerCardsContainer = ({
   const displayCards = () => {
     return playerCharacters.map((card, i) => {
       return (
-        <div className="player-card-container">
+        <div className="player-card-container" key={i}>
           <PlayerCharacterCard
-            key={i}
             playerIndex={i}
             deletePlayerCharacter={deletePlayerCharacter}
             playerName={card.playerName}

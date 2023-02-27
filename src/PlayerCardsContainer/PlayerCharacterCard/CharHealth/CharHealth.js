@@ -65,9 +65,7 @@ export const CharHealth = ({
           <div id="health-total">
             <span>{maxHealth}</span>
           </div>
-          <div id="health-bar" className="">
-            {healthBar}
-          </div>
+          <div id="health-bar">{healthBar}</div>
         </div>
       </div>
 
@@ -85,10 +83,9 @@ export const CharHealth = ({
         <span>Condition:</span>
         <div
           className={
-            (condition === "Healthy (+1)" && "green") ||
-            (condition === "Injured" && "yellow") ||
-            (condition === "Unconscious" && "red") ||
-            condition === "DEAD"
+            (condition === "Healthy (+1)" ? "green" : "") ||
+            (condition === "Injured" ? "yellow" : "") ||
+            (condition === "Unconscious" ? "red" : "")
           }
         >
           <b>{condition}</b>{" "}
