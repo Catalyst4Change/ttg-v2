@@ -30,7 +30,7 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
   };
 
   return (
-    <main id="npc-card">
+    <main className="npc-card">
       <h3 className="title row distribute">
         {type}
         <button
@@ -53,7 +53,19 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
         }
       </div>
       <div className="row distribute">
-        <span>Power: {power}</span> <span>Initiative: {initiative}</span>
+        <span className="tooltip">
+          Power: {power}
+          <span className="tooltip-text">
+            How many cards this character flips when attacking or taking an
+            action.
+          </span>
+        </span>
+        <span className="tooltip">
+          Initiative: {initiative}{" "}
+          <span className="tooltip-text">
+            Initiative determines your turn in battle.
+          </span>
+        </span>
       </div>
       <p className="flavor column ">{flavorText}</p>
       {combatTraits.length > 0 && (

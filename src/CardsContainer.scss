@@ -1,6 +1,7 @@
 .cards-container {
   display: flex;
   flex-flow: row wrap;
+  padding: 10px;
 
   .new-form-container {
     z-index: 10 !important;
@@ -30,12 +31,15 @@
   }
 
   .player-card-container {
-    // no longer
-    width: 250px;
-    max-width: 25%;
-    height: min-content;
-    transition: 1s;
+    border: 1px blue solid;
     margin: 5px;
+    height: min-content;
+  }
+
+  .npc-card-container {
+    border: 1px red solid;
+    margin: 5px;
+    height: min-content;
   }
 
   #npc-card {

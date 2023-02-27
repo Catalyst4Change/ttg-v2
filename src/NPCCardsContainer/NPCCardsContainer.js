@@ -27,12 +27,14 @@ export const NPCCardsContainer = ({
   const displayNPCs = () => {
     return NPCs.map((npc, i) => {
       return (
-        <NPCCard
-          key={i}
-          npc={Object.values(npc)}
-          deleteNPC={deleteNPC}
-          NPCindex={i}
-        />
+        <div className="npc-card-container">
+          <NPCCard
+            key={i}
+            npc={Object.values(npc)}
+            deleteNPC={deleteNPC}
+            NPCindex={i}
+          />
+        </div>
       );
     });
   };

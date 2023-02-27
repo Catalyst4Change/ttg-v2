@@ -60,11 +60,15 @@ export const CharHealth = ({
         <h3 className="section-title">Health</h3>
       </div>
 
-      <div id="health-display">
-        <div id="health-total">
-          <span>{maxHealth}</span>
+      <div id="health-container" className="hilite">
+        <div id="health-display" className="white">
+          <div id="health-total">
+            <span>{maxHealth}</span>
+          </div>
+          <div id="health-bar" className="">
+            {healthBar}
+          </div>
         </div>
-        <div id="health-bar">{healthBar}</div>
       </div>
 
       <div id="health-condition">

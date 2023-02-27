@@ -7,45 +7,47 @@
 
     display: flex;
   }
-  #health-display {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0% 0% 3% 5%;
 
-    #health-total {
-      text-align: center;
-      font-size: 1.5em;
+  #health-container {
+    width: 100%;
 
-      border-radius: 50%;
-      background-color: limegreen;
-      height: 40px;
-      width: 50px;
+    #health-display {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
-      span {
-        height: 100%;
+      #health-total {
+        text-align: center;
+        font-size: 1.5em;
+
+        border-radius: 50%;
+        background-color: limegreen;
+        height: 40px;
+        width: 40px;
+
+        span {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          font-weight: bold;
+        }
+      }
+
+      #health-bar {
+        font-size: 1.4em;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        font-weight: bold;
+        text-align: left;
+        z-index: 2;
+
+        &::before {
+          position: absolute;
+          content: "⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️";
+          z-index: -1;
+        }
       }
-    }
-  }
-
-  #health-bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
-
-    text-align: left;
-    z-index: 2;
-
-    &::before {
-      position: absolute;
-      content: "⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️";
-      z-index: -1;
     }
   }
 

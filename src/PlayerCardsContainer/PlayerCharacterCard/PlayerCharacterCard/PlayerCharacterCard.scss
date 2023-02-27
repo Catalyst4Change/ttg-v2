@@ -3,64 +3,39 @@
   flex-direction: column;
   gap: 5px;
   width: 325px;
-  // max-width: 25%;
   height: min-content;
-  transition: 1s;
-  margin: 5px;
-
-  border: 1px rgb(25, 0, 255) solid;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
-
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  // grid-template-areas:
-  //   "basics health"
-  //   "basics stats"
-  //   "atts atts"
-  //   "masts masts"
-  //   "profs profs"
-  //   "options options";
-  // column-gap: 10px;
-  // row-gap: 10px;
-
   color: white;
-  background-color: rgba(0, 55, 255, 0.5);
-
+  margin: 5px;
   padding: 10px;
 
+  background-color: rgba(0, 0, 255, 0.4);
+
   .basics {
-    grid-area: basics;
     height: 100%;
   }
 
   .health {
-    grid-area: health;
     height: 100%;
   }
 
   .attributes {
-    grid-area: atts;
     display: flex;
     flex-direction: row;
   }
 
   .stats {
-    grid-area: stats;
     height: 100%;
   }
 
   .masteries {
-    grid-area: masts;
     height: 100%;
   }
 
   .proficiencies {
-    grid-area: profs;
     height: 100%;
   }
 
   .card-options {
-    grid-area: options;
     height: 100%;
   }
 }

@@ -1,16 +1,14 @@
-#npc-card {
-  width: 200px;
-  height: min-content;
-
+.npc-card {
   display: flex;
   flex-direction: column;
+  gap: 5px;
+  width: 200px;
+  height: min-content;
+  color: white;
+  margin: 5px;
+  padding: 10px;
 
-  border: 1px lightgrey solid;
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
-
-  background-color: white;
-  padding: 2%;
+  background-color: rgba(255, 0, 0, 0.4);
 
   .title {
     text-align: center;
@@ -18,9 +16,7 @@
   }
 
   .health {
-    margin: 10px 0;
     text-align: center;
-    grid-area: health;
   }
 
   .power {
@@ -29,9 +25,18 @@
 
   .flavor {
     width: 100%;
+    text-align: center;
   }
 
   .trait {
     grid-area: trait;
+  }
+}
+
+#npc-health {
+  .NPC-health-bar {
+    margin-top: 5px;
+    width: 100%;
+    word-wrap: break-word;
   }
 }

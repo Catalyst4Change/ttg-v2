@@ -8,8 +8,6 @@ export const NPCHealth = ({
   healthBar,
   setHealthBar,
 }) => {
-  const healthRatio = (currentHealth / maxHealth).toFixed(2);
-
   const subtractHealth = (e) => {
     if (currentHealth > 1) {
       setCurrentHealth(currentHealth - 1);
@@ -28,7 +26,7 @@ export const NPCHealth = ({
   };
 
   return (
-    <section id="health" className="column center">
+    <section id="npc-health" className="column center">
       <div className="vitals-health row center">
         <button
           type="button"

@@ -32,18 +32,20 @@ export const PlayerCardsContainer = ({
   const displayCards = () => {
     return playerCharacters.map((card, i) => {
       return (
-        <PlayerCharacterCard
-          key={i}
-          playerIndex={i}
-          deletePlayerCharacter={deletePlayerCharacter}
-          playerName={card.playerName}
-          charName={card.charName}
-          charConcept={card.charConcept}
-          charImage={card.charImage}
-          attributes={card.attributes}
-          chosenMasteries={card.chosenMasteries}
-          chosenProficiencies={card.chosenProficiencies}
-        />
+        <div className="player-card-container">
+          <PlayerCharacterCard
+            key={i}
+            playerIndex={i}
+            deletePlayerCharacter={deletePlayerCharacter}
+            playerName={card.playerName}
+            charName={card.charName}
+            charConcept={card.charConcept}
+            charImage={card.charImage}
+            attributes={card.attributes}
+            chosenMasteries={card.chosenMasteries}
+            chosenProficiencies={card.chosenProficiencies}
+          />
+        </div>
       );
     });
   };
