@@ -22,14 +22,16 @@ export const CharStats = ({ stats, statStepUp, statStepDown }) => {
           your crit stat.
         </div>
       </div>
-      <div className="dodge row distribute">
+
+      <div className="dodge row space-between">
         <button
+          className="stepper-button"
           type="button"
           name="dodge"
           value={stats.dodge}
           onClick={(event) => statStepDown(event)}
         >
-          -
+          🔽
         </button>
 
         <div className="badge tooltip">
@@ -40,22 +42,24 @@ export const CharStats = ({ stats, statStepUp, statStepDown }) => {
         </div>
 
         <button
+          className="stepper-button"
           type="button"
           name="dodge"
           value={stats.dodge}
           onClick={(event) => statStepUp(event)}
         >
-          +
+          🔼
         </button>
       </div>
-      <div className="drive row distribute">
+      <div className="drive row space-evenly">
         <button
+          className="stepper-button"
           type="button"
           name="drive"
           value={stats.drive}
           onClick={(event) => statStepDown(event)}
         >
-          -
+          🔽
         </button>
 
         <div className="badge drive tooltip">
@@ -66,15 +70,15 @@ export const CharStats = ({ stats, statStepUp, statStepDown }) => {
         </div>
 
         <button
+          className="stepper-button"
           type="button"
           name="drive"
           value={stats.drive}
           onClick={(event) => statStepUp(event)}
         >
-          +
+          🔼
         </button>
       </div>
-
       <label id="anti-joker" className="tooltip">
         <input type="checkbox" checked={antiJoker} onChange={toggleAntiJoker} />
         Anti-Joker

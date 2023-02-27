@@ -51,7 +51,7 @@ export const BasicsForm = ({
         value={charImage}
         onChange={(e) => setCharImage(e.target.value)}
       />
-      <div className="row distribute">
+      <div className="row space-evenly">
         <button className="form-button" type="submit">
           NEXT
         </button>

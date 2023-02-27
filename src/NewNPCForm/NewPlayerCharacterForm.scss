@@ -17,6 +17,7 @@
     }
   }
 }
+
 .combat-traits-container {
   padding: 10px;
   display: grid;
@@ -27,4 +28,10 @@
     flex-direction: row;
     justify-content: left;
   }
+}
+
+.npc-flavor-text {
+  margin-top: 10px;
+  height: 50px;
+  width: 80%;
 }

@@ -124,12 +124,13 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
         />
         <div className="form-attribute-stepper ">
           <button
+            className="stepper-button"
             type="button"
             name="health"
             value={health}
             onClick={healthStepDown}
           >
-            -
+            🔽
           </button>
           <div>
             <span className="tooltip">
@@ -141,22 +142,24 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
             {health}
           </div>
           <button
+            className="stepper-button"
             type="button"
             name="health"
             value={health}
             onClick={healthStepUp}
           >
-            +
+            🔼
           </button>
         </div>
         <div className="form-attribute-stepper ">
           <button
+            className="stepper-button"
             type="button"
             name="power"
             value={power}
             onClick={powerStepDown}
           >
-            -
+            🔽
           </button>
           <div>
             <span className="tooltip">
@@ -168,22 +171,24 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
             {power}
           </div>
           <button
+            className="stepper-button"
             type="button"
             name="power"
             value={power}
             onClick={powerStepUp}
           >
-            +
+            🔼
           </button>
         </div>
         <div className="form-attribute-stepper ">
           <button
+            className="stepper-button"
             type="button"
             name="initiative"
             value={initiative}
             onClick={initiativeStepDown}
           >
-            -
+            🔽
           </button>
           <div>
             <span className="tooltip">
@@ -195,23 +200,26 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
             {initiative}
           </div>
           <button
+            className="stepper-button"
             type="button"
             name="initiative"
             value={initiative}
             onClick={initiativeStepUp}
           >
-            +
+            🔼
           </button>
         </div>
         <div className="combat-traits-container">
           {displayCombatTraitsSelection()}
         </div>
         <textarea
+          className="npc-flavor-text"
+          placeholder="Description"
           value={flavorText}
           onChange={(event) => setFlavorText(event.target.value)}
         />
         <p></p>
-        <div className="row distribute">
+        <div className="row space-evenly">
           <button type="submit">ADD NPC</button>
           <button onClick={handleCancel}>DONE</button>
         </div>

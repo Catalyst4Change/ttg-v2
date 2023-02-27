@@ -24,7 +24,7 @@ export const CardOptionsMenu = ({
 
   return (
     <main id="card-options">
-      <div className="options-row row distribute">
+      <div className="options-row row space-evenly">
         <button
           className="options-icon delete"
           value={playerIndex}

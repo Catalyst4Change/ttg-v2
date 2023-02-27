@@ -7,14 +7,16 @@ export const CardOptionsMenu = ({
   resetToOriginal,
 }) => {
   return (
-    <main id="card-options" className="row distribute top-border">
+    <main id="card-options" className="row space-evenly top-border">
       <button
         value={playerIndex}
         onClick={(event) => deletePlayerCharacter(event)}
       >
-        DELETE
+        <b>DELETE</b>
       </button>
-      <button onClick={resetToOriginal}>REFRESH</button>
+      <button onClick={resetToOriginal}>
+        <b>REFRESH</b>
+      </button>
     </main>
   );
 };

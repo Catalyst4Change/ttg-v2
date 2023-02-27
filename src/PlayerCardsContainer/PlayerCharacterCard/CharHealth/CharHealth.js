@@ -60,8 +60,8 @@ export const CharHealth = ({
         <h3 className="section-title">Health</h3>
       </div>
 
-      <div id="health-container" className="hilite">
-        <div id="health-display" className="white">
+      <div id="health-container">
+        <div id="health-display">
           <div id="health-total">
             <span>{maxHealth}</span>
           </div>
@@ -74,12 +74,13 @@ export const CharHealth = ({
       <div id="health-condition">
         {" "}
         <button
+          className="stepper-button"
           type="button"
           name="health"
           value={currentHealth}
           onClick={(e) => subtractHealth(e)}
         >
-          -
+          🔽
         </button>
         <span>Condition:</span>
         <div
@@ -87,18 +88,19 @@ export const CharHealth = ({
             (condition === "Healthy (+1)" && "green") ||
             (condition === "Injured" && "yellow") ||
             (condition === "Unconscious" && "red") ||
-            (condition === "DEAD" && "purple")
+            condition === "DEAD"
           }
         >
           <b>{condition}</b>{" "}
         </div>
         <button
+          className="stepper-button"
           type="button"
           name="presence"
           value={currentHealth}
           onClick={(e) => addHealth(e)}
         >
-          +
+          🔼
         </button>
       </div>
     </section>

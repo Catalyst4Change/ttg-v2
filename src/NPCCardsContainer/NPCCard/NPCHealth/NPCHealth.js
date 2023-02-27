@@ -29,23 +29,25 @@ export const NPCHealth = ({
     <section id="npc-health" className="column center">
       <div className="vitals-health row center">
         <button
+          className="stepper-button"
           type="button"
           name="health"
           value={currentHealth}
           onClick={(e) => subtractHealth(e)}
         >
-          -
+          🔽
         </button>
         <div className="health-total">
           <div>Total Health: {maxHealth}</div>
         </div>{" "}
         <button
+          className="stepper-button"
           type="button"
           name="presence"
           value={currentHealth}
           onClick={(e) => addHealth(e)}
         >
-          +
+          🔼
         </button>
       </div>
       <div className="NPC-health-bar">

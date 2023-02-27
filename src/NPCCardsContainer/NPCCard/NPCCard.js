@@ -31,7 +31,7 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
 
   return (
     <main className="npc-card">
-      <h3 className="title row distribute">
+      <h3 className="title row space-evenly">
         {type}
         <button
           className="delete-npc-button"
@@ -52,7 +52,7 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
           />
         }
       </div>
-      <div className="row distribute">
+      <div className="row space-evenly">
         <span className="tooltip">
           Power: {power}
           <span className="tooltip-text">
@@ -71,7 +71,7 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
       {combatTraits.length > 0 && (
         <div>
           <p className="column center">Combat Traits:</p>
-          <div className="row distribute">{displayCombatTraits()}</div>
+          <div className="row space-evenly">{displayCombatTraits()}</div>
         </div>
       )}
     </main>

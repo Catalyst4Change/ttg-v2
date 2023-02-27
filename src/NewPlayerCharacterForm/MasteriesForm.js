@@ -94,7 +94,7 @@ export const MasteriesForm = ({
 
       <div className="choose-skills">{displayMasterySelection()}</div>
 
-      <div className="row distribute">
+      <div className="row space-evenly">
         <button className="form-button" type="button" onClick={handleSubmit}>
           NEXT
         </button>

@@ -10,6 +10,7 @@
 
   #health-container {
     width: 100%;
+    margin-bottom: 10px;
 
     #health-display {
       display: flex;
@@ -35,7 +36,7 @@
       }
 
       #health-bar {
-        font-size: 1.4em;
+        font-size: 1.18em;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -66,7 +67,7 @@
 }
 
 .green {
-  color: green;
+  color: limegreen;
 }
 
 .purple {

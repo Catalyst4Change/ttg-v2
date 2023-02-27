@@ -1,3 +1,5 @@
+$button-color: rgb(255, 255, 255);
+
 #App {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif");
   background-size: cover;
@@ -6,13 +8,7 @@
 
   display: flex;
   flex-direction: row;
-
-  // display: grid;
-  // grid-template-columns: 150px auto;
-  // grid-template-rows: 50vh 50vh;
-  // grid-template-areas:
-  //   "nav pcs"
-  //   "nav npcs";
+  font-size: 1.25em;
 
   #navbar {
     color: white;
@@ -66,8 +62,12 @@
   flex-wrap: wrap;
 }
 
-.distribute {
+.space-evenly {
   justify-content: space-evenly;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 option {
@@ -91,6 +91,39 @@ p {
 .top-border {
   border-top: 1px white solid;
   padding-top: 5px;
+}
+
+.stepper-button {
+  all: unset;
+  filter: grayscale(1);
+  transition: all 0.3s ease-in-out;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+
+  // background-color: $button-color;
+  // border: none;
+  // border-radius: 50%;
+  // height: 20px;
+  // width: 20px;
+  // font-size: 1em;
+  &:hover {
+    filter: grayscale(0);
+    transition: all 0.3s ease-in-out;
+
+    // text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.card-options {
+  padding-top: 5px;
+
+  button {
+    font-size: 1.1em;
+    margin-top: 10px;
+    filter: invert(1);
+  }
 }
 
 .white {

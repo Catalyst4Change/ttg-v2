@@ -98,7 +98,7 @@ export const ProficienciesForm = ({
         toward a related action.
       </p>
       <div className="choose-skills">{displayProficienciesSelection()}</div>
-      <div className="row distribute">
+      <div className="row space-evenly">
         <button className="form-button" type="button" onClick={handleSubmit}>
           DONE
         </button>
