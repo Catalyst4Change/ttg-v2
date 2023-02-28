@@ -2,34 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  // grid-template-areas:
-  //   "title title title title"
-  //   "init crit dodge drive";
-
-  .stats-title {
-    grid-area: title;
-  }
-
-  .initiative {
-    grid-area: init;
-    margin: auto;
-  }
-
-  .crit {
-    grid-area: crit;
-    margin: auto;
-  }
-
-  .dodge {
-    grid-area: dodge;
-    margin: auto;
-  }
-
-  .drive {
-    grid-area: drive;
+  .badge {
     margin: auto;
   }
 
@@ -41,7 +16,4 @@
     margin-top: auto;
     gap: 10px;
   }
-}
-.grey {
-  filter: grayscale(100%);
 }

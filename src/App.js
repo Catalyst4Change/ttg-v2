@@ -9,7 +9,7 @@ function App() {
   const [NPCs, setNPCs] = useState([]);
 
   const addNPC = (newNPC) => {
-    setNPCs([...NPCs, newNPC], console.log("app", NPCs));
+    setNPCs([...NPCs, newNPC]);
   };
 
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);

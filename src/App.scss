@@ -11,6 +11,8 @@ $button-color: rgb(255, 255, 255);
   flex-direction: row;
   font-size: 1.25em;
 
+  padding-bottom: 5%;
+
   #navbar {
     color: white;
     min-width: 13vw;
@@ -98,22 +100,9 @@ p {
   all: unset;
   filter: grayscale(1);
   transition: all 0.3s ease-in-out;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-
-  // background-color: $button-color;
-  // border: none;
-  // border-radius: 50%;
-  // height: 20px;
-  // width: 20px;
-  // font-size: 1em;
   &:hover {
     filter: grayscale(0);
     transition: all 0.3s ease-in-out;
-
-    // text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
   }
 }
 
@@ -121,6 +110,7 @@ p {
   padding-top: 5px;
 
   button {
+    font-weight: bold;
     font-size: 1.1em;
     margin-top: 10px;
     filter: invert(1);

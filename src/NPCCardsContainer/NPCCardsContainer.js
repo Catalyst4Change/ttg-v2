@@ -27,9 +27,8 @@ export const NPCCardsContainer = ({
   const displayNPCs = () => {
     return NPCs.map((npc, i) => {
       return (
-        <div className="npc-card-container">
+        <div className="npc-card-container" key={`${Object.keys(npc)}${i}`}>
           <NPCCard
-            key={i}
             npc={Object.values(npc)}
             deleteNPC={deleteNPC}
             NPCindex={i}

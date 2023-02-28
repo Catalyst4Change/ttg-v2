@@ -6,17 +6,17 @@ export const CardOptionsMenu = ({
   deletePlayerCharacter,
   resetToOriginal,
 }) => {
+  console.log("playerIndex", playerIndex);
   return (
-    <main id="card-options" className="row space-evenly top-border">
+    <div id="card-options" className="row space-evenly top-border">
       <button
         value={playerIndex}
         onClick={(event) => deletePlayerCharacter(event)}
       >
-        <b>DELETE</b>
+        DELETE
       </button>
-      <button onClick={resetToOriginal}>
-        <b>REFRESH</b>
-      </button>
-    </main>
+
+      <button onClick={resetToOriginal}>REFRESH</button>
+    </div>
   );
 };

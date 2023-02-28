@@ -20,6 +20,7 @@ export const PlayerCardsContainer = ({
 
   const deletePlayerCharacter = (event) => {
     const indexToRemove = parseInt(event.target.value);
+    console.log("deletePlayerCharacter", event.target.id);
 
     const removeCharacter = playerCharacters.filter((char, index) => {
       if (index !== indexToRemove) {
@@ -32,7 +33,7 @@ export const PlayerCardsContainer = ({
   const displayCards = () => {
     return playerCharacters.map((card, i) => {
       return (
-        <div className="player-card-container" key={i}>
+        <div className="player-card-container" key={`${card.playerName}${i}`}>
           <PlayerCharacterCard
             playerIndex={i}
             deletePlayerCharacter={deletePlayerCharacter}

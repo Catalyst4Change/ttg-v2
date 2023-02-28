@@ -80,6 +80,37 @@ export const CharStats = ({ stats, statStepUp, statStepDown }) => {
           🔼
         </button>
       </div>
+
+      <div className="hero-points row space-evenly">
+        <button
+          className="stepper-button"
+          type="button"
+          name="heroPoints"
+          value={stats.heroPoints}
+          onClick={(event) => statStepDown(event)}
+        >
+          🔽
+        </button>
+
+        <div className="badge hero-points tooltip">
+          ⭐️ = {stats.heroPoints}
+          <div className="tooltip-text">
+            Spending Hero Points gives you TWO extra cards to flip per point
+            spent. You may only spend one Hero Point per action.
+          </div>
+        </div>
+
+        <button
+          className="stepper-button"
+          type="button"
+          name="heroPoints"
+          value={stats.heroPoints}
+          onClick={(event) => statStepUp(event)}
+        >
+          🔼
+        </button>
+      </div>
+
       <label id="anti-joker" className="tooltip">
         <input type="checkbox" checked={antiJoker} onChange={toggleAntiJoker} />
         Anti-Joker

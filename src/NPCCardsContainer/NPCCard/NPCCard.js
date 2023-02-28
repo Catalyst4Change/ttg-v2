@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../../App.scss";
-import { GenerateNPCHealthBar } from "./NPCHealth/GenerateNPCHealthBar";
 import "./NPCCard.scss";
 import { NPCHealth } from "./NPCHealth/NPCHealth.js";
 
@@ -10,8 +9,16 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
   const [currentHealth, setCurrentHealth] = useState(health);
   const [healthBar, setHealthBar] = useState("❗️");
 
+  const GenerateNPCHealthBar = (health, setHealthBar) => {
+    let bar = [];
+    for (let i = 0; i < health; i++) {
+      bar.push("🔴");
+    }
+    setHealthBar(bar);
+  };
+
   useEffect(() => {
-    GenerateNPCHealthBar(maxHealth, setHealthBar);
+    GenerateNPCHealthBar(health, setHealthBar);
   }, []);
 
   const displayCombatTraits = () => {
@@ -79,7 +86,7 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
           value={NPCindex}
           onClick={(event) => deleteNPC(event)}
         >
-          <b>DELETE</b>
+          DELETE
         </button>
       </div>
     </main>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { CharAttributes } from "../CharAttributes/CharAttributes";
 import { CharBasics } from "../CharBasics/CharBasics";
 import { CharHealth } from "../CharHealth/CharHealth";
@@ -24,6 +24,7 @@ export const PlayerCharacterCard = ({
   const [maxHealth] = useState(attributes.brawn * 3);
   const [currentHealth, setCurrentHealth] = useState(attributes.brawn * 3);
   const [healthBar, setHealthBar] = useState(["❗️"]);
+  const notesRef = useRef(""); // {current: ""}
 
   useEffect(() => {
     GenerateHealthBar(maxHealth, setHealthBar);
@@ -34,6 +35,7 @@ export const PlayerCharacterCard = ({
     dodge: attributes.agility + attributes.wit - 2,
     drive: attributes.wit + attributes.presence,
     crit: attributes.charm,
+    heroPoints: 0,
   });
 
   const statStepUp = (e) => {
@@ -50,6 +52,10 @@ export const PlayerCharacterCard = ({
     }
   };
 
+  const handleNotes = (event) => {
+    notesRef.current = event.target.value;
+  };
+
   const resetToOriginal = () => {
     setCurrentHealth(maxHealth);
     GenerateHealthBar(maxHealth, setHealthBar);
@@ -58,6 +64,7 @@ export const PlayerCharacterCard = ({
       dodge: attributes.agility + attributes.wit - 2,
       drive: attributes.wit + attributes.presence,
       crit: attributes.charm,
+      heroPoints: 0,
     });
   };
 
@@ -96,6 +103,15 @@ export const PlayerCharacterCard = ({
       </div>
       <div className="proficiencies ">
         <CharProficiencies chosenProficiencies={chosenProficiencies} />
+      </div>
+
+      <div className="notes-area">
+        <textarea
+          className="char-notes-text"
+          ref={notesRef}
+          placeholder="Notes..."
+          onChange={(event) => handleNotes(event)}
+        ></textarea>
       </div>
 
       <div className="card-options">
