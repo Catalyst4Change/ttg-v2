@@ -10,6 +10,13 @@
 
   background-color: rgba(255, 0, 0, 0.4);
 
+  hr {
+    width: 100%;
+    border-color: red;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
   .title {
     text-align: center;
     grid-area: title;
@@ -30,6 +37,11 @@
 
   .trait {
     grid-area: trait;
+  }
+
+  .npc-notes {
+    width: 90%;
+    margin: 5px;
   }
 }
 

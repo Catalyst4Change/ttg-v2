@@ -3,12 +3,12 @@ import { CharAttributes } from "../CharAttributes/CharAttributes";
 import { CharBasics } from "../CharBasics/CharBasics";
 import { CharHealth } from "../CharHealth/CharHealth";
 import { CharStats } from "../CharStats/CharStats";
-import "./PlayerCharacterCard.scss";
-import "../../../App.scss";
 import { CharMasteries } from "../CharMasteries/CharMasteries";
 import { CharProficiencies } from "../CharProficiencies/CharProficiencies";
 import { CardOptionsMenu } from "../CardOptionsMenu/CardOptionsMenu";
 import { GenerateHealthBar } from "../CharHealth/GenerateHealthBar";
+import "./PlayerCharacterCard.scss";
+import "../../../App.scss";
 
 export const PlayerCharacterCard = ({
   playerIndex,
@@ -78,8 +78,8 @@ export const PlayerCharacterCard = ({
           charImage={charImage}
         />
       </div>
-
-      <div className="health top-border">
+      <hr></hr>
+      <div className="health">
         <CharHealth
           maxHealth={maxHealth}
           currentHealth={currentHealth}
@@ -88,8 +88,8 @@ export const PlayerCharacterCard = ({
           setHealthBar={setHealthBar}
         />
       </div>
-
-      <div className="attributes top-border">
+      <hr></hr>
+      <div className="attributes">
         <CharStats
           stats={stats}
           statStepUp={statStepUp}
@@ -97,14 +97,14 @@ export const PlayerCharacterCard = ({
         />
         <CharAttributes attributes={attributes} />
       </div>
-
-      <div className="masteries top-border">
+      <hr></hr>
+      <div className="masteries">
         <CharMasteries chosenMasteries={chosenMasteries} />
       </div>
       <div className="proficiencies ">
         <CharProficiencies chosenProficiencies={chosenProficiencies} />
       </div>
-
+      <hr></hr>
       <div className="notes-area">
         <textarea
           className="char-notes-text"

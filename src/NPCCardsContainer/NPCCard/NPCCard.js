@@ -5,7 +5,6 @@ import { NPCHealth } from "./NPCHealth/NPCHealth.js";
 
 export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
   const { type, health, power, initiative, combatTraits, flavorText } = npc[0];
-  const [maxHealth] = useState(health);
   const [currentHealth, setCurrentHealth] = useState(health);
   const [healthBar, setHealthBar] = useState("❗️");
 
@@ -56,6 +55,10 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
           />
         }
       </div>
+      <hr></hr>
+      <span className="row center">
+        <b>Stats:</b>
+      </span>
       <div className="row space-evenly">
         <span className="tooltip">
           Power: {power}
@@ -71,7 +74,6 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
           </span>
         </span>
       </div>
-      <p className="flavor column ">{flavorText}</p>
       {combatTraits.length > 0 && (
         <div>
           <p className="column center">
@@ -80,7 +82,11 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
           <div className="row space-evenly">{displayCombatTraits()}</div>
         </div>
       )}
-      <div className="top-border column center">
+      <hr></hr>
+      <div className="column center">
+        <span className="flavor column ">{flavorText}</span>
+        <hr></hr>
+        <textarea className="npc-notes" placeholder="Notes..."></textarea>
         <button
           className="delete-npc-button"
           value={NPCindex}
