@@ -12,43 +12,74 @@ import "../../../App.scss";
 
 export const PlayerCharacterCard = ({
   playerIndex,
+  character,
+  playerCharacters,
+  setPlayerCharacters,
   deletePlayerCharacter,
-  playerName,
-  charName,
-  charConcept,
-  charImage,
-  attributes,
-  chosenMasteries,
-  chosenProficiencies,
 }) => {
-  const [maxHealth] = useState(attributes.brawn * 3);
+  const {
+    playerName,
+    charName,
+    charConcept,
+    charImage,
+    maxHealth,
+    healthBar,
+    currentStatus,
+    heroPoints,
+    notes,
+    antiJoker,
+    attributes,
+    stats,
+    chosenMasteries,
+    chosenProficiencies,
+  } = character;
+
+  const { brawn, agility, intelligence, wit, charm, presence } = attributes;
+
+  const { initiative, dodge, drive, crit } = stats;
+
+  // const [maxHealth] = useState(attributes.brawn * 3);
   const [currentHealth, setCurrentHealth] = useState(attributes.brawn * 3);
-  const [healthBar, setHealthBar] = useState(["❗️"]);
-  const notesRef = useRef(""); // {current: ""}
+  const notesRef = useRef(notes);
 
   useEffect(() => {
-    GenerateHealthBar(maxHealth, setHealthBar);
+    const newInitiative = attributes.presence + attributes.agility;
+    const newCrit = attributes.charm;
+    const newDodge = attributes.agility + attributes.wit - 2;
+    const newDrive = attributes.wit + attributes.presence;
+    const newMaxHealth = brawn * 3;
+    setPlayerCharacters(
+      playerCharacters.map((character, i) => {
+        if (i === playerIndex) {
+          const updatedCharacter = {
+            ...character,
+            maxHealth: newMaxHealth,
+            healthBar: [GenerateHealthBar(newMaxHealth)],
+            stats: {
+              initiative: newInitiative,
+              crit: newCrit,
+              dodge: newDodge,
+              drive: newDrive,
+              heroPoints: 0,
+            },
+          };
+          return updatedCharacter;
+        }
+      })
+    );
   }, []);
-
-  const [stats, setStatuses] = useState({
-    initiative: attributes.presence + attributes.agility,
-    dodge: attributes.agility + attributes.wit - 2,
-    drive: attributes.wit + attributes.presence,
-    crit: attributes.charm,
-    heroPoints: 0,
-  });
 
   const statStepUp = (e) => {
     const { name, value } = e.target;
     const numValue = parseInt(value);
-    setStatuses({ ...stats, [name]: numValue + 1 });
+    // setStatuses({ ...stats, [name]: numValue + 1 });
   };
 
   const statStepDown = (e) => {
     const { name, value } = e.target;
     const numValue = parseInt(value);
     if (stats[name] > 0) {
-      setStatuses({ ...stats, [name]: numValue - 1 });
+      // setStatuses({ ...stats, [name]: numValue - 1 });
     }
   };
 
@@ -57,15 +88,15 @@ export const PlayerCharacterCard = ({
   };
 
   const resetToOriginal = () => {
-    setCurrentHealth(maxHealth);
-    GenerateHealthBar(maxHealth, setHealthBar);
-    setStatuses({
-      initiative: attributes.presence + attributes.agility,
-      dodge: attributes.agility + attributes.wit - 2,
-      drive: attributes.wit + attributes.presence,
-      crit: attributes.charm,
-      heroPoints: 0,
-    });
+    // setCurrentHealth(maxHealth);
+    // GenerateHealthBar(maxHealth, setHealthBar);
+    // setStatuses({
+    //   initiative: attributes.presence + attributes.agility,
+    //   dodge: attributes.agility + attributes.wit - 2,
+    //   drive: attributes.wit + attributes.presence,
+    //   crit: attributes.charm,
+    //   heroPoints: 0,
+    // });
   };
 
   return (
@@ -85,7 +116,7 @@ export const PlayerCharacterCard = ({
           currentHealth={currentHealth}
           setCurrentHealth={setCurrentHealth}
           healthBar={healthBar}
-          setHealthBar={setHealthBar}
+          // setHealthBar={setHealthBar}
         />
       </div>
       <hr></hr>

@@ -1,4 +1,4 @@
-export const GenerateHealthBar = (maxHealth, setHealthBar) => {
+export const GenerateHealthBar = (maxHealth) => {
   let red = [];
   let yellow = [];
   let green = [];
@@ -9,5 +9,5 @@ export const GenerateHealthBar = (maxHealth, setHealthBar) => {
     green.push("🟢");
   }
   bar = red.concat(yellow, green);
-  setHealthBar(bar);
+  return bar;
 };

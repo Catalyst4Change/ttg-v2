@@ -6,7 +6,6 @@ export const CardOptionsMenu = ({
   deletePlayerCharacter,
   resetToOriginal,
 }) => {
-  console.log("playerIndex", playerIndex);
   return (
     <div id="card-options" className="row space-evenly">
       <button

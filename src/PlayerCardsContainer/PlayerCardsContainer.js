@@ -3,47 +3,28 @@ import { NewPlayerCharacterForm } from "../NewPlayerCharacterForm/NewPlayerChara
 import { PlayerCharacterCard } from "./PlayerCharacterCard/PlayerCharacterCard/PlayerCharacterCard";
 import "../App.scss";
 import "../CardsContainer.scss";
-import { stockPlayerCharacters } from "./StockPlayerCharacters";
 
 export const PlayerCardsContainer = ({
+  playerCharacters,
+  setPlayerCharacters,
+  addPlayerCharacter,
+  deletePlayerCharacter,
   deployNewCharacterForm,
   setDeployNewCharacterForm,
 }) => {
-  const [playerCharacters, setPlayerCharacters] = useState(
-    stockPlayerCharacters
-  );
-
-  const addPlayerCharacter = (newChar) => {
-    setPlayerCharacters([...playerCharacters, newChar]);
-    setDeployNewCharacterForm(false);
-  };
-
-  const deletePlayerCharacter = (event) => {
-    const indexToRemove = parseInt(event.target.value);
-    console.log("deletePlayerCharacter", event.target.id);
-
-    const removeCharacter = playerCharacters.filter((char, index) => {
-      if (index !== indexToRemove) {
-        return true;
-      }
-    });
-    setPlayerCharacters(removeCharacter);
-  };
-
   const displayCards = () => {
-    return playerCharacters.map((card, i) => {
+    return playerCharacters.map((character, i) => {
       return (
-        <div className="player-card-container" key={`${card.playerName}${i}`}>
+        <div
+          className="player-card-container"
+          key={`${character.playerName}${i}`}
+        >
           <PlayerCharacterCard
             playerIndex={i}
+            character={character}
+            playerCharacters={playerCharacters}
+            setPlayerCharacters={setPlayerCharacters}
             deletePlayerCharacter={deletePlayerCharacter}
-            playerName={card.playerName}
-            charName={card.charName}
-            charConcept={card.charConcept}
-            charImage={card.charImage}
-            attributes={card.attributes}
-            chosenMasteries={card.chosenMasteries}
-            chosenProficiencies={card.chosenProficiencies}
           />
         </div>
       );

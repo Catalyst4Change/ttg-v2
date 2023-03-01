@@ -82,8 +82,6 @@ export const ProficienciesForm = ({
         skillCheckboxes[checkboxIndex] &&
         !chosenMasteries.includes(skills[checkboxIndex])
       ) {
-        console.log("addChecked", chosenMasteries, skills[checkboxIndex]);
-
         selectedSkills.push(skills[checkboxIndex]);
       }
     });

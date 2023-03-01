@@ -4,17 +4,35 @@ import { PlayerCardsContainer } from "./PlayerCardsContainer/PlayerCardsContaine
 import { NPCCardsContainer } from "./NPCCardsContainer/NPCCardsContainer";
 import { PCMenu } from "./NavBar/PCMenu";
 import { NPCMenu } from "./NavBar/NPCMenu";
+import { stockPlayerCharacters } from "./PlayerCardsContainer/StockPlayerCharacters";
 
 function App() {
+  const [playerCharacters, setPlayerCharacters] = useState(
+    stockPlayerCharacters
+  );
   const [NPCs, setNPCs] = useState([]);
+  const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
+  const [deployNewNPCForm, setDeployNewNPCForm] = useState(false);
 
   const addNPC = (newNPC) => {
     setNPCs([...NPCs, newNPC]);
   };
 
-  const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
+  const addPlayerCharacter = (newChar) => {
+    setPlayerCharacters([...playerCharacters, newChar]);
+    setDeployNewCharacterForm(false);
+  };
 
-  const [deployNewNPCForm, setDeployNewNPCForm] = useState(false);
+  const deletePlayerCharacter = (event) => {
+    const indexToRemove = parseInt(event.target.value);
+
+    const removeCharacter = playerCharacters.filter((char, index) => {
+      if (index !== indexToRemove) {
+        return true;
+      }
+    });
+    setPlayerCharacters(removeCharacter);
+  };
 
   return (
     <main id="App">
@@ -25,6 +43,10 @@ function App() {
       </section>
       <section id="cards-section" className="column">
         <PlayerCardsContainer
+          playerCharacters={playerCharacters}
+          setPlayerCharacters={setPlayerCharacters}
+          addPlayerCharacter={addPlayerCharacter}
+          deletePlayerCharacter={deletePlayerCharacter}
           deployNewCharacterForm={deployNewCharacterForm}
           setDeployNewCharacterForm={setDeployNewCharacterForm}
         />

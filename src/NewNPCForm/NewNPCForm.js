@@ -103,7 +103,6 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
       combatTraits: combatTraits,
       flavorText: flavorText,
     };
-    console.log("newNPC", newNPC);
     addNPC([newNPC]);
   };
 
