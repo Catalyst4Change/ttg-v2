@@ -8,7 +8,6 @@ export const stockPlayerCharacters = [
     currentHealth: 0,
     healthBar: ["❗️"],
     currentStatus: "Healthy",
-    heroPoints: 0,
     notes: "",
     antiJoker: false,
     attributes: {
@@ -24,6 +23,7 @@ export const stockPlayerCharacters = [
       dodge: 0,
       drive: 0,
       crit: 0,
+      heroPoints: 0,
     },
     chosenMasteries: [
       {

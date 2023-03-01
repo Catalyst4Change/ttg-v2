@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./CharStats.scss";
 
-export const CharStats = ({ stats, statStepUp, statStepDown }) => {
-  const [antiJoker, setAntiJoker] = useState(false);
-  const toggleAntiJoker = () => {
-    setAntiJoker(!antiJoker);
-  };
+export const CharStats = ({
+  stats,
+  statStepUp,
+  statStepDown,
+  antiJoker,
+  toggleAntiJoker,
+}) => {
   return (
     <main id="char-stats">
       <h3 className="stats-title">Stats</h3>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, Children } from "react";
 import { CharAttributes } from "../CharAttributes/CharAttributes";
 import { CharBasics } from "../CharBasics/CharBasics";
 import { CharHealth } from "../CharHealth/CharHealth";
@@ -23,6 +23,7 @@ export const PlayerCharacterCard = ({
     charConcept,
     charImage,
     maxHealth,
+    currentHealth,
     healthBar,
     currentStatus,
     heroPoints,
@@ -33,14 +34,8 @@ export const PlayerCharacterCard = ({
     chosenMasteries,
     chosenProficiencies,
   } = character;
-
   const { brawn, agility, intelligence, wit, charm, presence } = attributes;
-
   const { initiative, dodge, drive, crit } = stats;
-
-  // const [maxHealth] = useState(attributes.brawn * 3);
-  const [currentHealth, setCurrentHealth] = useState(attributes.brawn * 3);
-  const notesRef = useRef(notes);
 
   useEffect(() => {
     const newInitiative = attributes.presence + attributes.agility;
@@ -53,14 +48,15 @@ export const PlayerCharacterCard = ({
         if (i === playerIndex) {
           const updatedCharacter = {
             ...character,
+            currentHealth: newMaxHealth,
             maxHealth: newMaxHealth,
             healthBar: [GenerateHealthBar(newMaxHealth)],
             stats: {
+              ...stats,
               initiative: newInitiative,
               crit: newCrit,
               dodge: newDodge,
               drive: newDrive,
-              heroPoints: 0,
             },
           };
           return updatedCharacter;
@@ -69,22 +65,131 @@ export const PlayerCharacterCard = ({
     );
   }, []);
 
+  const updateCharacterStats = (statToChange, newValue) => {
+    setPlayerCharacters(
+      playerCharacters.map((character, i) => {
+        if (i === playerIndex) {
+          const updatedCharacter = {
+            ...character,
+            stats: {
+              ...stats,
+              [statToChange]: newValue,
+            },
+          };
+          return updatedCharacter;
+        }
+      })
+    );
+  };
+
   const statStepUp = (e) => {
     const { name, value } = e.target;
-    const numValue = parseInt(value);
-    // setStatuses({ ...stats, [name]: numValue + 1 });
+    const numValue = parseInt(value) + 1;
+    console.log(name, numValue);
+    updateCharacterStats(name, numValue);
   };
 
   const statStepDown = (e) => {
     const { name, value } = e.target;
-    const numValue = parseInt(value);
-    if (stats[name] > 0) {
-      // setStatuses({ ...stats, [name]: numValue - 1 });
+    const numValue = parseInt(value) - 1;
+    if (value > 0) {
+      updateCharacterStats(name, numValue);
     }
   };
 
-  const handleNotes = (event) => {
-    notesRef.current = event.target.value;
+  const toggleAntiJoker = () => {
+    setPlayerCharacters(
+      playerCharacters.map((character, i) => {
+        if (i === playerIndex) {
+          const updatedCharacter = {
+            ...character,
+            antiJoker: !antiJoker,
+          };
+          return updatedCharacter;
+        }
+      })
+    );
+  };
+
+  const updateNotes = (e) => {
+    const updatedNotes = e.target.value;
+    setPlayerCharacters(
+      playerCharacters.map((character, i) => {
+        if (i === playerIndex) {
+          const updatedCharacter = {
+            ...character,
+            notes: updatedNotes,
+          };
+          return updatedCharacter;
+        }
+      })
+    );
+  };
+
+  console.log("split", ...healthBar);
+  console.log("slice", healthBar.slice(0, 7));
+  console.log("3", healthBar);
+
+  const subtractHealth = (e) => {
+    // e.preventDefault();
+    if (currentHealth > 1) {
+      setPlayerCharacters(
+        playerCharacters.map((character, i) => {
+          if (i === playerIndex) {
+            const updatedCharacter = {
+              ...character,
+              currentHealth: currentHealth - 1,
+            };
+            return updatedCharacter;
+          }
+        })
+      );
+    } else if (currentHealth === 1) {
+      setPlayerCharacters(
+        playerCharacters.map((character, i) => {
+          if (i === playerIndex) {
+            const updatedCharacter = {
+              ...character,
+              currentHealth: 0,
+            };
+            return updatedCharacter;
+          }
+        })
+      );
+    }
+  };
+
+  const healthRatio = (currentHealth / maxHealth).toFixed(2);
+
+  const addHealth = () => {
+    let emoji = "";
+
+    if (healthRatio < 0.33) {
+      emoji = "🔴";
+    } else if (healthRatio >= 0.33 && healthRatio <= 0.66) {
+      emoji = "🟡";
+    } else if (healthRatio >= 0.67) {
+      emoji = "🟢";
+    }
+
+    //   if (currentHealth < maxHealth) {
+    //     setCurrentHealth(currentHealth + 1);
+    //     // setHealthBar((healthBar) => [...healthBar, emoji]);
+    // };
+
+    if (currentHealth < maxHealth) {
+      setPlayerCharacters(
+        playerCharacters.map((character, i) => {
+          if (i === playerIndex) {
+            const updatedCharacter = {
+              ...character,
+              currentHealth: currentHealth + 1,
+            };
+            return updatedCharacter;
+          }
+        })
+      );
+    }
   };
 
   const resetToOriginal = () => {
@@ -114,9 +219,9 @@ export const PlayerCharacterCard = ({
         <CharHealth
           maxHealth={maxHealth}
           currentHealth={currentHealth}
-          setCurrentHealth={setCurrentHealth}
           healthBar={healthBar}
-          // setHealthBar={setHealthBar}
+          subtractHealth={subtractHealth}
+          addHealth={addHealth}
         />
       </div>
       <hr></hr>
@@ -125,6 +230,8 @@ export const PlayerCharacterCard = ({
           stats={stats}
           statStepUp={statStepUp}
           statStepDown={statStepDown}
+          antiJoker={antiJoker}
+          toggleAntiJoker={toggleAntiJoker}
         />
         <CharAttributes attributes={attributes} />
       </div>
@@ -138,10 +245,10 @@ export const PlayerCharacterCard = ({
       <hr></hr>
       <div className="notes-area">
         <textarea
+          value={notes}
           className="char-notes-text"
-          ref={notesRef}
           placeholder="Notes..."
-          onChange={(event) => handleNotes(event)}
+          onChange={(event) => updateNotes(event)}
         ></textarea>
       </div>
 
