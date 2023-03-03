@@ -36,7 +36,9 @@ export const CharHealth = ({
       <div id="health-container">
         <div id="health-display">
           <div id="health-total">
-            <span>{currentHealth}</span>
+            <span>
+              {maxHealth}({currentHealth})
+            </span>
           </div>
           <div id="health-bar">{healthBar}</div>
         </div>

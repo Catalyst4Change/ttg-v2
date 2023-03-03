@@ -5,7 +5,6 @@ import { NPCCardsContainer } from "./NPCCardsContainer/NPCCardsContainer";
 import { PCMenu } from "./NavBar/PCMenu";
 import { NPCMenu } from "./NavBar/NPCMenu";
 import { stockPlayerCharacters } from "./PlayerCardsContainer/StockPlayerCharacters";
-import { GenerateHealthBar } from "./PlayerCardsContainer/PlayerCharacterCard/CharHealth/GenerateHealthBar";
 
 function App() {
   const [playerCharacters, setPlayerCharacters] = useState([]);

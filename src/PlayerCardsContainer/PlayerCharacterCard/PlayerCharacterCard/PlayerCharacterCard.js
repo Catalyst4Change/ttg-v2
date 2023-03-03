@@ -38,7 +38,6 @@ export const PlayerCharacterCard = ({
   const initializePlayerCharacter = () => {
     // Create a copy of the original state
     let modifiedCharacters = playerCharacters;
-    console.log("modifiedCharacters", modifiedCharacters);
 
     playerCharacters.reduce((acc, character, i) => {
       if (i === playerIndex) {
@@ -50,7 +49,7 @@ export const PlayerCharacterCard = ({
 
         character.currentHealth = newMaxHealth;
         character.maxHealth = newMaxHealth;
-        character.healthBar = [GenerateHealthBar(newMaxHealth)];
+        character.healthBar = GenerateHealthBar(newMaxHealth);
         character.stats = {
           ...stats,
           initiative: newInitiative,
@@ -139,32 +138,17 @@ export const PlayerCharacterCard = ({
     );
   };
 
-  // console.log("split", ...healthBar);
-  // console.log("slice", healthBar.slice(0, 7));
-  // console.log("3", healthBar);
+  const subtractHealth = () => {
+    const lessOne = healthBar.slice(0, -1);
 
-  const subtractHealth = (e) => {
-    // e.preventDefault();
-    if (currentHealth > 1) {
+    if (currentHealth >= 1) {
       setPlayerCharacters(
         playerCharacters.map((character, i) => {
           if (i === playerIndex) {
             const updatedCharacter = {
               ...character,
               currentHealth: currentHealth - 1,
-            };
-            return updatedCharacter;
-          }
-          return character;
-        })
-      );
-    } else if (currentHealth === 1) {
-      setPlayerCharacters(
-        playerCharacters.map((character, i) => {
-          if (i === playerIndex) {
-            const updatedCharacter = {
-              ...character,
-              currentHealth: 0,
+              healthBar: lessOne,
             };
             return updatedCharacter;
           }
@@ -177,28 +161,27 @@ export const PlayerCharacterCard = ({
   const healthRatio = (currentHealth / maxHealth).toFixed(2);
 
   const addHealth = () => {
-    let emoji = "";
-
-    if (healthRatio < 0.33) {
-      emoji = "🔴";
-    } else if (healthRatio >= 0.33 && healthRatio <= 0.66) {
-      emoji = "🟡";
-    } else if (healthRatio >= 0.67) {
-      emoji = "🟢";
-    }
-
-    //   if (currentHealth < maxHealth) {
-    //     setCurrentHealth(currentHealth + 1);
-    //     // setHealthBar((healthBar) => [...healthBar, emoji]);
-    // };
-
     if (currentHealth < maxHealth) {
+      const emoji = () => {
+        if (healthRatio < 0.33) {
+          return "🔴";
+        } else if (healthRatio >= 0.33 && healthRatio <= 0.66) {
+          return "🟡";
+        } else if (healthRatio >= 0.67) {
+          return "🟢";
+        }
+      };
+
+      let healthBarCopy = healthBar;
+      healthBarCopy.push(emoji());
+
       setPlayerCharacters(
         playerCharacters.map((character, i) => {
           if (i === playerIndex) {
             const updatedCharacter = {
               ...character,
               currentHealth: currentHealth + 1,
+              healthBar: healthBarCopy,
             };
             return updatedCharacter;
           }
