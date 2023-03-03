@@ -1,31 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./CharHealth.scss";
 
 export const CharHealth = ({
   maxHealth,
   currentHealth,
-  setCurrentHealth,
   healthBar,
   subtractHealth,
   addHealth,
+  healthRatio,
 }) => {
   const [condition, setCondition] = useState("Healthy");
 
-  // const displayCondition = () => {
-  //   if (healthRatio == 0.0) {
-  //     setCondition("DEAD");
-  //   } else if (healthRatio > 0.0 && healthRatio <= 0.33) {
-  //     setCondition("Unconscious");
-  //   } else if (healthRatio >= 0.34 && healthRatio <= 0.67) {
-  //     setCondition("Injured");
-  //   } else if (healthRatio >= 0.68 || healthRatio === 1.0) {
-  //     setCondition("Healthy (+1)");
-  //   }
-  // };
+  const displayCondition = () => {
+    if (healthRatio == 0.0) {
+      setCondition("DEAD");
+    } else if (healthRatio > 0.0 && healthRatio <= 0.33) {
+      setCondition("Unconscious");
+    } else if (healthRatio >= 0.34 && healthRatio <= 0.67) {
+      setCondition("Injured");
+    } else if (healthRatio >= 0.68 || healthRatio === 1.0) {
+      setCondition("Healthy (+1)");
+    }
+  };
 
-  // useEffect(() => {
-  //   displayCondition();
-  // }, [healthRatio]);
+  useEffect(() => {
+    displayCondition();
+  }, [healthRatio]);
 
   return (
     <section id="char-health">
@@ -36,9 +36,7 @@ export const CharHealth = ({
       <div id="health-container">
         <div id="health-display">
           <div id="health-total">
-            <span>
-              {maxHealth}({currentHealth})
-            </span>
+            <span>{maxHealth}</span>
           </div>
           <div id="health-bar">{healthBar}</div>
         </div>

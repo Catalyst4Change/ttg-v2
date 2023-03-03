@@ -221,6 +221,7 @@ export const PlayerCharacterCard = ({
           healthBar={healthBar}
           subtractHealth={subtractHealth}
           addHealth={addHealth}
+          healthRatio={healthRatio}
         />
       </div>
       <hr></hr>
