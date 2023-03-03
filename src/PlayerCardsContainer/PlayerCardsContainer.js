@@ -35,6 +35,7 @@ export const PlayerCardsContainer = ({
           <NewPlayerCharacterForm
             addPlayerCharacter={addPlayerCharacter}
             setDeployNewCharacterForm={setDeployNewCharacterForm}
+            playerCharacters={playerCharacters}
           />
         )}
       </div>

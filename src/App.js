@@ -13,46 +13,8 @@ function App() {
   const [NPCs, setNPCs] = useState([]);
   const [deployNewNPCForm, setDeployNewNPCForm] = useState(false);
 
-  const initializePlayerCharacters = () => {
-    // Create a copy of the original state
-    console.log("stockPlayerCharacters", stockPlayerCharacters);
-    let modifiedCharacters = stockPlayerCharacters;
-    console.log("modifiedCharacters", modifiedCharacters);
-
-    stockPlayerCharacters.reduce((acc, character, i) => {
-      console.log(character);
-      const { attributes, stats } = character;
-
-      const newInitiative = attributes.presence + attributes.agility;
-      const newCrit = attributes.charm;
-      const newDodge = attributes.agility + attributes.wit - 2;
-      const newDrive = attributes.wit + attributes.presence;
-      const newMaxHealth = attributes.brawn * 3;
-
-      // Find the object you want to modify and update it
-
-      character.currentHealth = newMaxHealth;
-      character.maxHealth = newMaxHealth;
-      character.healthBar = [GenerateHealthBar(newMaxHealth)];
-      character.stats = {
-        ...stats,
-        initiative: newInitiative,
-        crit: newCrit,
-        dodge: newDodge,
-        drive: newDrive,
-      };
-
-      acc.push(character);
-      modifiedCharacters = acc;
-
-      return acc;
-    }, []);
-
-    setPlayerCharacters(modifiedCharacters);
-  };
-
   useEffect(() => {
-    initializePlayerCharacters();
+    // initializePlayerCharacters();
     setPlayerCharacters(stockPlayerCharacters);
   }, [stockPlayerCharacters]);
 

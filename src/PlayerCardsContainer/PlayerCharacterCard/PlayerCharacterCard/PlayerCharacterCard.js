@@ -34,8 +34,47 @@ export const PlayerCharacterCard = ({
     chosenMasteries,
     chosenProficiencies,
   } = character;
-  const { brawn, agility, intelligence, wit, charm, presence } = attributes;
-  const { initiative, dodge, drive, crit } = stats;
+
+  const initializePlayerCharacter = () => {
+    // Create a copy of the original state
+    let modifiedCharacters = playerCharacters;
+    console.log("modifiedCharacters", modifiedCharacters);
+
+    playerCharacters.reduce((acc, character, i) => {
+      if (i === playerIndex) {
+        const newInitiative = attributes.presence + attributes.agility;
+        const newCrit = attributes.charm;
+        const newDodge = attributes.agility + attributes.wit - 2;
+        const newDrive = attributes.wit + attributes.presence;
+        const newMaxHealth = attributes.brawn * 3;
+
+        character.currentHealth = newMaxHealth;
+        character.maxHealth = newMaxHealth;
+        character.healthBar = [GenerateHealthBar(newMaxHealth)];
+        character.stats = {
+          ...stats,
+          initiative: newInitiative,
+          crit: newCrit,
+          dodge: newDodge,
+          drive: newDrive,
+        };
+
+        acc.push(character);
+        modifiedCharacters = acc;
+      } else {
+        acc.push(character);
+        modifiedCharacters = acc;
+      }
+
+      return acc;
+    }, []);
+
+    setPlayerCharacters(modifiedCharacters);
+  };
+
+  useEffect(() => {
+    initializePlayerCharacter();
+  }, []);
 
   const updateCharacterStats = (statToChange, newValue) => {
     setPlayerCharacters(

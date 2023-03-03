@@ -10,6 +10,7 @@ import "./NewPlayerCharacterForm.scss";
 export const NewPlayerCharacterForm = ({
   addPlayerCharacter,
   setDeployNewCharacterForm,
+  playerCharacters,
 }) => {
   // form itself
   const [formPage, setFormPage] = useState(0);
@@ -24,11 +25,25 @@ export const NewPlayerCharacterForm = ({
 
   const submitNewCharacter = () => {
     const newChar = {
+      id: playerCharacters.length + 1,
       playerName: playerName,
       charName: charName,
       charConcept: charConcept,
       charImage: charImage,
+      maxHealth: 0,
+      currentHealth: 0,
+      healthBar: ["❗️"],
+      currentStatus: "Healthy",
+      notes: "",
+      antiJoker: false,
       attributes: attributes,
+      stats: {
+        initiative: 0,
+        dodge: 0,
+        drive: 0,
+        crit: 0,
+        heroPoints: 0,
+      },
       chosenMasteries: chosenMasteries,
       chosenProficiencies: chosenProficiencies,
     };
