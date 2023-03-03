@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NewPlayerCharacterForm } from "../NewPlayerCharacterForm/NewPlayerCharacterForm";
 import { PlayerCharacterCard } from "./PlayerCharacterCard/PlayerCharacterCard/PlayerCharacterCard";
 import "../App.scss";
@@ -15,10 +15,7 @@ export const PlayerCardsContainer = ({
   const displayCards = () => {
     return playerCharacters.map((character, i) => {
       return (
-        <div
-          className="player-card-container"
-          key={`${character.playerName}${i}`}
-        >
+        <div className="player-card-container" key={character.playerName}>
           <PlayerCharacterCard
             playerIndex={i}
             character={character}

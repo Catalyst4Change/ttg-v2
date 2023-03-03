@@ -1,18 +1,60 @@
 import "./App.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PlayerCardsContainer } from "./PlayerCardsContainer/PlayerCardsContainer";
 import { NPCCardsContainer } from "./NPCCardsContainer/NPCCardsContainer";
 import { PCMenu } from "./NavBar/PCMenu";
 import { NPCMenu } from "./NavBar/NPCMenu";
 import { stockPlayerCharacters } from "./PlayerCardsContainer/StockPlayerCharacters";
+import { GenerateHealthBar } from "./PlayerCardsContainer/PlayerCharacterCard/CharHealth/GenerateHealthBar";
 
 function App() {
-  const [playerCharacters, setPlayerCharacters] = useState(
-    stockPlayerCharacters
-  );
-  const [NPCs, setNPCs] = useState([]);
+  const [playerCharacters, setPlayerCharacters] = useState([]);
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
+  const [NPCs, setNPCs] = useState([]);
   const [deployNewNPCForm, setDeployNewNPCForm] = useState(false);
+
+  const initializePlayerCharacters = () => {
+    // Create a copy of the original state
+    console.log("stockPlayerCharacters", stockPlayerCharacters);
+    let modifiedCharacters = stockPlayerCharacters;
+    console.log("modifiedCharacters", modifiedCharacters);
+
+    stockPlayerCharacters.reduce((acc, character, i) => {
+      console.log(character);
+      const { attributes, stats } = character;
+
+      const newInitiative = attributes.presence + attributes.agility;
+      const newCrit = attributes.charm;
+      const newDodge = attributes.agility + attributes.wit - 2;
+      const newDrive = attributes.wit + attributes.presence;
+      const newMaxHealth = attributes.brawn * 3;
+
+      // Find the object you want to modify and update it
+
+      character.currentHealth = newMaxHealth;
+      character.maxHealth = newMaxHealth;
+      character.healthBar = [GenerateHealthBar(newMaxHealth)];
+      character.stats = {
+        ...stats,
+        initiative: newInitiative,
+        crit: newCrit,
+        dodge: newDodge,
+        drive: newDrive,
+      };
+
+      acc.push(character);
+      modifiedCharacters = acc;
+
+      return acc;
+    }, []);
+
+    setPlayerCharacters(modifiedCharacters);
+  };
+
+  useEffect(() => {
+    initializePlayerCharacters();
+    setPlayerCharacters(stockPlayerCharacters);
+  }, [stockPlayerCharacters]);
 
   const addNPC = (newNPC) => {
     setNPCs([...NPCs, newNPC]);

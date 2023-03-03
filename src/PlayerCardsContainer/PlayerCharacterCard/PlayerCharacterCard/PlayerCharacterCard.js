@@ -37,34 +37,6 @@ export const PlayerCharacterCard = ({
   const { brawn, agility, intelligence, wit, charm, presence } = attributes;
   const { initiative, dodge, drive, crit } = stats;
 
-  useEffect(() => {
-    const newInitiative = attributes.presence + attributes.agility;
-    const newCrit = attributes.charm;
-    const newDodge = attributes.agility + attributes.wit - 2;
-    const newDrive = attributes.wit + attributes.presence;
-    const newMaxHealth = brawn * 3;
-    setPlayerCharacters(
-      playerCharacters.map((character, i) => {
-        if (i === playerIndex) {
-          const updatedCharacter = {
-            ...character,
-            currentHealth: newMaxHealth,
-            maxHealth: newMaxHealth,
-            healthBar: [GenerateHealthBar(newMaxHealth)],
-            stats: {
-              ...stats,
-              initiative: newInitiative,
-              crit: newCrit,
-              dodge: newDodge,
-              drive: newDrive,
-            },
-          };
-          return updatedCharacter;
-        }
-      })
-    );
-  }, []);
-
   const updateCharacterStats = (statToChange, newValue) => {
     setPlayerCharacters(
       playerCharacters.map((character, i) => {
@@ -78,6 +50,7 @@ export const PlayerCharacterCard = ({
           };
           return updatedCharacter;
         }
+        return character;
       })
     );
   };
@@ -85,7 +58,6 @@ export const PlayerCharacterCard = ({
   const statStepUp = (e) => {
     const { name, value } = e.target;
     const numValue = parseInt(value) + 1;
-    console.log(name, numValue);
     updateCharacterStats(name, numValue);
   };
 
@@ -107,6 +79,7 @@ export const PlayerCharacterCard = ({
           };
           return updatedCharacter;
         }
+        return character;
       })
     );
   };
@@ -122,13 +95,14 @@ export const PlayerCharacterCard = ({
           };
           return updatedCharacter;
         }
+        return character;
       })
     );
   };
 
-  console.log("split", ...healthBar);
-  console.log("slice", healthBar.slice(0, 7));
-  console.log("3", healthBar);
+  // console.log("split", ...healthBar);
+  // console.log("slice", healthBar.slice(0, 7));
+  // console.log("3", healthBar);
 
   const subtractHealth = (e) => {
     // e.preventDefault();
@@ -142,6 +116,7 @@ export const PlayerCharacterCard = ({
             };
             return updatedCharacter;
           }
+          return character;
         })
       );
     } else if (currentHealth === 1) {
@@ -154,6 +129,7 @@ export const PlayerCharacterCard = ({
             };
             return updatedCharacter;
           }
+          return character;
         })
       );
     }
@@ -187,6 +163,7 @@ export const PlayerCharacterCard = ({
             };
             return updatedCharacter;
           }
+          return character;
         })
       );
     }
