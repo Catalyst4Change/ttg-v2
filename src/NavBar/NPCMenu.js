@@ -5,11 +5,9 @@ import { StockNPCs } from "../NPCCardsContainer/StockNPCs";
 
 export const NPCMenu = ({ addNPC, setDeployNewNPCForm }) => {
   const generateNPCButtons = () => {
-    return StockNPCs.map((npcObject, i) => {
-      const npcArray = Object.values(npcObject);
-      const npc = npcArray[0];
+    return StockNPCs.map((npc, i) => {
       return (
-        <button key={i} onClick={() => addNPC(npcObject)}>
+        <button key={i} onClick={() => addNPC(npc)}>
           {npc.type}
         </button>
       );

@@ -3,10 +3,19 @@ import "../../App.scss";
 import "./NPCCard.scss";
 import { NPCHealth } from "./NPCHealth/NPCHealth.js";
 
-export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
-  const { type, health, power, initiative, combatTraits, flavorText } = npc[0];
-  const [currentHealth, setCurrentHealth] = useState(health);
+export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
+  const {
+    type,
+    currentHealth,
+    maxHealth,
+    power,
+    initiative,
+    combatTraits,
+    notes,
+    flavorText,
+  } = npc;
   const [healthBar, setHealthBar] = useState("❗️");
+  console.log(npc.combatTraits);
 
   const GenerateNPCHealthBar = (health, setHealthBar) => {
     let bar = [];
@@ -16,19 +25,56 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
     setHealthBar(bar);
   };
 
+  const subtractHealth = () => {
+    if (currentHealth >= 1) {
+      const reducedHealth = currentHealth - 1;
+      setNPCs(
+        NPCs.map((character, i) => {
+          if (i === NPCindex) {
+            console.log(character, i);
+            const updatedCharacter = {
+              ...character,
+              currentHealth: reducedHealth,
+            };
+            return updatedCharacter;
+          }
+          return character;
+        })
+      );
+    }
+  };
+
+  const addHealth = () => {
+    if (currentHealth < maxHealth) {
+      const increasedHealth = currentHealth + 1;
+      setNPCs(
+        NPCs.map((character, i) => {
+          if (i === NPCindex) {
+            console.log(character, i);
+            const updatedCharacter = {
+              ...character,
+              currentHealth: increasedHealth,
+            };
+            return updatedCharacter;
+          }
+          return character;
+        })
+      );
+    }
+  };
+
   useEffect(() => {
-    GenerateNPCHealthBar(health, setHealthBar);
-  }, []);
+    GenerateNPCHealthBar(currentHealth, setHealthBar);
+  }, [currentHealth]);
 
   const displayCombatTraits = () => {
-    return combatTraits.map((traitObject, i) => {
-      const traitArray = Object.values(traitObject);
+    console.log(combatTraits);
+    return combatTraits.map((trait, i) => {
       const lastIndex = () => {
-        if (combatTraits[combatTraits.length - 1] === traitObject) {
+        if (trait[combatTraits.length - 1] === trait) {
           return "true";
         }
       };
-      const trait = traitArray[0];
       return (
         <div key={i}>
           <span className="row tooltip">
@@ -41,17 +87,34 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
     });
   };
 
+  const updateNPCNotes = (event) => {
+    const newNotes = event.target.value;
+    setNPCs(
+      NPCs.map((character, i) => {
+        if (i === NPCindex) {
+          console.log(character, i);
+          const updatedCharacter = {
+            ...character,
+            notes: newNotes,
+          };
+          return updatedCharacter;
+        }
+        return character;
+      })
+    );
+  };
+
   return (
     <main className="npc-card">
       <h3 className="title row space-evenly">{type}</h3>
       <div className="health">
         {
           <NPCHealth
-            maxHealth={health}
+            maxHealth={maxHealth}
             currentHealth={currentHealth}
-            setCurrentHealth={setCurrentHealth}
             healthBar={healthBar}
-            setHealthBar={setHealthBar}
+            subtractHealth={subtractHealth}
+            addHealth={addHealth}
           />
         }
       </div>
@@ -86,7 +149,12 @@ export const NPCCard = ({ npc, deleteNPC, NPCindex }) => {
       <div className="column center">
         <span className="flavor column ">{flavorText}</span>
         <hr></hr>
-        <textarea className="npc-notes" placeholder="Notes..."></textarea>
+        <textarea
+          className="npc-notes"
+          value={notes}
+          placeholder="Notes..."
+          onChange={(event) => updateNPCNotes(event)}
+        ></textarea>
         <button
           className="delete-npc-button"
           value={NPCindex}

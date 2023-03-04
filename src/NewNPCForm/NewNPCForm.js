@@ -3,7 +3,7 @@ import "../App.scss";
 import "./NewPlayerCharacterForm.scss";
 import { NPCCombatTraits } from "../NPCCardsContainer/NPCCombatTraitsList";
 
-export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
+export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
   const [type, setType] = useState("");
   const [health, setHealth] = useState(1);
   const [power, setPower] = useState(1);
@@ -97,7 +97,8 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC }) => {
 
     const newNPC = {
       type: type,
-      health: health,
+      currentHealth: health,
+      maxHealth: health,
       power: power,
       initiative: initiative,
       combatTraits: combatTraits,

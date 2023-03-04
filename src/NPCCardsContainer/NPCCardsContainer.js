@@ -27,9 +27,11 @@ export const NPCCardsContainer = ({
   const displayNPCs = () => {
     return NPCs.map((npc, i) => {
       return (
-        <div className="npc-card-container" key={`${Object.keys(npc)}${i}`}>
+        <div className="npc-card-container" key={`${npc.name}${i}`}>
           <NPCCard
-            npc={Object.values(npc)}
+            npc={npc}
+            NPCs={NPCs}
+            setNPCs={setNPCs}
             deleteNPC={deleteNPC}
             NPCindex={i}
           />
@@ -43,6 +45,7 @@ export const NPCCardsContainer = ({
       <div>
         {deployNewNPCForm && (
           <NewNPCForm
+            NPCs={NPCs}
             setDeployNewNPCForm={setDeployNewNPCForm}
             addNPC={addNPC}
           />

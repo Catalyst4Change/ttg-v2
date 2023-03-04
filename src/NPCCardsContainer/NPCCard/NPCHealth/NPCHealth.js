@@ -4,27 +4,10 @@ import "./NPCHealth.scss";
 export const NPCHealth = ({
   maxHealth,
   currentHealth,
-  setCurrentHealth,
   healthBar,
-  setHealthBar,
+  subtractHealth,
+  addHealth,
 }) => {
-  const subtractHealth = (e) => {
-    if (currentHealth > 1) {
-      setCurrentHealth(currentHealth - 1);
-      setHealthBar(healthBar.slice(0, -1));
-    } else if (currentHealth === 1) {
-      setCurrentHealth(0);
-      setHealthBar([]);
-    }
-  };
-
-  const addHealth = () => {
-    if (currentHealth < maxHealth) {
-      setCurrentHealth(currentHealth + 1);
-      setHealthBar((healthBar) => [...healthBar, "🔴"]);
-    }
-  };
-
   return (
     <section id="npc-health" className="column center">
       <div className="vitals-health row center">
@@ -33,7 +16,7 @@ export const NPCHealth = ({
           type="button"
           name="health"
           value={currentHealth}
-          onClick={(e) => subtractHealth(e)}
+          onClick={subtractHealth}
         >
           🔽
         </button>

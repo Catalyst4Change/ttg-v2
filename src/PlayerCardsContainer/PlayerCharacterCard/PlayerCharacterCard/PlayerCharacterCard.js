@@ -25,8 +25,6 @@ export const PlayerCharacterCard = ({
     maxHealth,
     currentHealth,
     healthBar,
-    currentStatus,
-    heroPoints,
     notes,
     antiJoker,
     attributes,
