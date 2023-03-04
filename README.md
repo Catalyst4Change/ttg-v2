@@ -14,14 +14,14 @@ I digitized Space Kings' character sheets, then did all the math and logic to ma
 - Delete a card if the character dies! So it goes.
 - Stare into 8-bit space for hours on end!
 
-### It is a desktop web-app available for free [HERE](https://space-kings-desktop.vercel.app).
+### It is a desktop web-app available for free [HERE](https://space-kings-desktop.vercel.app). It looks best on Chrome at the moment.
 
 If you find a bug or have an idea, I would love to hear any feedback at [catalystfourchange@icloud.com](CatalystFourChange@iCloud.com).  
 If you like it, consider giving me a job and paying me to build more cool stuff.  
 While you're at it, checkout my website: [catalyst.sex](https://catalyst.sex)
 
 ![screenshot of app showing player characters](https://github.com/Catalyst4Change/ttg-v2/blob/main/Screenshot%202023-03-04%20at%202.19.46%20AM.png)
-![screenshot of NPCs)[https://github.com/Catalyst4Change/ttg-v2/blob/main/Screenshot%202023-03-04%20at%202.32.37%20AM.png]
+![screenshot of NPCs](https://github.com/Catalyst4Change/ttg-v2/blob/main/Screenshot%202023-03-04%20at%202.32.37%20AM.png)
 
 ### Known bugs and next steps:
 - Fix the wonky styling issues in Safari. Looks great in Chrome tho.
