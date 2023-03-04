@@ -20,8 +20,8 @@ If you find a bug or have an idea, I would love to hear any feedback at [catalys
 If you like it, consider giving me a job and paying me to build more cool stuff.  
 While you're at it, checkout my website: [catalyst.sex](https://catalyst.sex)
 
-[https://github.com/Catalyst4Change/ttg-v2/blob/main/Screenshot%202023-03-04%20at%202.19.46%20AM.png](screenshot of app showing player characters)
-
+![screenshot of app showing player characters](https://github.com/Catalyst4Change/ttg-v2/blob/main/Screenshot%202023-03-04%20at%202.19.46%20AM.png)
+![screenshot of NPCs)[
 
 ### Known bugs and next steps:
 - Fix the wonky styling issues in Safari. Looks great in Chrome tho.
