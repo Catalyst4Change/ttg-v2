@@ -9,7 +9,7 @@ I digitized Space Kings' character sheets, then did all the math and logic to ma
 - View all your stats at a glance and mouseover any term to see it's definition!
 - Lose and gain Health, plus be shown your condition at any point!
 - Keep track of Drive, Dodge, Hero Points, and the vital Anti-Joker! 
-- Add notes to the character to monitor status or remind you of your Ultimate traits!
+- Add notes to the character to track inventory or remind you of your Ultimate traits!
 - Deploy pre-made NPCs or create your own!
 - Delete a card if the character dies! So it goes.
 - Stare into 8-bit space for hours on end!
