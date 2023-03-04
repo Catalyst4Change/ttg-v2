@@ -189,17 +189,17 @@ export const PlayerCharacterCard = ({
     }
   };
 
-  const resetToOriginal = () => {
-    // setCurrentHealth(maxHealth);
-    // GenerateHealthBar(maxHealth, setHealthBar);
-    // setStatuses({
-    //   initiative: attributes.presence + attributes.agility,
-    //   dodge: attributes.agility + attributes.wit - 2,
-    //   drive: attributes.wit + attributes.presence,
-    //   crit: attributes.charm,
-    //   heroPoints: 0,
-    // });
-  };
+  // const resetToOriginal = () => {
+  //   // setCurrentHealth(maxHealth);
+  //   // GenerateHealthBar(maxHealth, setHealthBar);
+  //   // setStatuses({
+  //   //   initiative: attributes.presence + attributes.agility,
+  //   //   dodge: attributes.agility + attributes.wit - 2,
+  //   //   drive: attributes.wit + attributes.presence,
+  //   //   crit: attributes.charm,
+  //   //   heroPoints: 0,
+  //   // });
+  // };
 
   return (
     <main className="character-card">
@@ -241,7 +241,7 @@ export const PlayerCharacterCard = ({
         <CharProficiencies chosenProficiencies={chosenProficiencies} />
       </div>
       <hr></hr>
-      <div className="notes-area">
+      <div className="notes-area column center">
         <textarea
           value={notes}
           className="char-notes-text"
@@ -254,7 +254,7 @@ export const PlayerCharacterCard = ({
         <CardOptionsMenu
           playerIndex={playerIndex}
           deletePlayerCharacter={deletePlayerCharacter}
-          resetToOriginal={resetToOriginal}
+          // resetToOriginal={resetToOriginal}
         />
       </div>
       {/* ultimates */}

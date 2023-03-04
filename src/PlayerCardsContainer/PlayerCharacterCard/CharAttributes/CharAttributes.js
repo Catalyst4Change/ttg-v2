@@ -12,18 +12,16 @@ export const CharAttributes = ({ attributes }) => {
   };
 
   return (
-    <main id="char-attributes">
-      <h3 className="section-title">Attributes</h3>
+    <main className="char-attributes">
+      <h3 className="section-title row center">Attributes</h3>
       <section className="attributes-grid">
-        <div className="grid-item">
-          <span className="tooltip">
-            Brawn:
-            <span className="tooltip-text">
-              Brawn describes a character's raw physical strength, size, and
-              resilience.
-            </span>
+        <span className="tooltip grid-item">
+          Brawn:
+          <span className="tooltip-text">
+            Brawn describes a character's raw physical strength, size, and
+            resilience.
           </span>
-        </div>
+        </span>
         <div className="grid-item">
           {showAttributeEmojis(attributes.brawn, "💪")}
         </div>

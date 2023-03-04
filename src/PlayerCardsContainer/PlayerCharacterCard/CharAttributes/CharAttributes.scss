@@ -1,24 +1,21 @@
-#char-attributes {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+.char-attributes {
+  height: auto;
 }
 
 .section-title {
-  margin: auto;
+  margin: 0 auto;
 }
 
 .attributes-grid {
   width: 100%;
+  height: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 10px;
+  row-gap: 5px;
 
   .grid-item {
-    padding: 0 5%;
+    padding-left: 10%;
     flex-direction: row;
     justify-content: baseline;
     text-align: left;

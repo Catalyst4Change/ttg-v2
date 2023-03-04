@@ -4,7 +4,7 @@ import "../../../App.scss";
 export const CardOptionsMenu = ({
   playerIndex,
   deletePlayerCharacter,
-  resetToOriginal,
+  // resetToOriginal,
 }) => {
   return (
     <div id="card-options" className="row space-evenly">
@@ -15,7 +15,7 @@ export const CardOptionsMenu = ({
         DELETE
       </button>
 
-      <button onClick={resetToOriginal}>REFRESH</button>
+      {/* <button onClick={resetToOriginal}>REFRESH</button> */}
     </div>
   );
 };

@@ -9,9 +9,9 @@ export const CharStats = ({
   toggleAntiJoker,
 }) => {
   return (
-    <main id="char-stats">
+    <main className="char-stats">
       <h3 className="stats-title">Stats</h3>
-      <div className="badge initiative tooltip">
+      <div className="badge initiative tooltip ">
         ⏩ = {stats.initiative}
         <div className="tooltip-text">
           Initiative determines your turn order in battle.
@@ -54,7 +54,7 @@ export const CharStats = ({
         </button>
       </div>
 
-      <div className="drive row space-evenly">
+      <div className="drive row space-between">
         <button
           className="stepper-button"
           type="button"
@@ -83,7 +83,7 @@ export const CharStats = ({
         </button>
       </div>
 
-      <div className="hero-points row space-evenly">
+      <div className="hero-points row space-between">
         <button
           className="stepper-button"
           type="button"
@@ -113,12 +113,14 @@ export const CharStats = ({
         </button>
       </div>
 
-      <label id="anti-joker" className="tooltip">
+      <label className="row space-evenly">
         <input type="checkbox" checked={antiJoker} onChange={toggleAntiJoker} />
-        Anti-Joker
-        <span className="tooltip-text">
-          When Jokers and Anti-Jokers collide, they obliterate each other. Use
-          wisely to avoid the chaotic effects of flipping a Joker.
+        <span className="tooltip">
+          Anti-Joker
+          <span className="tooltip-text">
+            When Jokers and Anti-Jokers collide, they obliterate each other. Use
+            wisely to avoid the chaotic effects of flipping a Joker.
+          </span>
         </span>
       </label>
     </main>
