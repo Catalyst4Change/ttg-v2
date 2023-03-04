@@ -42,12 +42,12 @@
   .trait {
     grid-area: trait;
   }
-
-  .npc-notes {
-    width: 90%;
-    height: 50px;
+  .notes-container {
     min-height: fit-content;
-    margin: 5px;
+    .npc-notes {
+      width: 90%;
+      height: 50px;
+    }
   }
 }
 

@@ -148,12 +148,14 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
       <div className="column center">
         <span className="flavor column ">{flavorText}</span>
         <hr></hr>
-        <textarea
-          className="npc-notes"
-          value={notes}
-          placeholder="Notes..."
-          onChange={(event) => updateNPCNotes(event)}
-        ></textarea>
+        <div className="notes-container">
+          <textarea
+            className="npc-notes"
+            value={notes}
+            placeholder="Notes..."
+            onChange={(event) => updateNPCNotes(event)}
+          ></textarea>
+        </div>
         <button
           className="delete-npc-button"
           value={NPCindex}

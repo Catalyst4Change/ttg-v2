@@ -27,7 +27,7 @@ export const NPCCardsContainer = ({
   const displayNPCs = () => {
     return NPCs.map((npc, i) => {
       return (
-        <div className="npc-card-container" key={`${npc.name}${i}`}>
+        <div className="npc-card-container" key={npc.name}>
           <NPCCard
             npc={npc}
             NPCs={NPCs}
