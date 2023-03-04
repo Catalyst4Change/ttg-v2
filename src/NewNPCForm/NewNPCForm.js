@@ -45,10 +45,7 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
   };
 
   const displayCombatTraitsSelection = () => {
-    const traitsArray = Object.values(NPCCombatTraits);
-
-    return traitsArray.map((traitObject, i) => {
-      const trait = Object.values(traitObject)[0];
+    return NPCCombatTraits.map((trait, i) => {
       return (
         <div className="combat-trait" key={i}>
           <label className="tooltip">
@@ -58,7 +55,6 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
               value={trait}
               checked={combatTraitsCheckboxes[i]}
               onChange={(event) => checkCombatTrait(event)}
-              // disabled={disableCheckbox()}
             />
             {trait.name}
             <p className="tooltip-text">{trait.text}</p>
@@ -93,7 +89,7 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
 
   const submitNewNPC = (event) => {
     event.preventDefault();
-    addCheckedCombatTraits();
+    // addCheckedCombatTraits();
 
     const newNPC = {
       type: type,
@@ -104,7 +100,7 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
       combatTraits: combatTraits,
       flavorText: flavorText,
     };
-    addNPC([newNPC]);
+    addNPC(newNPC);
   };
 
   const handleCancel = () => {

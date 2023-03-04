@@ -18,8 +18,10 @@
   }
 
   .title {
+    display: inline-block;
+    width: 100%;
     text-align: center;
-    grid-area: title;
+    word-wrap: break-word;
   }
 
   .health {
@@ -32,6 +34,8 @@
 
   .flavor {
     width: 100%;
+    display: inline-block;
+    word-wrap: break-word;
     text-align: center;
   }
 
@@ -41,6 +45,8 @@
 
   .npc-notes {
     width: 90%;
+    height: 50px;
+    min-height: fit-content;
     margin: 5px;
   }
 }

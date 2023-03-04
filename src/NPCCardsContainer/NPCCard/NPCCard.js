@@ -15,7 +15,7 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
     flavorText,
   } = npc;
   const [healthBar, setHealthBar] = useState("❗️");
-  console.log(npc.combatTraits);
+  console.log(combatTraits);
 
   const GenerateNPCHealthBar = (health, setHealthBar) => {
     let bar = [];
@@ -31,7 +31,6 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
       setNPCs(
         NPCs.map((character, i) => {
           if (i === NPCindex) {
-            console.log(character, i);
             const updatedCharacter = {
               ...character,
               currentHealth: reducedHealth,
@@ -67,21 +66,21 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
     GenerateNPCHealthBar(currentHealth, setHealthBar);
   }, [currentHealth]);
 
+  console.log(combatTraits);
   const displayCombatTraits = () => {
-    console.log(combatTraits);
     return combatTraits.map((trait, i) => {
       const lastIndex = () => {
-        if (trait[combatTraits.length - 1] === trait) {
+        if (i === combatTraits.length - 1) {
           return "true";
         }
       };
       return (
         <div key={i}>
-          <span className="row tooltip">
+          <p className="row tooltip">
             {trait.name}
             {lastIndex() ? "" : ","}
             <span className="tooltip-text">{trait.text}</span>
-          </span>
+          </p>
         </div>
       );
     });
@@ -106,7 +105,7 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
 
   return (
     <main className="npc-card">
-      <h3 className="title row space-evenly">{type}</h3>
+      <h3 className="title row sh3ace-evenly">{type}</h3>
       <div className="health">
         {
           <NPCHealth
