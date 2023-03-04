@@ -1,7 +1,7 @@
 # Space Kings Character Tracker
 
 Hello! I'm Catalyst.  
-As a novice coder and budding Game/Dungeon Master, I wanted to build a way to keep track of my players' characters and my NPCs. It's nice to be able to reference that info at a glance without having a bunch of note cards everywhere. After a solid week of hacking at it, I believe I have made just the thing.
+As a novice coder and budding Game/Dungeon Master, I wanted to build a way to keep track of my players' characters and my NPCs. It's nice to be able to reference that info at a glance without having a bunch of note cards everywhere. After two solid weeks of hacking at it, I believe I have made just the thing.
 I digitized Space Kings' character sheets, then did all the math and logic to make them interactive. [Space Kings](https://supertry.itch.io/spacekings) is a rad [TTRPG](https://en.wikipedia.org/wiki/Tabletop_role-playing_game) made by [Kevin Cole](https://supertry.itch.io), who doesn't seem very litigious. It's fun, less complicated than D&D, plus it's in fucking space. Currently, my players' characters are hard-coded in. Consider it an example of what's possible. Delete them and create your own!
 
 ### A user is able to:
@@ -30,4 +30,5 @@ While you're at it, checkout my website: [catalyst.sex](https://catalyst.sex)
 - Save your player characters and custom NPCs to your computer and eventually to the cloud.
 - Sync Host's account with their players so an update on one changes the other.
 
+In the course of building this I learned a lot about state-management and modifying values of keys in objects in objects in arrays in state. 
 This app was made using HTML, SCSS, React, & JavaScript. I used no dependancies.
