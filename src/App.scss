@@ -1,4 +1,9 @@
-$button-color: rgb(255, 255, 255);
+@import "Normalize.css";
+
+@font-face {
+  font-family: "custom";
+  src: url(./Assets/Fonts/Rocket.ttf) format("truetype");
+}
 
 #App {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif");
@@ -12,6 +17,9 @@ $button-color: rgb(255, 255, 255);
 
   padding-bottom: 5%;
 
+  font-size: 18px;
+  letter-spacing: 0em;
+
   #navbar {
     color: white;
     min-width: 13vw;
@@ -20,6 +28,10 @@ $button-color: rgb(255, 255, 255);
   #cards-section {
     max-width: 85vw;
   }
+}
+
+.emoji {
+  margin: 0;
 }
 
 .form-input {

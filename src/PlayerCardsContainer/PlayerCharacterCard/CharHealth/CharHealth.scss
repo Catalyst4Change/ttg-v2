@@ -19,34 +19,45 @@
 
       #health-total {
         text-align: center;
-        font-size: 1.5em;
-
-        border-radius: 50%;
-        background-color: limegreen;
-        height: 40px;
-        width: 40px;
-
+        .health-total-background {
+          height: 40px;
+          width: 40px;
+        }
         span {
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
+          font-size: 2em;
+          position: absolute;
+          padding: 0% 1%;
           font-weight: bold;
         }
       }
 
       #health-bar {
-        font-size: 1.18em;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-around;
         text-align: left;
         z-index: 2;
 
-        &::before {
-          position: absolute;
-          content: "⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️";
-          z-index: -1;
+        .health-bar-dot {
+          height: 21px;
+          width: 21px;
+        }
+
+        &::after {
+          content: " ";
+        }
+      }
+
+      .health-bar-background {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        padding-left: 4.8%;
+
+        .health-bar-background-dot {
+          filter: grayscale(1);
+          height: 21px;
+          width: 21px;
         }
       }
     }
@@ -72,4 +83,11 @@
 
 .purple {
   color: purple;
+}
+
+.circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: limegreen;
 }

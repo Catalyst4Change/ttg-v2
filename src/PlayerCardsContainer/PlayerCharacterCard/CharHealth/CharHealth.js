@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./CharHealth.scss";
+import greenDot from "../../../Assets/Images/icons8-green-circle-96.png";
 
 export const CharHealth = ({
   maxHealth,
@@ -27,6 +28,15 @@ export const CharHealth = ({
     displayCondition();
   }, [healthRatio]);
 
+  const healthBarBackground = () => {
+    const dots = [];
+    for (let index = 0; index < 12; index++) {
+      const dot = <img className="health-bar-background-dot" src={greenDot} />;
+      dots.push(dot);
+    }
+    return dots;
+  };
+
   return (
     <section id="char-health">
       <div id="health-title">
@@ -37,8 +47,10 @@ export const CharHealth = ({
         <div id="health-display">
           <div id="health-total">
             <span>{maxHealth}</span>
+            <img className="health-total-background" src={greenDot} />
           </div>
           <div id="health-bar">{healthBar}</div>
+          <div className="health-bar-background">{healthBarBackground()}</div>
         </div>
       </div>
 
