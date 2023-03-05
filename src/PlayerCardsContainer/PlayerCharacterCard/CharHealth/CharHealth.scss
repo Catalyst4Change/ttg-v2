@@ -10,7 +10,9 @@
 
   #health-container {
     width: 100%;
+    margin-left: 4%;
     margin-bottom: 10px;
+    position: relative;
 
     #health-display {
       display: flex;
@@ -19,6 +21,7 @@
 
       #health-total {
         text-align: center;
+        position: relative;
         .health-total-background {
           height: 40px;
           width: 40px;
@@ -26,7 +29,7 @@
         span {
           font-size: 2em;
           position: absolute;
-          padding: 0% 1%;
+          padding: 0% 20%;
           font-weight: bold;
         }
       }
@@ -42,17 +45,13 @@
           height: 21px;
           width: 21px;
         }
-
-        &::after {
-          content: " ";
-        }
       }
 
       .health-bar-background {
         display: flex;
         flex-direction: row;
         position: absolute;
-        padding-left: 4.8%;
+        padding-left: 12.5%;
 
         .health-bar-background-dot {
           filter: grayscale(1);

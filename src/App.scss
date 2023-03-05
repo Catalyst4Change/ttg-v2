@@ -18,7 +18,7 @@
   padding-bottom: 5%;
 
   font-size: 18px;
-  letter-spacing: 0em;
+  letter-spacing: normal;
 
   #navbar {
     color: white;
@@ -64,6 +64,11 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.display-icon {
+  height: 20px;
+  width: 20px;
 }
 
 .row {
