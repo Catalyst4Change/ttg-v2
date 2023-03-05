@@ -97,10 +97,6 @@ export const ProficienciesForm = ({
       </p>
       <div className="choose-skills">{displayProficienciesSelection()}</div>
       <div className="row space-evenly">
-        <button className="form-button" type="button" onClick={handleSubmit}>
-          DONE
-        </button>
-
         <button className="form-button" type="button" onClick={retardFormPage}>
           BACK
         </button>
@@ -111,6 +107,10 @@ export const ProficienciesForm = ({
           onClick={(event) => cancelNewCharacter(event)}
         >
           CANCEL
+        </button>
+
+        <button className="form-button" type="button" onClick={handleSubmit}>
+          DONE
         </button>
         {submissionError && (
           <p>You must select {remainingProficiencies()} more Proficiencies.</p>

@@ -52,16 +52,16 @@ export const BasicsForm = ({
         onChange={(e) => setCharImage(e.target.value)}
       />
       <div className="row space-evenly">
-        <button className="form-button" type="submit">
-          NEXT
-        </button>
-
         <button
           className="form-button"
           type="button"
           onClick={() => setDeployNewCharacterForm(false)}
         >
           CANCEL
+        </button>
+
+        <button className="form-button" type="submit">
+          NEXT
         </button>
       </div>
     </form>

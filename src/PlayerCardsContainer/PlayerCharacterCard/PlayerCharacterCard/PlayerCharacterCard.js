@@ -7,6 +7,9 @@ import { CharMasteries } from "../CharMasteries/CharMasteries";
 import { CharProficiencies } from "../CharProficiencies/CharProficiencies";
 import { CardOptionsMenu } from "../CardOptionsMenu/CardOptionsMenu";
 import { GenerateHealthBar } from "../CharHealth/GenerateHealthBar";
+import greenDot from "../../../Assets/Images/icons8-green-circle-96.png";
+import yellowDot from "../../../Assets/Images/icons8-yellow-circle-96.png";
+import redDot from "../../../Assets/Images/icons8-red-circle-96.png";
 import "./PlayerCharacterCard.scss";
 import "../../../App.scss";
 
@@ -162,11 +165,11 @@ export const PlayerCharacterCard = ({
     if (currentHealth < maxHealth) {
       const emoji = () => {
         if (healthRatio < 0.33) {
-          return "🔴";
+          return <img className="health-bar-dot" src={redDot} />;
         } else if (healthRatio >= 0.33 && healthRatio <= 0.66) {
-          return "🟡";
+          return <img className="health-bar-dot" src={yellowDot} />;
         } else if (healthRatio >= 0.67) {
-          return "🟢";
+          return <img className="health-bar-dot" src={greenDot} />;
         }
       };
 

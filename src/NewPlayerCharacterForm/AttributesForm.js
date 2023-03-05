@@ -249,10 +249,6 @@ export const AttributesForm = ({
         </button>
       </div>
       <div className="row space-evenly">
-        <button className="form-button" type="button" onClick={handleSubmit}>
-          NEXT
-        </button>
-
         <button className="form-button" type="button" onClick={retardFormPage}>
           BACK
         </button>
@@ -263,6 +259,10 @@ export const AttributesForm = ({
           onClick={() => setDeployNewCharacterForm(false)}
         >
           CANCEL
+        </button>
+
+        <button className="form-button" type="button" onClick={handleSubmit}>
+          NEXT
         </button>
       </div>
       {submissionError && (
