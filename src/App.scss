@@ -42,7 +42,9 @@
 .form-attribute-stepper {
   width: 80%;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin-top: 10px;
 }
 
@@ -107,16 +109,6 @@ p {
   padding: 5%;
 }
 
-.stepper-button {
-  all: unset;
-  filter: grayscale(1);
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    filter: grayscale(0);
-    transition: all 0.3s ease-in-out;
-  }
-}
-
 .card-options {
   padding-top: 5px;
 
@@ -173,4 +165,17 @@ p {
   &:hover .tooltip-text {
     visibility: visible;
   }
+}
+
+.invert-colors {
+  filter: invert(1);
+}
+
+.form-stepper {
+  width: 40px;
+  height: 40px;
+}
+
+.stepper-button {
+  all: unset;
 }

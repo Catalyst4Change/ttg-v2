@@ -65,7 +65,12 @@
   #health-condition {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    .health-stepper {
+      height: 40px;
+      width: 40px;
+    }
   }
 }
 .red {

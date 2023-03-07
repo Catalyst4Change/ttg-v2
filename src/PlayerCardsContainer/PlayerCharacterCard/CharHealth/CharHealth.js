@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./CharHealth.scss";
 import greenDot from "../../../Assets/Images/icons8-green-circle-96.png";
+import chevDown from "../../../Assets/Images/icons8-chevron-down-white.png";
+import chevUp from "../../../Assets/Images/icons8-chevron-up-white.png";
 
 export const CharHealth = ({
   maxHealth,
@@ -31,7 +33,9 @@ export const CharHealth = ({
   const healthBarBackground = () => {
     const dots = [];
     for (let index = 0; index < 12; index++) {
-      const dot = <img className="health-bar-background-dot" src={greenDot} />;
+      const dot = (
+        <img key={index} className="health-bar-background-dot" src={greenDot} />
+      );
       dots.push(dot);
     }
     return dots;
@@ -55,15 +59,14 @@ export const CharHealth = ({
       </div>
 
       <div id="health-condition">
-        <button
-          className="stepper-button"
-          type="button"
+        <img
+          className="health-stepper"
+          src={chevDown}
           name="health"
           value={currentHealth}
           onClick={(e) => subtractHealth(e)}
-        >
-          🔽
-        </button>
+        />
+
         <span>Condition:</span>
         <div
           className={
@@ -74,15 +77,13 @@ export const CharHealth = ({
         >
           <b>{condition}</b>
         </div>
-        <button
-          className="stepper-button"
-          type="button"
-          name="presence"
+        <img
+          className="health-stepper"
+          src={chevUp}
+          name="health"
           value={currentHealth}
           onClick={(e) => addHealth(e)}
-        >
-          🔼
-        </button>
+        />
       </div>
     </section>
   );

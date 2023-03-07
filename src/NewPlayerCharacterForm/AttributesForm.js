@@ -9,9 +9,25 @@ export const AttributesForm = ({
   setDeployNewCharacterForm,
 }) => {
   const [submissionError, setSubmissionError] = useState(false);
+  const [temporaryPoints, setTemporaryPoints] = useState({
+    agility: 1,
+    brawn: 1,
+    charm: 1,
+    intelligence: 1,
+    presence: 1,
+    wit: 1,
+  });
+  console.log(temporaryPoints);
+
+  /* 
+  create copy of attributes 
+  each stepper adds to relevant attribute
+  track points as applied
+  setAttributes(temporary)
+  */
 
   const currentAttributePoints = () => {
-    return Object.values(attributes).reduce((acc, cur) => {
+    return Object.values(temporaryPoints).reduce((acc, cur) => {
       acc += cur;
       return acc;
     }, 0);
@@ -22,6 +38,7 @@ export const AttributesForm = ({
   );
 
   const attributeStepUp = (e) => {
+    console.log(e);
     const { name, value } = e.target;
     const numValue = parseInt(value);
     if (attributesPoints > 0 && attributes[name] < 4) {

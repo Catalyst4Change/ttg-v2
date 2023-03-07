@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../App.scss";
-import "./NewPlayerCharacterForm.scss";
+import "./NewNPCForm.scss";
 import { NPCCombatTraits } from "../NPCCardsContainer/NPCCombatTraitsList";
+import chevDown from "../Assets/Images/icons8-chevron-down-black.png";
+import chevUp from "../Assets/Images/icons8-chevron-up-black.png";
 
 export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
   const [type, setType] = useState("");
@@ -109,7 +111,7 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
 
   return (
     <main className="new-form-container column center">
-      <h3>New NPC</h3>
+      <h2>New NPC</h2>
       <form onSubmit={(event) => submitNewNPC(event)} className="column center">
         <input
           required
@@ -119,92 +121,74 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
           value={type}
           onChange={(e) => setType(e.target.value)}
         />
-        <div className="form-attribute-stepper ">
-          <button
-            className="stepper-button"
-            type="button"
+        <div className="form-attribute-stepper">
+          <img
+            className="form-stepper"
+            src={chevDown}
             name="health"
-            value={health}
             onClick={healthStepDown}
-          >
-            🔽
-          </button>
+          />
           <div>
-            <span className="tooltip">
+            <h3 className="tooltip">
               Health:{" "}
               <span className="tooltip-text">
                 How much damage this NPC takes before being deaded.
               </span>
-            </span>{" "}
-            {health}
+            </h3>{" "}
+            <b>{health}</b>
           </div>
-          <button
-            className="stepper-button"
-            type="button"
+          <img
+            className="form-stepper"
+            src={chevUp}
             name="health"
-            value={health}
             onClick={healthStepUp}
-          >
-            🔼
-          </button>
+          />
         </div>
         <div className="form-attribute-stepper ">
-          <button
-            className="stepper-button"
-            type="button"
+          <img
+            className="form-stepper"
+            src={chevDown}
             name="power"
-            value={power}
             onClick={powerStepDown}
-          >
-            🔽
-          </button>
+          />
           <div>
-            <span className="tooltip">
+            <h3 className="tooltip">
               Power:
               <span className="tooltip-text">
                 How many cards this NPC flips on an action/attack.
               </span>
-            </span>{" "}
-            {power}
+            </h3>{" "}
+            <b>{power}</b>
           </div>
-          <button
-            className="stepper-button"
-            type="button"
+          <img
+            className="form-stepper"
+            src={chevUp}
             name="power"
-            value={power}
             onClick={powerStepUp}
-          >
-            🔼
-          </button>
+          />
         </div>
         <div className="form-attribute-stepper ">
-          <button
-            className="stepper-button"
-            type="button"
+          <img
+            className="form-stepper"
+            src={chevDown}
             name="initiative"
-            value={initiative}
             onClick={initiativeStepDown}
-          >
-            🔽
-          </button>
+          />
           <div>
-            <span className="tooltip">
+            <h3 className="tooltip">
               Initiative:
               <span className="tooltip-text">
                 When this character acts in combat.
               </span>
-            </span>{" "}
-            {initiative}
+            </h3>{" "}
+            <b>{initiative}</b>
           </div>
-          <button
-            className="stepper-button"
-            type="button"
+          <img
+            className="form-stepper"
+            src={chevUp}
             name="initiative"
-            value={initiative}
             onClick={initiativeStepUp}
-          >
-            🔼
-          </button>
+          />
         </div>
         <div className="combat-traits-container">
           {displayCombatTraitsSelection()}
