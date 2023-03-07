@@ -14,7 +14,7 @@ I digitized Space Kings' character sheets, then did all the math and logic to ma
 - Delete a card if the character dies! So it goes.
 - Stare into 8-bit space for hours on end!
 
-### It is a desktop web-app available for free [HERE](https://space-kings-desktop.vercel.app). It looks best on Chrome at the moment.
+### It is a desktop web-app available for free [HERE](https://space-kings-desktop.vercel.app).
 
 If you find a bug or have an idea, I would love to hear any feedback at [CatalystFourChange@iCloud.com](mailto:catalystfourchange@icloud.com).  
 If you like it, consider giving me a job and paying me to build more cool stuff.  
