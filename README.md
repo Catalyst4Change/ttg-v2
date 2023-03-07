@@ -25,6 +25,7 @@ While you're at it, checkout my website: [catalyst.sex](https://catalyst.sex)
 
 ### Known bugs and next steps:
 - Fix the wonky styling issues in Safari. Looks great in Chrome tho.
+  - Turns out Safari adds a few pixels of white space around emojis that is not present in Chrome or Firefox. This very small differeence was causing huge problems with my UI. I'm in the process of removing the emojis and replacing them with PNGs.
 - Select Ulitimates during character creation as a choice based on your Attributes & Skills.
 - Add mobile-firendly individual character sheet for players. 
 - Save your player characters and custom NPCs to your computer and eventually to the cloud.
