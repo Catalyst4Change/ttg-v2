@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../App.scss";
+import "./NewPlayerCharacterForm.scss";
+import chevronUp from "../Assets/Images/icons8-chevron-up-black.png";
+import chevronDown from "../Assets/Images/icons8-chevron-down-black.png";
 
 export const AttributesForm = ({
   attributes,
@@ -78,7 +81,11 @@ export const AttributesForm = ({
           value={attributes.brawn}
           onClick={(e) => attributeStepDown(e)}
         >
-          🔽
+          <img
+            src={chevronDown}
+            alt="down-facing chevron"
+            className="chevron"
+          />
         </button>
         <div>
           <span className="tooltip">
@@ -99,7 +106,7 @@ export const AttributesForm = ({
           value={attributes.brawn}
           onClick={(e) => attributeStepUp(e)}
         >
-          🔼
+          <img src={chevronUp} alt="up-facing chevron" className="chevron" />
         </button>
       </div>
 
@@ -111,7 +118,11 @@ export const AttributesForm = ({
           value={attributes.agility}
           onClick={(e) => attributeStepDown(e)}
         >
-          🔽
+          <img
+            src={chevronDown}
+            alt="down-facing chevron"
+            className="chevron"
+          />
         </button>
         <div>
           <span className="tooltip">
@@ -132,7 +143,7 @@ export const AttributesForm = ({
           value={attributes.agility}
           onClick={(e) => attributeStepUp(e)}
         >
-          🔼
+          <img src={chevronUp} alt="up-facing chevron" className="chevron" />
         </button>
       </div>
 
@@ -144,7 +155,11 @@ export const AttributesForm = ({
           value={attributes.wit}
           onClick={(e) => attributeStepDown(e)}
         >
-          🔽
+          <img
+            src={chevronDown}
+            alt="down-facing chevron"
+            className="chevron"
+          />
         </button>
         <div>
           <span className="tooltip">
@@ -164,7 +179,7 @@ export const AttributesForm = ({
           value={attributes.wit}
           onClick={(e) => attributeStepUp(e)}
         >
-          🔼
+          <img src={chevronUp} alt="up-facing chevron" className="chevron" />
         </button>
       </div>
 
@@ -176,7 +191,11 @@ export const AttributesForm = ({
           value={attributes.intelligence}
           onClick={(e) => attributeStepDown(e)}
         >
-          🔽
+          <img
+            src={chevronDown}
+            alt="down-facing chevron"
+            className="chevron"
+          />
         </button>
         <div>
           <span className="tooltip">
@@ -197,7 +216,7 @@ export const AttributesForm = ({
           value={attributes.intelligence}
           onClick={(e) => attributeStepUp(e)}
         >
-          🔼
+          <img src={chevronUp} alt="up-facing chevron" className="chevron" />
         </button>
       </div>
 
@@ -209,7 +228,11 @@ export const AttributesForm = ({
           value={attributes.charm}
           onClick={(e) => attributeStepDown(e)}
         >
-          🔽
+          <img
+            src={chevronDown}
+            alt="down-facing chevron"
+            className="chevron"
+          />
         </button>
         <div>
           <span className="tooltip">
@@ -230,7 +253,7 @@ export const AttributesForm = ({
           value={attributes.charm}
           onClick={(e) => attributeStepUp(e)}
         >
-          🔼
+          <img src={chevronUp} alt="up-facing chevron" className="chevron" />
         </button>
       </div>
 
@@ -242,7 +265,11 @@ export const AttributesForm = ({
           value={attributes.presence}
           onClick={(e) => attributeStepDown(e)}
         >
-          🔽
+          <img
+            src={chevronDown}
+            alt="down-facing chevron"
+            className="chevron"
+          />
         </button>
         <div>
           <span className="tooltip">
@@ -262,7 +289,7 @@ export const AttributesForm = ({
           value={attributes.presence}
           onClick={(e) => attributeStepUp(e)}
         >
-          🔼
+          <img src={chevronUp} alt="up-facing chevron" className="chevron" />
         </button>
       </div>
       <div className="row space-evenly">
