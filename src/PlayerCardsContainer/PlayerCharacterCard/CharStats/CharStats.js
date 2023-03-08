@@ -5,6 +5,8 @@ import queenOfHearts from "../../../Assets/Images/love_heart_02-512.webp";
 import dodge from "../../../Assets/Images/icons8-unavailable-64.png";
 import drive from "../../../Assets/Images/icons8-lightning-bolt-96.png";
 import heroPoint from "../../../Assets/Images/icons8-army-star-100.png";
+import chevronUp from "../../../Assets/Images/icons8-chevron-up-white.png";
+import chevronDown from "../../../Assets/Images/icons8-chevron-down-white.png";
 
 export const CharStats = ({
   stats,
@@ -48,7 +50,11 @@ export const CharStats = ({
           value={stats.dodge}
           onClick={(event) => statStepDown(event)}
         >
-          🔽
+          <img
+            className="stat-icon"
+            src={chevronDown}
+            alt="chevron pointing down"
+          />
         </button>
 
         <div className="badge tooltip">
@@ -70,7 +76,11 @@ export const CharStats = ({
           value={stats.dodge}
           onClick={(event) => statStepUp(event)}
         >
-          🔼
+          <img
+            className="stat-icon"
+            src={chevronUp}
+            alt="chevron pointing up"
+          />
         </button>
       </div>
 
@@ -82,7 +92,11 @@ export const CharStats = ({
           value={stats.drive}
           onClick={(event) => statStepDown(event)}
         >
-          🔽
+          <img
+            className="stat-icon"
+            src={chevronDown}
+            alt="chevron pointing down"
+          />
         </button>
 
         <div className="badge drive tooltip">
@@ -104,7 +118,11 @@ export const CharStats = ({
           value={stats.drive}
           onClick={(event) => statStepUp(event)}
         >
-          🔼
+          <img
+            className="stat-icon"
+            src={chevronUp}
+            alt="chevron pointing up"
+          />
         </button>
       </div>
 
@@ -116,7 +134,11 @@ export const CharStats = ({
           value={stats.heroPoints}
           onClick={(event) => statStepDown(event)}
         >
-          🔽
+          <img
+            className="stat-icon"
+            src={chevronDown}
+            alt="chevron pointing down"
+          />
         </button>
 
         <div className="badge hero-points tooltip">
@@ -139,7 +161,11 @@ export const CharStats = ({
           value={stats.heroPoints}
           onClick={(event) => statStepUp(event)}
         >
-          🔼
+          <img
+            className="stat-icon"
+            src={chevronUp}
+            alt="chevron pointing up"
+          />
         </button>
       </div>
 
