@@ -14,7 +14,7 @@ I digitized Space Kings' character sheets, then did all the math and logic to ma
 - Delete a card if the character dies! So it goes.
 - Stare into 8-bit space for hours on end!
 
-### It is a desktop web-app available for free [HERE](https://space-kings-desktop.vercel.app). It looks best on Chrome at the moment.
+### It is a desktop web-app available for free [HERE](https://space-kings-desktop.vercel.app).
 
 If you find a bug or have an idea, I would love to hear any feedback at [CatalystFourChange@iCloud.com](mailto:catalystfourchange@icloud.com).  
 If you like it, consider giving me a job and paying me to build more cool stuff.  
@@ -25,6 +25,7 @@ While you're at it, checkout my website: [catalyst.sex](https://catalyst.sex)
 
 ### Known bugs and next steps:
 - Fix the wonky styling issues in Safari. Looks great in Chrome tho.
+  - Turns out Safari adds a few pixels of white space around emojis that is not present in Chrome or Firefox. This very small differeence was causing huge problems with my UI. I'm in the process of removing the emojis and replacing them with PNGs.
 - Select Ulitimates during character creation as a choice based on your Attributes & Skills.
 - Add mobile-firendly individual character sheet for players. 
 - Save your player characters and custom NPCs to your computer and eventually to the cloud.
