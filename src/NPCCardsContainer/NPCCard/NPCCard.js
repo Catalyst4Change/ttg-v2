@@ -104,19 +104,17 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
   };
 
   return (
-    <main className="npc-card">
-      <h3 className="title row sh3ace-evenly">{type}</h3>
-      <div className="health">
-        {
-          <NPCHealth
-            maxHealth={maxHealth}
-            currentHealth={currentHealth}
-            healthBar={healthBar}
-            subtractHealth={subtractHealth}
-            addHealth={addHealth}
-          />
-        }
-      </div>
+    <main className="npc-card column center">
+      <h2 className="title">{type}</h2>
+      {
+        <NPCHealth
+          maxHealth={maxHealth}
+          currentHealth={currentHealth}
+          healthBar={healthBar}
+          subtractHealth={subtractHealth}
+          addHealth={addHealth}
+        />
+      }
       <hr></hr>
       <span className="row center">
         <b>Stats:</b>
@@ -145,25 +143,20 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
         </div>
       )}
       <hr></hr>
-      <div className="column center">
-        <span className="flavor column ">{flavorText}</span>
-        <hr></hr>
-        <div className="notes-container">
-          <textarea
-            className="npc-notes"
-            value={notes}
-            placeholder="Notes..."
-            onChange={(event) => updateNPCNotes(event)}
-          ></textarea>
-        </div>
-        <button
-          className="option-button secondary"
-          value={NPCindex}
-          onClick={(event) => deleteNPC(event)}
-        >
-          DELETE
-        </button>
-      </div>
+      <span className="flavor column center">{flavorText}</span> <hr></hr>
+      <textarea
+        className="npc-notes"
+        value={notes}
+        placeholder="Notes..."
+        onChange={(event) => updateNPCNotes(event)}
+      ></textarea>
+      <button
+        className="option-button secondary"
+        value={NPCindex}
+        onClick={(event) => deleteNPC(event)}
+      >
+        DELETE
+      </button>
     </main>
   );
 };

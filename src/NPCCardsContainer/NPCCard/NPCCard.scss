@@ -15,8 +15,7 @@
   hr {
     width: 100%;
     border-color: $secondary-color;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin: 10px auto 5px auto;
   }
 
   .title {
@@ -24,6 +23,7 @@
     width: 100%;
     text-align: center;
     word-wrap: break-word;
+    margin: 0;
   }
 
   .health {
@@ -44,12 +44,10 @@
   .trait {
     grid-area: trait;
   }
-  .notes-container {
-    min-height: fit-content;
-    .npc-notes {
-      width: 90%;
-      height: 50px;
-    }
+
+  .npc-notes {
+    width: 95%;
+    height: 50px;
   }
 }
 

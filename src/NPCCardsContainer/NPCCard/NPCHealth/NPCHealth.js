@@ -12,7 +12,7 @@ export const NPCHealth = ({
 }) => {
   return (
     <section id="npc-health" className="column center">
-      <div className="vitals-health row center">
+      <div className="vitals-health row space-between">
         <button
           className="stepper-button"
           type="button"
