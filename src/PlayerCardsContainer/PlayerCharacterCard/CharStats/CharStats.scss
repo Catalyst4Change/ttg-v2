@@ -5,4 +5,18 @@
   align-items: center;
   height: auto;
   width: 100%;
+
+  .badge {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .spacer {
+    width: 0.2em;
+  }
+  .stat-icon {
+    width: 1.1em;
+    height: 1.1em;
+  }
 }

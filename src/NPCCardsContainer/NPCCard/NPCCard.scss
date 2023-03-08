@@ -1,3 +1,5 @@
+@import "../../App.scss";
+
 .npc-card {
   display: flex;
   flex-direction: column;
@@ -8,11 +10,11 @@
   margin: 5px;
   padding: 10px;
 
-  background-color: rgba(255, 0, 0, 0.4);
+  background-color: rgba($secondary-color, 0.5);
 
   hr {
     width: 100%;
-    border-color: red;
+    border-color: $secondary-color;
     margin-top: 10px;
     margin-bottom: 5px;
   }

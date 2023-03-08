@@ -1,9 +1,10 @@
-@import "Normalize.css";
-
 @font-face {
   font-family: "custom";
   src: url(./Assets/Fonts/Rocket.ttf) format("truetype");
 }
+
+$primary-color: rgb(195, 255, 0);
+$secondary-color: rgb(255, 0, 242);
 
 #App {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif");

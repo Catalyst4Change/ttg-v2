@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import "./CharStats.scss";
+import initiativeArrow from "../../../Assets/Images/icons8-arrow-67.png";
+import queenOfHearts from "../../../Assets/Images/icons8-14-queen-of-heart-64.png";
+import dodge from "../../../Assets/Images/icons8-exercise-90.png";
+import drive from "../../../Assets/Images/icons8-lightning-bolt-96.png";
+import heroPoint from "../../../Assets/Images/icons8-army-star-100.png";
 
 export const CharStats = ({
   stats,
@@ -12,13 +17,23 @@ export const CharStats = ({
     <main className="char-stats">
       <h3 className="stats-title">Stats</h3>
       <div className="badge initiative tooltip ">
-        ⏩ = {stats.initiative}
+        <img
+          className="initiative-arrow stat-icon"
+          src={initiativeArrow}
+          alt="initiative Arrow"
+        />
+        <div className="spacer" />= {stats.initiative}
         <div className="tooltip-text">
           Initiative determines your turn order in battle.
         </div>
       </div>
       <div className="badge crit tooltip">
-        ❤️ + {stats.crit}
+        <img
+          className="initiative-arrow stat-icon"
+          src={queenOfHearts}
+          alt="queen of hearts"
+        />
+        <div className="spacer" />+ {stats.crit}
         <div className="tooltip-text">
           On flipping the Queen of Hearts, Crit gives you successes equal to
           your crit stat.
@@ -37,9 +52,14 @@ export const CharStats = ({
         </button>
 
         <div className="badge tooltip">
-          🥷 = {stats.dodge}
+          <img
+            className="initiative-arrow stat-icon"
+            src={dodge}
+            alt="person running"
+          />
+          <div className="spacer" />= {stats.dodge}
           <div className="tooltip-text">
-            Dodge determines your turn order in battle.
+            Avoid one incoming damage point per Dodge point spent.
           </div>
         </div>
 
@@ -66,7 +86,12 @@ export const CharStats = ({
         </button>
 
         <div className="badge drive tooltip">
-          🛞 = {stats.drive}
+          <img
+            className="initiative-arrow stat-icon"
+            src={drive}
+            alt="lightning"
+          />
+          <div className="spacer" /> = {stats.drive}
           <div className="tooltip-text">
             Drive gives you an extra card to flip per point spent.
           </div>
@@ -95,7 +120,12 @@ export const CharStats = ({
         </button>
 
         <div className="badge hero-points tooltip">
-          ⭐️ = {stats.heroPoints}
+          <img
+            className="initiative-arrow stat-icon"
+            src={heroPoint}
+            alt="star in circle"
+          />
+          <div className="spacer" /> = {stats.heroPoints}
           <div className="tooltip-text">
             Spending Hero Points gives you TWO extra cards to flip per point
             spent. You may only spend one Hero Point per action.

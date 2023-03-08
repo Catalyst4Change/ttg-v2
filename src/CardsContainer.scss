@@ -1,3 +1,5 @@
+@import "App.scss";
+
 .cards-container {
   display: flex;
   flex-flow: row wrap;
@@ -32,13 +34,13 @@
 
   .player-card-container {
     width: 365px;
-    border: 1px blue solid;
+    border: 1px $primary-color solid;
     margin: 5px;
     height: min-content;
   }
 
   .npc-card-container {
-    border: 1px red solid;
+    border: 1px $secondary-color solid;
     margin: 5px;
     height: min-content;
   }
