@@ -1,12 +1,20 @@
 import React from "react";
 import "./CharAttributes.scss";
 import "../../../App.scss";
+import brawn from "../../../Assets/Images/icons8-punch-100.png";
+import agility from "../../../Assets/Images/icons8-exercise-96.png";
+import intelligence from "../../../Assets/Images/icons8-engineering-100.png";
+import wit from "../../../Assets/Images/icons8-light-bulb-64 (2).png";
+import charm from "../../../Assets/Images/icons8-fantasy-100.png";
+import presence from "../../../Assets/Images/icons8-lotus-64.png";
 
 export const CharAttributes = ({ attributes }) => {
-  const showAttributeEmojis = (att, emoji) => {
-    let display = "";
+  const showAttributeEmojis = (att, symbol) => {
+    let display = [];
     for (let i = 0; i < att; i++) {
-      display += emoji;
+      display.push(
+        <img className="attribute-symbol" src={symbol} alt={[symbol]} />
+      );
     }
     return display;
   };
@@ -25,7 +33,7 @@ export const CharAttributes = ({ attributes }) => {
           </span>
         </div>
         <div className="grid-item">
-          {showAttributeEmojis(attributes.brawn, "💪")}
+          {showAttributeEmojis(attributes.brawn, brawn)}
         </div>
         <div className="grid-item">
           <span className="tooltip">
@@ -37,7 +45,7 @@ export const CharAttributes = ({ attributes }) => {
           </span>
         </div>
         <div className="grid-item">
-          {showAttributeEmojis(attributes.agility, "👟")}
+          {showAttributeEmojis(attributes.agility, agility)}
         </div>
         <div className="grid-item">
           <span className="tooltip">
@@ -49,7 +57,7 @@ export const CharAttributes = ({ attributes }) => {
           </span>
         </div>
         <div className="grid-item">
-          {showAttributeEmojis(attributes.intelligence, "🧠")}
+          {showAttributeEmojis(attributes.intelligence, intelligence)}
         </div>
         <div className="grid-item">
           <span className="tooltip">
@@ -60,7 +68,7 @@ export const CharAttributes = ({ attributes }) => {
           </span>
         </div>
         <div className="grid-item">
-          {showAttributeEmojis(attributes.wit, "⚡️")}
+          {showAttributeEmojis(attributes.wit, wit)}
         </div>
         <div className="grid-item">
           <span className="tooltip">
@@ -72,7 +80,7 @@ export const CharAttributes = ({ attributes }) => {
           </span>
         </div>
         <div className="grid-item">
-          {showAttributeEmojis(attributes.charm, "✨")}
+          {showAttributeEmojis(attributes.charm, charm)}
         </div>
         <div className="grid-item">
           <span className="tooltip">
@@ -84,7 +92,7 @@ export const CharAttributes = ({ attributes }) => {
           </span>
         </div>
         <div className="grid-item">
-          {showAttributeEmojis(attributes.presence, "👤")}
+          {showAttributeEmojis(attributes.presence, presence)}
         </div>
       </section>
     </main>
