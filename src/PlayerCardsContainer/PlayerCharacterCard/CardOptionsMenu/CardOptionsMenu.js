@@ -9,6 +9,7 @@ export const CardOptionsMenu = ({
   return (
     <div id="card-options" className="row space-evenly">
       <button
+        className="option-button primary"
         value={playerIndex}
         onClick={(event) => deletePlayerCharacter(event)}
       >

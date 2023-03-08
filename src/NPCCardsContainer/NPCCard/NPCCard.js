@@ -157,7 +157,7 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
           ></textarea>
         </div>
         <button
-          className="delete-npc-button"
+          className="option-button secondary"
           value={NPCindex}
           onClick={(event) => deleteNPC(event)}
         >

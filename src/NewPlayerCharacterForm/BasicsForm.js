@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.scss";
 
 export const BasicsForm = ({
   playerName,
@@ -36,7 +37,7 @@ export const BasicsForm = ({
         value={charName}
         onChange={(e) => setCharName(e.target.value)}
       />
-      <textarea
+      <input
         required
         className="form-input"
         type="text"
@@ -53,14 +54,14 @@ export const BasicsForm = ({
       />
       <div className="row space-evenly">
         <button
-          className="form-button"
+          className="option-button negative"
           type="button"
           onClick={() => setDeployNewCharacterForm(false)}
         >
           CANCEL
         </button>
 
-        <button className="form-button" type="submit">
+        <button className="option-button positive" type="submit">
           NEXT
         </button>
       </div>

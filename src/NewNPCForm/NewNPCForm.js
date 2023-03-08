@@ -201,8 +201,12 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
         />
         <p></p>
         <div className="row space-evenly">
-          <button onClick={handleCancel}>BACK</button>
-          <button type="submit">DEPLOY</button>
+          <button className="option-button negative" onClick={handleCancel}>
+            BACK
+          </button>
+          <button className="option-button positive" type="submit">
+            DEPLOY
+          </button>
         </div>
       </form>
     </main>

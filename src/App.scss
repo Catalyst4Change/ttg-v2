@@ -4,7 +4,7 @@
 }
 
 $primary-color: rgb(195, 255, 0);
-$secondary-color: rgb(255, 0, 242);
+$secondary-color: rgb(255, 0, 98);
 
 #App {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif");
@@ -37,7 +37,8 @@ $secondary-color: rgb(255, 0, 242);
 
 .form-input {
   width: 80%;
-  margin: 5px;
+  margin: 10px;
+  border: 1px black solid;
 }
 
 .form-attribute-stepper {
@@ -112,13 +113,6 @@ p {
 
 .card-options {
   padding-top: 5px;
-
-  button {
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-top: 10px;
-    filter: invert(1);
-  }
 }
 
 .white {
@@ -179,4 +173,44 @@ p {
 
 .stepper-button {
   all: unset;
+}
+
+.option-button {
+  all: unset;
+  width: 100px;
+  padding: 1%;
+  color: black;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 5px;
+  border: 1px black solid;
+
+  &.primary {
+    border: 1px $primary-color solid;
+    background-color: rgba($primary-color, 0.5);
+  }
+
+  &.secondary {
+    border: 1px $secondary-color solid;
+    background-color: rgba($secondary-color, 0.5);
+  }
+
+  &.positive {
+    border: 1px black solid;
+    background-color: green;
+    color: white;
+  }
+
+  &.neutral {
+    border: 1px black solid;
+    background-color: lightgrey;
+    color: black;
+  }
+
+  &.negative {
+    border: 1px black solid;
+    background-color: firebrick;
+    color: white;
+  }
 }

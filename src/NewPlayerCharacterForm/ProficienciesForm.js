@@ -97,19 +97,27 @@ export const ProficienciesForm = ({
       </p>
       <div className="choose-skills">{displayProficienciesSelection()}</div>
       <div className="row space-evenly">
-        <button className="form-button" type="button" onClick={retardFormPage}>
+        <button
+          className="option-button neutral"
+          type="button"
+          onClick={retardFormPage}
+        >
           BACK
         </button>
 
         <button
-          className="form-button"
+          className="option-button negative"
           type="button"
           onClick={(event) => cancelNewCharacter(event)}
         >
           CANCEL
         </button>
 
-        <button className="form-button" type="button" onClick={handleSubmit}>
+        <button
+          className="option-button positive"
+          type="button"
+          onClick={handleSubmit}
+        >
           DONE
         </button>
         {submissionError && (

@@ -95,19 +95,27 @@ export const MasteriesForm = ({
       <div className="choose-skills">{displayMasterySelection()}</div>
 
       <div className="row space-evenly">
-        <button className="form-button" type="button" onClick={retardFormPage}>
+        <button
+          className="option-button neutral"
+          type="button"
+          onClick={retardFormPage}
+        >
           BACK
         </button>
 
         <button
-          className="form-button"
+          className="option-button negative"
           type="button"
           onClick={() => setDeployNewCharacterForm(false)}
         >
           CANCEL
         </button>
 
-        <button className="form-button" type="button" onClick={handleSubmit}>
+        <button
+          className="option-button positive"
+          type="button"
+          onClick={handleSubmit}
+        >
           NEXT
         </button>
       </div>

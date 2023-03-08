@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./NPCHealth.scss";
+import chevronUp from "../../../Assets/Images/icons8-chevron-up-white.png";
+import chevronDown from "../../../Assets/Images/icons8-chevron-down-white.png";
 
 export const NPCHealth = ({
   maxHealth,
@@ -18,7 +20,11 @@ export const NPCHealth = ({
           value={currentHealth}
           onClick={subtractHealth}
         >
-          🔽
+          <img
+            src={chevronDown}
+            alt="down-facing chevron"
+            className="chevron"
+          />
         </button>
         <div className="health-total">
           <div>Total Health: {maxHealth}</div>
@@ -30,7 +36,7 @@ export const NPCHealth = ({
           value={currentHealth}
           onClick={(e) => addHealth(e)}
         >
-          🔼
+          <img src={chevronUp} alt="up-facing chevron" className="chevron" />
         </button>
       </div>
       <div className="NPC-health-bar">
