@@ -3,7 +3,6 @@
 .cards-container {
   display: flex;
   flex-flow: row wrap;
-  padding: 10px;
 
   .new-form-container {
     z-index: 10 !important;
@@ -33,7 +32,7 @@
   }
 
   .player-card-container {
-    width: 365px;
+    width: 320px;
     border: 1px $primary-color solid;
     margin: 5px;
     height: min-content;

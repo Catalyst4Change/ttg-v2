@@ -56,7 +56,6 @@ export const CharStats = ({
             alt="chevron pointing down"
           />
         </button>
-
         <div className="badge tooltip">
           <img
             className="initiative-arrow stat-icon"
@@ -68,7 +67,6 @@ export const CharStats = ({
             Dodge one incoming damage point per point spent.
           </div>
         </div>
-
         <button
           className="stepper-button"
           type="button"

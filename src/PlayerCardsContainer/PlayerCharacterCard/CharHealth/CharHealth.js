@@ -43,19 +43,15 @@ export const CharHealth = ({
 
   return (
     <section id="char-health">
-      <div id="health-title">
-        <h3 className="section-title">Health</h3>
-      </div>
+      <h3 className="section-title">Health</h3>
 
-      <div id="health-container">
-        <div id="health-display">
-          <div id="health-total">
-            <span>{maxHealth}</span>
-            <img className="health-total-background" src={greenDot} />
-          </div>
-          <div id="health-bar">{healthBar}</div>
-          <div className="health-bar-background">{healthBarBackground()}</div>
+      <div id="health-display">
+        <div id="health-total">
+          <div id="max-health">{maxHealth}</div>
+          <img className="health-total-background" src={greenDot} />
         </div>
+        <div id="health-bar">{healthBar}</div>
+        <div className="health-bar-background">{healthBarBackground()}</div>
       </div>
 
       <div id="health-condition">

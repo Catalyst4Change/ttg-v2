@@ -1,6 +1,5 @@
 import React from "react";
 import "../App.scss";
-import "./NavBar.scss";
 
 export const PCMenu = ({ setDeployNewCharacterForm }) => {
   return (
@@ -8,7 +7,7 @@ export const PCMenu = ({ setDeployNewCharacterForm }) => {
       <b>Create new:</b>
 
       <button
-        className="new-character-button"
+        className="option-button sidebar"
         onClick={() => setDeployNewCharacterForm(true)}
         type="button"
       >

@@ -16,14 +16,25 @@ $secondary-color: rgb(255, 0, 98);
   display: flex;
   flex-direction: row;
 
-  padding-bottom: 5%;
-
   font-size: 16px;
   letter-spacing: normal;
 
   #navbar {
     color: white;
-    min-width: 13vw;
+    margin: 10px 5px 10px 10px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+
+    .creator-credit {
+      margin-top: 20px;
+    }
+
+    .catalyst {
+      font-family: custom;
+    }
   }
 
   #cards-section {
@@ -177,14 +188,16 @@ p {
 
 .option-button {
   all: unset;
-  width: 100px;
+  min-width: 100px;
   padding: 1%;
   color: black;
   border-radius: 5px;
   font-weight: bold;
   font-size: 1.1em;
   margin-top: 5px;
+  background-color: white;
   border: 1px black solid;
+  text-align: center;
 
   &.primary {
     border: 1px $primary-color solid;
@@ -212,5 +225,9 @@ p {
     border: 1px black solid;
     background-color: firebrick;
     color: white;
+  }
+
+  &.sidebar {
+    width: 95%;
   }
 }

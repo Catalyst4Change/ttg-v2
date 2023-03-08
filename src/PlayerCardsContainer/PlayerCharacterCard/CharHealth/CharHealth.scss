@@ -1,63 +1,66 @@
 #char-health {
   width: 100%;
   height: 100%;
-
-  #health-title {
-    grid-area: title;
-
-    display: flex;
+  .section-title {
+    text-align: center;
   }
 
-  #health-container {
+  #health-display {
     width: 100%;
-    margin-left: 4%;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     position: relative;
 
-    #health-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    #max-health {
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: 45%;
+      transform: translate(-50%, -50%);
+      font-size: 1.9em;
+      font-weight: bold;
+    }
+
+    #health-total {
+      position: relative;
+      .health-total-background {
+        height: 40px;
+        width: 40px;
+      }
+      span {
+        font-size: 2em;
+        position: absolute;
+        padding: 0% 20%;
+        font-weight: bold;
+      }
+    }
+
+    #health-bar {
       display: flex;
       flex-direction: row;
-      align-items: center;
+      justify-content: space-around;
+      text-align: left;
+      z-index: 2;
 
-      #health-total {
-        text-align: center;
-        position: relative;
-        .health-total-background {
-          height: 40px;
-          width: 40px;
-        }
-        span {
-          font-size: 2em;
-          position: absolute;
-          padding: 0% 20%;
-          font-weight: bold;
-        }
+      .health-bar-dot {
+        height: 21px;
+        width: 21px;
       }
+    }
 
-      #health-bar {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        text-align: left;
-        z-index: 2;
+    .health-bar-background {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      padding-left: 14%;
 
-        .health-bar-dot {
-          height: 21px;
-          width: 21px;
-        }
-      }
-
-      .health-bar-background {
-        display: flex;
-        flex-direction: row;
-        position: absolute;
-        padding-left: 12%;
-
-        .health-bar-background-dot {
-          filter: grayscale(1);
-          height: 21px;
-          width: 21px;
-        }
+      .health-bar-background-dot {
+        filter: grayscale(1);
+        height: 21px;
+        width: 21px;
       }
     }
   }
