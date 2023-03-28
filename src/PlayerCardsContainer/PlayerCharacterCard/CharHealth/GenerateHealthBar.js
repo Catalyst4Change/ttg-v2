@@ -7,15 +7,42 @@ export const GenerateHealthBar = (maxHealth) => {
   let yellow = [];
   let green = [];
   let bar = [];
-  for (let i = 0; i < maxHealth / 3; i++) {
+  const translation = 21;
+  const healthDots = maxHealth / 3;
+  for (let i = 0; i < healthDots; i++) {
     red.push(
-      <img key={Math.random()} className="health-bar-dot" src={redDot} />
+      <circle
+        key={Math.random()}
+        transform={`translate(${i * translation}, ${11})`}
+        r="10.5"
+        strokeWidth={1}
+        stroke="darkred"
+        fill="red"
+      ></circle>
     );
     yellow.push(
-      <img key={Math.random()} className="health-bar-dot" src={yellowDot} />
+      <circle
+        key={Math.random()}
+        transform={`translate(${
+          translation * healthDots + i * translation
+        }, ${11})`}
+        r="10.5"
+        strokeWidth={1}
+        stroke="gold"
+        fill="yellow"
+      ></circle>
     );
     green.push(
-      <img key={Math.random()} className="health-bar-dot" src={greenDot} />
+      <circle
+        key={Math.random()}
+        transform={`translate(${
+          translation * healthDots * 2 + i * translation
+        }, ${11})`}
+        r="10.5"
+        strokeWidth={1}
+        stroke="green"
+        fill="limegreen"
+      ></circle>
     );
   }
   bar = red.concat(yellow, green);

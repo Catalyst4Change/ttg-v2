@@ -163,7 +163,7 @@ export const PlayerCharacterCard = ({
 
   const addHealth = () => {
     if (currentHealth < maxHealth) {
-      const emoji = () => {
+      const healthDot = () => {
         if (healthRatio < 0.33) {
           return <img className="health-bar-dot" src={redDot} />;
         } else if (healthRatio >= 0.33 && healthRatio <= 0.66) {
@@ -174,7 +174,7 @@ export const PlayerCharacterCard = ({
       };
 
       let healthBarCopy = healthBar;
-      healthBarCopy.push(emoji());
+      healthBarCopy.push(healthDot());
 
       setPlayerCharacters(
         playerCharacters.map((character, i) => {

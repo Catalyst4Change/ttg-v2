@@ -14,8 +14,7 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
     notes,
     flavorText,
   } = npc;
-  const [healthBar, setHealthBar] = useState("❗️");
-  console.log(combatTraits);
+  const [healthBar, setHealthBar] = useState(["❗️"]);
 
   const GenerateNPCHealthBar = (health, setHealthBar) => {
     let bar = [];
@@ -49,7 +48,6 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
       setNPCs(
         NPCs.map((character, i) => {
           if (i === NPCindex) {
-            console.log(character, i);
             const updatedCharacter = {
               ...character,
               currentHealth: increasedHealth,
@@ -66,7 +64,6 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
     GenerateNPCHealthBar(currentHealth, setHealthBar);
   }, [currentHealth]);
 
-  console.log(combatTraits);
   const displayCombatTraits = () => {
     return combatTraits.map((trait, i) => {
       const lastIndex = () => {
@@ -91,7 +88,6 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
     setNPCs(
       NPCs.map((character, i) => {
         if (i === NPCindex) {
-          console.log(character, i);
           const updatedCharacter = {
             ...character,
             notes: newNotes,

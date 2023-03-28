@@ -20,7 +20,6 @@ export const AttributesForm = ({
     presence: 1,
     wit: 1,
   });
-  console.log(temporaryPoints);
 
   const currentAttributePoints = () => {
     return Object.values(temporaryPoints).reduce((acc, cur) => {
@@ -34,7 +33,6 @@ export const AttributesForm = ({
   );
 
   const attributeStepUp = (e) => {
-    console.log(e);
     const { name, value } = e.target;
     const numValue = parseInt(value);
     if (attributesPoints > 0 && attributes[name] < 4) {

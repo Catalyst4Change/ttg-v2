@@ -38,13 +38,13 @@
       }
     }
 
-    #health-bar {
+    .health-bar {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       text-align: left;
       z-index: 2;
-
+      align-items: flex-end;
       .health-bar-dot {
         height: 21px;
         width: 21px;
