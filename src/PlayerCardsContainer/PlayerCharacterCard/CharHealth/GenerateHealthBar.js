@@ -8,9 +8,15 @@ export const GenerateHealthBar = (maxHealth) => {
   let green = [];
   let bar = [];
   for (let i = 0; i < maxHealth / 3; i++) {
-    red.push(<img className="health-bar-dot" src={redDot} />);
-    yellow.push(<img className="health-bar-dot" src={yellowDot} />);
-    green.push(<img className="health-bar-dot" src={greenDot} />);
+    red.push(
+      <img key={Math.random()} className="health-bar-dot" src={redDot} />
+    );
+    yellow.push(
+      <img key={Math.random()} className="health-bar-dot" src={yellowDot} />
+    );
+    green.push(
+      <img key={Math.random()} className="health-bar-dot" src={greenDot} />
+    );
   }
   bar = red.concat(yellow, green);
   return bar;
