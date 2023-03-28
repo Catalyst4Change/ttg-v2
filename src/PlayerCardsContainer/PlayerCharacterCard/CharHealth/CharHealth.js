@@ -34,7 +34,11 @@ export const CharHealth = ({
     const dots = [];
     for (let index = 0; index < 12; index++) {
       const dot = (
-        <img key={index} className="health-bar-background-dot" src={greenDot} />
+        <img
+          key={Math.random()}
+          className="health-bar-background-dot"
+          src={greenDot}
+        />
       );
       dots.push(dot);
     }

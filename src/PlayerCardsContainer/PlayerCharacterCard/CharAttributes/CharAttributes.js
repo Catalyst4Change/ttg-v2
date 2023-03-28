@@ -13,7 +13,12 @@ export const CharAttributes = ({ attributes }) => {
     let display = [];
     for (let i = 0; i < att; i++) {
       display.push(
-        <img className="attribute-symbol" src={symbol} alt={[symbol]} />
+        <img
+          key={symbol + i}
+          className="attribute-symbol"
+          src={symbol}
+          alt={[symbol]}
+        />
       );
     }
     return display;

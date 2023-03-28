@@ -6,16 +6,31 @@ import { PCMenu } from "./NavBar/PCMenu";
 import { NPCMenu } from "./NavBar/NPCMenu";
 import { stockPlayerCharacters } from "./PlayerCardsContainer/StockPlayerCharacters";
 
-function App() {
+export const App = () => {
   const [playerCharacters, setPlayerCharacters] = useState([]);
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
   const [NPCs, setNPCs] = useState([]);
   const [deployNewNPCForm, setDeployNewNPCForm] = useState(false);
 
+  /*
+   * if local storage is present, load that
+   * else, load stock characters
+   */
+
   useEffect(() => {
-    // initializePlayerCharacters();
-    setPlayerCharacters(stockPlayerCharacters);
-  }, [stockPlayerCharacters]);
+    const localCharacters = JSON.parse(localStorage.getItem("characters"));
+    console.log("localCharacters", localCharacters);
+    if (localCharacters) {
+      setPlayerCharacters(localCharacters);
+    } else if (localCharacters === [] || !localCharacters) {
+      setPlayerCharacters(stockPlayerCharacters);
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log("update characters");
+    localStorage.setItem("characters", JSON.stringify(playerCharacters));
+  }, [playerCharacters]);
 
   const addNPC = (newNPC) => {
     setNPCs([...NPCs, newNPC]);
@@ -80,6 +95,4 @@ function App() {
       </section>
     </main>
   );
-}
-
-export default App;
+};
