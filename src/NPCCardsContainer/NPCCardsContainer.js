@@ -12,6 +12,8 @@ export const NPCCardsContainer = ({
   deployNewNPCForm,
   setDeployNewNPCForm,
 }) => {
+  console.log(NPCs);
+
   const deleteNPC = (event) => {
     const indexToRemove = parseInt(event.target.value);
 
@@ -32,7 +34,7 @@ export const NPCCardsContainer = ({
     if (NPCs) {
       return orderByInitiative().map((npc, i) => {
         return (
-          <div className="npc-card-container" key={npc.name}>
+          <div className="npc-card-container" key={Math.random()}>
             <NPCCard
               npc={npc}
               NPCs={NPCs}
@@ -58,7 +60,7 @@ export const NPCCardsContainer = ({
         )}
       </div>
 
-      {NPCs.length && displayNPCs()}
+      {displayNPCs()}
     </main>
   );
 };
