@@ -4,7 +4,7 @@ import { CharBasics } from "../CharBasics/CharBasics";
 import { CharHealth } from "../CharHealth/CharHealth";
 import { CharStats } from "../CharStats/CharStats";
 import { CharMasteries } from "../CharMasteries/CharMasteries";
-import { CharProficiencies } from "../CharProficiencies/CharProficiencies";
+import { CharPractices } from "../CharPractices/CharPractices";
 import { CardOptionsMenu } from "../CardOptionsMenu/CardOptionsMenu";
 import "./PlayerCharacterCard.scss";
 import "../../../App.scss";
@@ -23,13 +23,12 @@ export const PlayerCharacterCard = ({
     charImage,
     maxHealth,
     currentHealth,
-    healthBar,
     notes,
     antiJoker,
     attributes,
     stats,
     chosenMasteries,
-    chosenProficiencies,
+    chosenPractices,
   } = character;
 
   const initializePlayerCharacter = () => {
@@ -172,8 +171,8 @@ export const PlayerCharacterCard = ({
       <div className="masteries">
         <CharMasteries chosenMasteries={chosenMasteries} />
       </div>
-      <div className="proficiencies ">
-        <CharProficiencies chosenProficiencies={chosenProficiencies} />
+      <div className="practices ">
+        <CharPractices chosenPractices={chosenPractices} />
       </div>
       <hr></hr>
       <div className="notes-area column center">
