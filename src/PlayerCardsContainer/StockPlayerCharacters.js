@@ -8,7 +8,7 @@ export const stockPlayerCharacters = [
     maxHealth: 0,
     currentHealth: 0,
     healthBar: ["❗️"],
-    currentStatus: "Healthy",
+    currentStatus: "Healthy (+1)",
     notes: "",
     antiJoker: false,
     attributes: {
@@ -64,7 +64,7 @@ export const stockPlayerCharacters = [
     maxHealth: 0,
     currentHealth: 0,
     healthBar: ["❗️"],
-    currentStatus: "Healthy",
+    currentStatus: "Healthy (+1)",
     notes: "",
     antiJoker: false,
     attributes: {
@@ -132,7 +132,7 @@ export const stockPlayerCharacters = [
     maxHealth: 0,
     currentHealth: 0,
     healthBar: ["❗️"],
-    currentStatus: "Healthy",
+    currentStatus: "Healthy (+1)",
     notes: "",
     antiJoker: false,
     attributes: {
@@ -192,7 +192,7 @@ export const stockPlayerCharacters = [
     maxHealth: 0,
     currentHealth: 0,
     healthBar: ["❗️"],
-    currentStatus: "Healthy",
+    currentStatus: "Healthy (+1)",
     notes: "",
     antiJoker: false,
     attributes: {
@@ -249,7 +249,7 @@ export const stockPlayerCharacters = [
     maxHealth: 0,
     currentHealth: 0,
     healthBar: ["❗️"],
-    currentStatus: "Healthy",
+    currentStatus: "Healthy (+1)",
     notes: "",
     antiJoker: false,
     attributes: {
@@ -310,7 +310,7 @@ export const stockPlayerCharacters = [
     maxHealth: 0,
     currentHealth: 0,
     healthBar: ["❗️"],
-    currentStatus: "Healthy",
+    currentStatus: "Healthy (+1)",
     notes: "",
     antiJoker: false,
     attributes: {
@@ -375,7 +375,7 @@ export const stockPlayerCharacters = [
     maxHealth: 0,
     currentHealth: 0,
     healthBar: ["❗️"],
-    currentStatus: "Healthy",
+    currentStatus: "Healthy (+1)",
     notes: "",
     antiJoker: false,
     attributes: {
@@ -436,7 +436,7 @@ export const stockPlayerCharacters = [
     maxHealth: 0,
     currentHealth: 0,
     healthBar: ["❗️"],
-    currentStatus: "Healthy",
+    currentStatus: "Healthy (+1)",
     notes: "",
     antiJoker: false,
     attributes: {

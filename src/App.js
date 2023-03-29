@@ -7,30 +7,21 @@ import { NPCMenu } from "./NavBar/NPCMenu";
 import { stockPlayerCharacters } from "./PlayerCardsContainer/StockPlayerCharacters";
 
 export const App = () => {
-  const [playerCharacters, setPlayerCharacters] = useState([]);
+  if (!JSON.parse(localStorage.getItem("characters"))) {
+    localStorage.setItem("characters", JSON.stringify(stockPlayerCharacters));
+  }
+
+  const [playerCharacters, setPlayerCharacters] = useState(
+    JSON.parse(localStorage.getItem("characters"))
+  );
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
-  const [NPCs, setNPCs] = useState([]);
+  const [NPCs, setNPCs] = useState(JSON.parse(localStorage.getItem("npcs")));
   const [deployNewNPCForm, setDeployNewNPCForm] = useState(false);
 
-  /*
-   * if local storage is present, load that
-   * else, load stock characters
-   */
-
   useEffect(() => {
-    const localCharacters = JSON.parse(localStorage.getItem("characters"));
-    console.log("localCharacters", localCharacters);
-    if (localCharacters) {
-      setPlayerCharacters(localCharacters);
-    } else if (localCharacters === [] || !localCharacters) {
-      setPlayerCharacters(stockPlayerCharacters);
-    }
-  }, []);
-
-  useEffect(() => {
-    console.log("update characters");
     localStorage.setItem("characters", JSON.stringify(playerCharacters));
-  }, [playerCharacters]);
+    localStorage.setItem("npcs", JSON.stringify(NPCs));
+  }, [playerCharacters, NPCs]);
 
   const addNPC = (newNPC) => {
     setNPCs([...NPCs, newNPC]);

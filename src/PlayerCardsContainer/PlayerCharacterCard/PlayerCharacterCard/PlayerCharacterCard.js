@@ -6,10 +6,6 @@ import { CharStats } from "../CharStats/CharStats";
 import { CharMasteries } from "../CharMasteries/CharMasteries";
 import { CharProficiencies } from "../CharProficiencies/CharProficiencies";
 import { CardOptionsMenu } from "../CardOptionsMenu/CardOptionsMenu";
-import { GenerateHealthBar } from "../CharHealth/GenerateHealthBar";
-import greenDot from "../../../Assets/Images/icons8-green-circle-96.png";
-import yellowDot from "../../../Assets/Images/icons8-yellow-circle-96.png";
-import redDot from "../../../Assets/Images/icons8-red-circle-96.png";
 import "./PlayerCharacterCard.scss";
 import "../../../App.scss";
 
@@ -50,7 +46,6 @@ export const PlayerCharacterCard = ({
 
         character.currentHealth = newMaxHealth;
         character.maxHealth = newMaxHealth;
-        character.healthBar = GenerateHealthBar(newMaxHealth);
         character.stats = {
           ...stats,
           initiative: newInitiative,
@@ -139,70 +134,7 @@ export const PlayerCharacterCard = ({
     );
   };
 
-  const subtractHealth = () => {
-    const lessOne = healthBar.slice(0, -1);
-
-    if (currentHealth >= 1) {
-      setPlayerCharacters(
-        playerCharacters.map((character, i) => {
-          if (i === playerIndex) {
-            const updatedCharacter = {
-              ...character,
-              currentHealth: currentHealth - 1,
-              healthBar: lessOne,
-            };
-            return updatedCharacter;
-          }
-          return character;
-        })
-      );
-    }
-  };
-
   const healthRatio = (currentHealth / maxHealth).toFixed(2);
-
-  const addHealth = () => {
-    if (currentHealth < maxHealth) {
-      const emoji = () => {
-        if (healthRatio < 0.33) {
-          return <img className="health-bar-dot" src={redDot} />;
-        } else if (healthRatio >= 0.33 && healthRatio <= 0.66) {
-          return <img className="health-bar-dot" src={yellowDot} />;
-        } else if (healthRatio >= 0.67) {
-          return <img className="health-bar-dot" src={greenDot} />;
-        }
-      };
-
-      let healthBarCopy = healthBar;
-      healthBarCopy.push(emoji());
-
-      setPlayerCharacters(
-        playerCharacters.map((character, i) => {
-          if (i === playerIndex) {
-            const updatedCharacter = {
-              ...character,
-              currentHealth: currentHealth + 1,
-              healthBar: healthBarCopy,
-            };
-            return updatedCharacter;
-          }
-          return character;
-        })
-      );
-    }
-  };
-
-  // const resetToOriginal = () => {
-  //   // setCurrentHealth(maxHealth);
-  //   // GenerateHealthBar(maxHealth, setHealthBar);
-  //   // setStatuses({
-  //   //   initiative: attributes.presence + attributes.agility,
-  //   //   dodge: attributes.agility + attributes.wit - 2,
-  //   //   drive: attributes.wit + attributes.presence,
-  //   //   crit: attributes.charm,
-  //   //   heroPoints: 0,
-  //   // });
-  // };
 
   return (
     <main className="character-card">
@@ -220,9 +152,10 @@ export const PlayerCharacterCard = ({
           maxHealth={maxHealth}
           currentHealth={currentHealth}
           healthBar={healthBar}
-          subtractHealth={subtractHealth}
-          addHealth={addHealth}
           healthRatio={healthRatio}
+          playerIndex={playerIndex}
+          playerCharacters={playerCharacters}
+          setPlayerCharacters={setPlayerCharacters}
         />
       </div>
       <hr></hr>
