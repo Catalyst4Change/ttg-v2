@@ -151,7 +151,6 @@ export const PlayerCharacterCard = ({
         <CharHealth
           maxHealth={maxHealth}
           currentHealth={currentHealth}
-          healthBar={healthBar}
           healthRatio={healthRatio}
           playerIndex={playerIndex}
           playerCharacters={playerCharacters}

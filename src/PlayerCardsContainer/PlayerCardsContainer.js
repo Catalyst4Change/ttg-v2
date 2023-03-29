@@ -12,8 +12,14 @@ export const PlayerCardsContainer = ({
   deployNewCharacterForm,
   setDeployNewCharacterForm,
 }) => {
+  const orderByInitiative = () => {
+    return playerCharacters.sort(
+      (a, b) => b.stats.initiative - a.stats.initiative
+    );
+  };
+
   const displayCards = () => {
-    return playerCharacters.map((character, i) => {
+    return orderByInitiative().map((character, i) => {
       return (
         <div className="player-card-container" key={character.playerName}>
           <PlayerCharacterCard
