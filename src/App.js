@@ -7,7 +7,7 @@ import { NPCMenu } from "./NavBar/NPCMenu";
 import { stockPlayerCharacters } from "./PlayerCardsContainer/StockPlayerCharacters";
 
 export const App = () => {
-  if (!JSON.parse(localStorage.getItem("characters"))) {
+  if (JSON.parse(localStorage.getItem("characters")).length === 0) {
     localStorage.setItem("characters", JSON.stringify(stockPlayerCharacters));
   }
 

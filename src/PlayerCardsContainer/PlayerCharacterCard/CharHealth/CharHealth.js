@@ -15,7 +15,7 @@ export const CharHealth = ({
   setPlayerCharacters,
 }) => {
   const [condition, setCondition] = useState("Healthy (+1)");
-  const [healthBar, setHealthBar] = useState([]);
+  const [healthBar, setHealthBar] = useState(["☹️"]);
 
   useEffect(() => {
     let red = [];
@@ -52,7 +52,7 @@ export const CharHealth = ({
 
     bar = red.concat(yellow, green);
     setHealthBar(bar);
-  }, []);
+  }, [maxHealth]);
 
   // useEffect(() => {
   //   const healthDifferential = Math.abs(maxHealth - currentHealth);
