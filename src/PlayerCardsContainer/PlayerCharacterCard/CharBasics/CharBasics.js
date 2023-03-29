@@ -9,43 +9,19 @@ export const CharBasics = ({
   charImage,
 }) => {
   const [imageLinkValid, setImageLinkValid] = useState(true);
-  let response;
+
+  const testImage = () =>
+    new Promise((resolve) => {
+      const img = new Image();
+
+      img.src = charImage;
+      img.onload = () => resolve(true);
+      img.onerror = () => setImageLinkValid(false);
+    });
 
   useEffect(() => {
-    checkImage();
-    isValidUrl();
+    testImage();
   }, []);
-
-  const checkImage = async () => {
-    try {
-      response = await fetch(charImage);
-    } catch (error) {
-      console.log("There was an error", error);
-    }
-
-    // Uses the 'optional chaining' operator
-    if (!response?.ok) {
-      console.log(
-        `${playerName} image load error - HTTP Response Code: ${response?.status}`
-      );
-      setImageLinkValid(false);
-    }
-  };
-
-  const isValidUrl = () => {
-    var urlPattern = new RegExp(
-      "^(https?:\\/\\/)?" + // validate protocol
-        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // validate domain name
-        "((\\d{1,3}\\.){3}\\d{1,3}))" + // validate OR ip (v4) address
-        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // validate port and path
-        "(\\?[;&a-z\\d%_.~+=-]*)?" + // validate query string
-        "(\\#[-a-z\\d_]*)?$",
-      "i"
-    ); // validate fragment locator
-    if (!!urlPattern.test(charImage) === false) {
-      setImageLinkValid(false);
-    }
-  };
 
   return (
     <main id="basics">
