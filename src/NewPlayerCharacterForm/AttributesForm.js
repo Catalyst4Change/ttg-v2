@@ -12,17 +12,9 @@ export const AttributesForm = ({
   setDeployNewCharacterForm,
 }) => {
   const [submissionError, setSubmissionError] = useState(false);
-  const [temporaryPoints, setTemporaryPoints] = useState({
-    agility: 1,
-    brawn: 1,
-    charm: 1,
-    intelligence: 1,
-    presence: 1,
-    wit: 1,
-  });
 
   const currentAttributePoints = () => {
-    return Object.values(temporaryPoints).reduce((acc, cur) => {
+    return Object.values(attributes).reduce((acc, cur) => {
       acc += cur;
       return acc;
     }, 0);

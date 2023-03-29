@@ -12,8 +12,6 @@ export const NPCCardsContainer = ({
   deployNewNPCForm,
   setDeployNewNPCForm,
 }) => {
-  console.log(NPCs);
-
   const deleteNPC = (event) => {
     const indexToRemove = parseInt(event.target.value);
 
