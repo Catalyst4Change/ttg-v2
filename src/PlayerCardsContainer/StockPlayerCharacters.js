@@ -12,7 +12,7 @@ export const stockPlayerCharacters = [
     currentStatus: "Healthy (+1)",
     notes:
       "Type notes here to keep track of your useful items or favorite bits of space-trivia.",
-    antiJoker: false,
+    antiJoker: true,
     attributes: {
       brawn: 4,
       agility: 2,
