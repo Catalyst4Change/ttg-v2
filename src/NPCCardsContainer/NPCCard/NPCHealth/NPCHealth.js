@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./NPCHealth.scss";
 import chevronUp from "../../../Assets/Images/icons8-chevron-up-white.png";
 import chevronDown from "../../../Assets/Images/icons8-chevron-down-white.png";

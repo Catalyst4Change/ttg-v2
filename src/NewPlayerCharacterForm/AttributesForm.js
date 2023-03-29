@@ -58,7 +58,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper ">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="brawn"
           value={attributes.brawn}
@@ -83,7 +83,7 @@ export const AttributesForm = ({
           {attributes.brawn}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="brawn"
           value={attributes.brawn}
@@ -95,7 +95,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="agility"
           value={attributes.agility}
@@ -113,14 +113,13 @@ export const AttributesForm = ({
             <span className="tooltip-text">
               Agility describes a character's speed, precision, coordination,
               and reaction time. <br />
-              Initiative and Max Dodge are both influenced by a character's
-              Agility.
+              Initiative and Dodge are both influenced by a character's Agility.
             </span>
           </span>{" "}
           {attributes.agility}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="agility"
           value={attributes.agility}
@@ -132,7 +131,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="wit"
           value={attributes.wit}
@@ -150,13 +149,13 @@ export const AttributesForm = ({
             <span className="tooltip-text">
               Wit describes a character's creativity and powers of observation.
               <br />
-              Max Dodge and Max Drive stats are both influenced by Wit.
+              Dodge and Drive stats are both influenced by Wit.
             </span>
           </span>{" "}
           {attributes.wit}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="wit"
           value={attributes.wit}
@@ -168,7 +167,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="intelligence"
           value={attributes.intelligence}
@@ -193,7 +192,7 @@ export const AttributesForm = ({
           {attributes.intelligence}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="intelligence"
           value={attributes.intelligence}
@@ -205,7 +204,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="charm"
           value={attributes.charm}
@@ -230,7 +229,7 @@ export const AttributesForm = ({
           {attributes.charm}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="charm"
           value={attributes.charm}
@@ -242,7 +241,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="presence"
           value={attributes.presence}
@@ -259,14 +258,14 @@ export const AttributesForm = ({
             Presence:
             <span className="tooltip-text">
               Presence describes a character's composure, willpower, and
-              confidence. <br />A character's Max Drive and Initiative stats are
-              both influenced by Presence.
+              confidence. <br />A character's Drive and Initiative stats are
+              both influenced by their Presence.
             </span>
           </span>{" "}
           {attributes.presence}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="presence"
           value={attributes.presence}
