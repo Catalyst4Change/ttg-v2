@@ -33,7 +33,7 @@ export const ProficienciesForm = ({
               checked={skillCheckboxes[i]}
               disabled={unavailableSkills[i]}
               onChange={(event) => checkSkill(event)}
-            />
+            />{" "}
             {skill.name}
             <span className="tooltip-text">{skill.text}</span>
           </label>

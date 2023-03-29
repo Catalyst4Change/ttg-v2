@@ -45,7 +45,7 @@ export const MasteriesForm = ({
               value={skill}
               checked={skillCheckboxes[i]}
               onChange={(event) => checkSkill(event)}
-            />
+            />{" "}
             {skill.name}
             <span className="tooltip-text">{skill.text}</span>
           </label>
