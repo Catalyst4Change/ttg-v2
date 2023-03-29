@@ -11,19 +11,17 @@ export const App = () => {
     localStorage.setItem("characters", JSON.stringify(stockPlayerCharacters));
   }
 
-  // const [playerCharacters, setPlayerCharacters] = useState(
-  //   stockPlayerCharacters
-  // );
   const [playerCharacters, setPlayerCharacters] = useState(
     JSON.parse(localStorage.getItem("characters"))
   );
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
-  const [NPCs, setNPCs] = useState([]);
+  const [NPCs, setNPCs] = useState(JSON.parse(localStorage.getItem("npcs")));
   const [deployNewNPCForm, setDeployNewNPCForm] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("characters", JSON.stringify(playerCharacters));
-  }, [playerCharacters]);
+    localStorage.setItem("npcs", JSON.stringify(NPCs));
+  }, [playerCharacters, NPCs]);
 
   const addNPC = (newNPC) => {
     setNPCs([...NPCs, newNPC]);

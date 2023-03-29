@@ -141,7 +141,8 @@ p {
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px black dotted;
+  border-bottom: 1px rgba(255, 255, 255, 0.5) dotted;
+  transition: opacity 1s ease-in;
 
   .tooltip-text {
     position: absolute;
@@ -149,6 +150,7 @@ p {
     top: -25px;
     left: 120%;
     visibility: hidden;
+    opacity: 0;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     text-align: center;
@@ -156,6 +158,7 @@ p {
     padding: 10px;
     border-radius: 10px;
     z-index: 10 !important;
+    transition: opacity 0.5s ease-in;
 
     &::after {
       content: " ";
@@ -166,10 +169,15 @@ p {
       border-width: 5px;
       border-style: solid;
       border-color: transparent black transparent transparent;
+
+      opacity: 1;
+      transition: opacity 0.5s ease-in;
     }
   }
   &:hover .tooltip-text {
     visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
   }
 }
 

@@ -54,6 +54,18 @@ export const CharHealth = ({
     setHealthBar(bar);
   }, []);
 
+  // useEffect(() => {
+  //   const healthDifferential = Math.abs(maxHealth - currentHealth);
+  //   console.log("healthDifferential", healthDifferential);
+  //   if (healthDifferential) {
+  //     const reducedHealth = () => {
+  //       return healthBar.slice(0, -healthDifferential);
+  //     };
+  //     console.log("reducedHealth", reducedHealth());
+  //     setHealthBar(reducedHealth);
+  //   }
+  // }, []);
+
   const addHealth = () => {
     if (currentHealth < maxHealth) {
       const healthDot = () => {
@@ -130,7 +142,7 @@ export const CharHealth = ({
 
   const displayCondition = () => {
     if (healthRatio == 0.0) {
-      setCondition("DEAD!");
+      setCondition("DEAD :(");
     } else if (healthRatio > 0.0 && healthRatio <= 0.33) {
       setCondition("Unconscious");
     } else if (healthRatio >= 0.34 && healthRatio <= 0.67) {
@@ -158,9 +170,6 @@ export const CharHealth = ({
     }
     return dots;
   };
-
-  const centerX = 10;
-  const centerY = 0;
 
   return (
     <section id="char-health">
