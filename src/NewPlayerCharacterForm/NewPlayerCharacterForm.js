@@ -3,7 +3,7 @@ import "../App.scss";
 import { AttributesForm } from "./AttributesForm";
 import { BasicsForm } from "./BasicsForm";
 import { MasteriesForm } from "./MasteriesForm";
-import { ProficienciesForm } from "./ProficienciesForm";
+import { PracticesForm } from "./PracticesForm";
 import { skillList } from "./SkillsList";
 import "./NewPlayerCharacterForm.scss";
 
@@ -45,7 +45,7 @@ export const NewPlayerCharacterForm = ({
         heroPoints: 0,
       },
       chosenMasteries: chosenMasteries,
-      chosenProficiencies: chosenProficiencies,
+      chosenPractices: chosenPractices,
     };
     addPlayerCharacter(newChar);
   };
@@ -76,7 +76,7 @@ export const NewPlayerCharacterForm = ({
   );
 
   const [chosenMasteries, setChosenMasteries] = useState([]);
-  const [chosenProficiencies, setChosenProficiencies] = useState([]);
+  const [chosenPractices, setChosenPractices] = useState([]);
 
   return (
     <main className="new-form-container">
@@ -119,10 +119,10 @@ export const NewPlayerCharacterForm = ({
           />
         )}
         {formPage === 3 && (
-          <ProficienciesForm
+          <PracticesForm
             chosenMasteries={chosenMasteries}
-            chosenProficiencies={chosenProficiencies}
-            setChosenProficiencies={setChosenProficiencies}
+            chosenPractices={chosenPractices}
+            setChosenPractices={setChosenPractices}
             skills={skills}
             setSkills={setSkills}
             skillCheckboxes={skillCheckboxes}

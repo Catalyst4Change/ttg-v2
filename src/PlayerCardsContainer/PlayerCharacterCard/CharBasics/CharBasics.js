@@ -37,7 +37,7 @@ export const CharBasics = ({
       </div>
       <div id="char-info">
         <span>{playerName}</span>
-        <h3>{charName}</h3>
+        <h3 className="row">{charName}</h3>
         <span>{charConcept}</span>
       </div>
     </main>
