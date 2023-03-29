@@ -24,9 +24,7 @@ export const CharBasics = ({
     }
 
     // Uses the 'optional chaining' operator
-    if (response?.ok) {
-      console.log(response);
-    } else {
+    if (!response?.ok) {
       console.log(
         `${playerName} image load error - HTTP Response Code: ${response?.status}`
       );

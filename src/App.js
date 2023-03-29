@@ -7,7 +7,10 @@ import { NPCMenu } from "./NavBar/NPCMenu";
 import { stockPlayerCharacters } from "./PlayerCardsContainer/StockPlayerCharacters";
 
 export const App = () => {
-  if (JSON.parse(localStorage.getItem("characters")).length === 0) {
+  if (
+    !JSON.parse(localStorage.getItem("characters")) ||
+    JSON.parse(localStorage.getItem("characters")).length === 0
+  ) {
     localStorage.setItem("characters", JSON.stringify(stockPlayerCharacters));
   }
 
@@ -15,7 +18,9 @@ export const App = () => {
     JSON.parse(localStorage.getItem("characters"))
   );
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
-  const [NPCs, setNPCs] = useState(JSON.parse(localStorage.getItem("npcs")));
+  const [NPCs, setNPCs] = useState(
+    JSON.parse(localStorage.getItem("npcs")) || []
+  );
   const [deployNewNPCForm, setDeployNewNPCForm] = useState(false);
 
   useEffect(() => {
