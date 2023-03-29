@@ -57,7 +57,7 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
               value={trait}
               checked={combatTraitsCheckboxes[i]}
               onChange={(event) => checkCombatTrait(event)}
-            />
+            />{" "}
             {trait.name}
             <p className="tooltip-text">{trait.text}</p>
           </label>
@@ -121,7 +121,7 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
           value={type}
           onChange={(e) => setType(e.target.value)}
         />
-        <div className="form-attribute-stepper">
+        <div className="form-attribute-stepper down">
           <img
             className="form-stepper"
             src={chevDown}

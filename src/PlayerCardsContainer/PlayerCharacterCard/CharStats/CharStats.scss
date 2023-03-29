@@ -18,17 +18,12 @@
     height: 1.2em;
     margin-right: 0.2em;
   }
+
   .crit {
     filter: invert(1);
     height: 1.6em;
     width: 1.6em;
     margin-right: -1px;
     transform: translateY(-1px);
-  }
-}
-
-.stepper-button {
-  img {
-    pointer-events: none;
   }
 }

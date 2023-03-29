@@ -3,8 +3,8 @@
   src: url(./Assets/Fonts/Rocket.ttf) format("truetype");
 }
 
-$primary-color: rgb(195, 255, 0);
-$secondary-color: rgb(255, 0, 98);
+$primary-color: rgb(128, 255, 0);
+$secondary-color: rgb(0, 89, 255);
 
 #App {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif");
@@ -58,7 +58,13 @@ $secondary-color: rgb(255, 0, 98);
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   margin-top: 10px;
+  .form-stepper {
+    &:hover {
+      scale: 110%;
+    }
+  }
 }
 
 .form-select {
@@ -102,6 +108,12 @@ $secondary-color: rgb(255, 0, 98);
 
 .space-between {
   justify-content: space-between;
+}
+
+.stepper-button {
+  &:hover {
+    scale: 110%;
+  }
 }
 
 option {
@@ -186,12 +198,17 @@ p {
 }
 
 .form-stepper {
-  width: 40px;
-  height: 40px;
+  all: unset;
+  img {
+    pointer-events: none;
+  }
 }
 
 .stepper-button {
   all: unset;
+  img {
+    pointer-events: none;
+  }
 }
 
 .option-button {
@@ -208,13 +225,25 @@ p {
   text-align: center;
 
   &.primary {
+    color: white;
     border: 1px $primary-color solid;
     background-color: rgba($primary-color, 0.5);
+    transition: background-color 0.25s ease-in-out;
+    &:hover {
+      background-color: rgba(red, 0.5);
+      transition: background-color 0.25s ease-in-out;
+    }
   }
 
   &.secondary {
+    color: white;
     border: 1px $secondary-color solid;
     background-color: rgba($secondary-color, 0.5);
+    transition: background-color 0.25s ease-in-out;
+    &:hover {
+      background-color: rgba(red, 0.5);
+      transition: background-color 0.25s ease-in-out;
+    }
   }
 
   &.positive {

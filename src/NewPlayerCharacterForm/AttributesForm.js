@@ -58,7 +58,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper ">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="brawn"
           value={attributes.brawn}
@@ -83,7 +83,7 @@ export const AttributesForm = ({
           {attributes.brawn}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="brawn"
           value={attributes.brawn}
@@ -95,7 +95,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="agility"
           value={attributes.agility}
@@ -119,7 +119,7 @@ export const AttributesForm = ({
           {attributes.agility}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="agility"
           value={attributes.agility}
@@ -131,7 +131,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="wit"
           value={attributes.wit}
@@ -155,7 +155,7 @@ export const AttributesForm = ({
           {attributes.wit}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="wit"
           value={attributes.wit}
@@ -167,7 +167,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="intelligence"
           value={attributes.intelligence}
@@ -192,7 +192,7 @@ export const AttributesForm = ({
           {attributes.intelligence}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="intelligence"
           value={attributes.intelligence}
@@ -204,7 +204,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="charm"
           value={attributes.charm}
@@ -229,7 +229,7 @@ export const AttributesForm = ({
           {attributes.charm}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="charm"
           value={attributes.charm}
@@ -241,7 +241,7 @@ export const AttributesForm = ({
 
       <div className="form-attribute-stepper">
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="presence"
           value={attributes.presence}
@@ -265,7 +265,7 @@ export const AttributesForm = ({
           {attributes.presence}
         </div>
         <button
-          className="stepper-button"
+          className="stepper-button form-stepper"
           type="button"
           name="presence"
           value={attributes.presence}

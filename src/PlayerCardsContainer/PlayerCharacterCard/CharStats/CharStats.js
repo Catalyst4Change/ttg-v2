@@ -42,7 +42,7 @@ export const CharStats = ({
         </div>
       </div>
 
-      <div className="dodge row space-between">
+      <div className="row space-between">
         <button
           className="stepper-button"
           type="button"

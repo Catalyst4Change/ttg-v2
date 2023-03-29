@@ -73,6 +73,9 @@
     .health-stepper {
       height: 40px;
       width: 40px;
+      &:hover {
+        scale: 110%;
+      }
     }
   }
 }
