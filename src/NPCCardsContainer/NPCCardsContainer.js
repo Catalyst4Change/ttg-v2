@@ -25,19 +25,21 @@ export const NPCCardsContainer = ({
   };
 
   const displayNPCs = () => {
-    return NPCs.map((npc, i) => {
-      return (
-        <div className="npc-card-container" key={npc.name}>
-          <NPCCard
-            npc={npc}
-            NPCs={NPCs}
-            setNPCs={setNPCs}
-            deleteNPC={deleteNPC}
-            NPCindex={i}
-          />
-        </div>
-      );
-    });
+    if (NPCs) {
+      return NPCs.map((npc, i) => {
+        return (
+          <div className="npc-card-container" key={npc.name}>
+            <NPCCard
+              npc={npc}
+              NPCs={NPCs}
+              setNPCs={setNPCs}
+              deleteNPC={deleteNPC}
+              NPCindex={i}
+            />
+          </div>
+        );
+      });
+    }
   };
 
   return (
@@ -52,7 +54,7 @@ export const NPCCardsContainer = ({
         )}
       </div>
 
-      {NPCs.length > 0 ? displayNPCs() : ""}
+      {NPCs.length && displayNPCs()}
     </main>
   );
 };
