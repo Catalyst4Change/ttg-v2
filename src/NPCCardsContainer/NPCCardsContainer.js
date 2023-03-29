@@ -24,9 +24,13 @@ export const NPCCardsContainer = ({
     setNPCs(removeCharacter);
   };
 
+  const orderByInitiative = () => {
+    return NPCs.sort((a, b) => b.initiative - a.initiative);
+  };
+
   const displayNPCs = () => {
     if (NPCs) {
-      return NPCs.map((npc, i) => {
+      return orderByInitiative().map((npc, i) => {
         return (
           <div className="npc-card-container" key={npc.name}>
             <NPCCard
