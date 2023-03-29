@@ -6,6 +6,65 @@
 $primary-color: rgb(128, 255, 0);
 $secondary-color: rgb(0, 89, 255);
 
+// tags //
+
+a {
+  color: magenta;
+  &:visited {
+    color: darkorchid;
+  }
+}
+
+h3 {
+  margin: 0;
+}
+
+option {
+  font-size: 2em;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+// global attributes //
+
+.border {
+  border: 1px black solid;
+  border-radius: 10px;
+  padding: 5%;
+}
+
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
 #App {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif");
   background-size: cover;
@@ -34,6 +93,8 @@ $secondary-color: rgb(0, 89, 255);
 
     .catalyst {
       font-family: custom;
+      font-weight: bold;
+      font-size: 1.5em;
     }
   }
 
@@ -42,14 +103,24 @@ $secondary-color: rgb(0, 89, 255);
   }
 }
 
-.emoji {
-  margin: 0;
+.card-options {
+  padding-top: 5px;
 }
 
-.form-input {
-  width: 80%;
-  margin: 10px;
-  border: 1px black solid;
+.display-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.invert-colors {
+  filter: invert(1);
+}
+
+.form-stepper {
+  all: unset;
+  img {
+    pointer-events: none;
+  }
 }
 
 .form-attribute-stepper {
@@ -67,148 +138,18 @@ $secondary-color: rgb(0, 89, 255);
   }
 }
 
-.form-select {
-  margin: 10px;
-}
-
 .form-button {
   margin: 10px;
 }
 
-.column {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.center {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.display-icon {
-  height: 20px;
-  width: 20px;
-}
-
-.row {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-wrap: wrap;
-}
-
-.space-evenly {
-  justify-content: space-evenly;
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
-.stepper-button {
-  &:hover {
-    scale: 110%;
-  }
-}
-
-option {
-  font-size: 2em;
-}
-
-h3 {
-  margin: 0;
-}
-
-p {
-  margin-bottom: 0;
-}
-
-.border {
+.form-input {
+  width: 80%;
+  margin: 10px;
   border: 1px black solid;
-  border-radius: 10px;
-  padding: 5%;
 }
 
-.card-options {
-  padding-top: 5px;
-}
-
-.white {
-  border: 1px white solid;
-  padding: 5px;
-}
-.purps {
-  border: 1px purple solid;
-  padding: 5px;
-}
-.hilite {
-  border: 1px fuchsia solid;
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px rgba(175, 175, 175, 0.75) dotted;
-  transition: opacity 1s ease-in;
-
-  .tooltip-text {
-    position: absolute;
-    width: 200px;
-    top: -25px;
-    left: 120%;
-    visibility: hidden;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align: center;
-    font-weight: 800;
-    padding: 10px;
-    border-radius: 10px;
-    z-index: 10 !important;
-    transition: opacity 0.5s ease-in;
-
-    &::after {
-      content: " ";
-      position: absolute;
-      top: 35px;
-      right: 100%;
-      margin-top: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: transparent black transparent transparent;
-
-      opacity: 1;
-      transition: opacity 0.5s ease-in;
-    }
-  }
-  &:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.5s ease-in;
-  }
-}
-
-.invert-colors {
-  filter: invert(1);
-}
-
-.form-stepper {
-  all: unset;
-  img {
-    pointer-events: none;
-  }
-}
-
-.stepper-button {
-  all: unset;
-  img {
-    pointer-events: none;
-  }
+.form-select {
+  margin: 10px;
 }
 
 .option-button {
@@ -266,5 +207,58 @@ p {
 
   &.sidebar {
     width: 95%;
+  }
+}
+
+.stepper-button {
+  all: unset;
+  &:hover {
+    scale: 110%;
+  }
+  img {
+    pointer-events: none;
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px rgba(175, 175, 175, 0.75) dotted;
+  transition: opacity 1s ease-in;
+
+  .tooltip-text {
+    position: absolute;
+    width: 200px;
+    top: -25px;
+    left: 120%;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    font-weight: 800;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 10 !important;
+    transition: opacity 0.5s ease-in;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 35px;
+      right: 100%;
+      margin-top: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent black transparent transparent;
+
+      opacity: 1;
+      transition: opacity 0.5s ease-in;
+    }
+  }
+  &:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
   }
 }
