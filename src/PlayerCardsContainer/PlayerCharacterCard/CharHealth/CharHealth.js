@@ -103,7 +103,7 @@ export const CharHealth = ({
       healthBarCopy.push(healthDot());
       setHealthBar(healthBarCopy);
 
-      if (currentHealth >= 1) {
+      if (currentHealth >= 0) {
         setPlayerCharacters(
           playerCharacters.map((character, i) => {
             if (i === playerIndex) {

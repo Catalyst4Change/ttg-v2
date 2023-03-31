@@ -224,15 +224,12 @@ p {
   position: relative;
   display: inline-block;
   border-bottom: 1px rgba(175, 175, 175, 0.75) dotted;
-  transition: opacity 1s ease-in;
 
   .tooltip-text {
     position: absolute;
     width: 200px;
     top: -25px;
     left: 120%;
-    visibility: hidden;
-    opacity: 0;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     text-align: center;
@@ -240,7 +237,9 @@ p {
     padding: 10px;
     border-radius: 10px;
     z-index: 10 !important;
-    transition: opacity 0.5s ease-in;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s ease-out, opacity 0.5s ease-out;
 
     &::after {
       content: " ";
@@ -253,12 +252,13 @@ p {
       border-color: transparent black transparent transparent;
 
       opacity: 1;
-      transition: opacity 0.5s ease-in;
+      transition: visibility 0.5s ease-out, opacity 0.5s ease-out;
     }
   }
+
   &:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.5s ease-in;
+    transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
   }
 }
