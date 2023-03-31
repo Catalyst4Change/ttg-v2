@@ -4,7 +4,7 @@ export const stockPlayerCharacters = [
     playerName: "Catalyst",
     charName: "Demo Character",
     charConcept:
-      "I'm here to introduce you to the app! Fell free to delete me when you're ready.",
+      "I'm here to introduce you to the app! Feel free to delete me when you're ready.",
     charImage:
       "https://images.assetsdelivery.com/compings_v2/putracetol/putracetol1805/putracetol180506437.jpg",
     maxHealth: 0,
