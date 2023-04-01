@@ -4,15 +4,7 @@ Hello! I'm Catalyst.
 As a novice coder and budding Game/Dungeon Master, I wanted to build a way to keep track of my players' characters and my NPCs while playing table-top games. It's nice to be able to reference that info at a glance without having a bunch of note cards everywhere. After several weeks of hacking at it, I believe I have made just the thing.
 I digitized Space Kings' character sheets, then did all the math and logic to make them interactive. [Space Kings](https://supertry.itch.io/spacekings) is a rad [TTRPG](https://en.wikipedia.org/wiki/Tabletop_role-playing_game) made by [Kevin Cole](https://supertry.itch.io), who doesn't seem very litigious. It's fun, less complicated than D&D, plus it's in fucking space. Currently, my players' characters are hard-coded in. Consider it an example of what's possible. Delete them and create your own!
 
-<iframe
-    width="640"
-    height="480"
-    src="https://youtu.be/0xiAX2rOWQg"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
->
-</iframe>
+[Check out the demo video!](https://youtu.be/0xiAX2rOWQg) 
 
 
 ### A user is able to:
