@@ -24,12 +24,13 @@ While you're at it, checkout my website: [catalyst.sex](https://catalyst.sex)
 ![screenshot of NPCs](https://github.com/Catalyst4Change/ttg-v2/blob/main/Screenshot%202023-03-04%20at%202.32.37%20AM.png)
 
 ### Known bugs and next steps:
-- Fix the wonky styling issues in Safari. Looks great in Chrome tho.
-  - Turns out Safari adds a few pixels of white space around emojis that is not present in Chrome or Firefox. This very small differeence was causing huge problems with my UI. I'm in the process of removing the emojis and replacing them with PNGs.
-- Select Ulitimates during character creation as a choice based on your Attributes & Skills.
+
 - Add mobile-firendly individual character sheet for players. 
-- Save your player characters and custom NPCs to your computer and eventually to the cloud.
+- Select Ulitimates during character creation as a choice based on your Attributes & Skills.
 - Sync Host's account with their players so an update on one changes the other.
+[x] Save your player characters and custom NPCs to your computer and eventually to the cloud.
+[x] Fix the wonky styling issues in Safari. Looks great in Chrome tho.
+  - Turns out Safari adds a few pixels of white space around emojis that is not present in Chrome or Firefox. This very small differeence was causing huge problems with my UI. Emojis were a good placeholder but eventually I replaced them with SVGS.
 
 In the course of building this I learned a lot about state-management and modifying values of keys in objects in objects in arrays in state. 
 This app was made using HTML, SCSS, React, & JavaScript. I used no dependancies.
