@@ -1,6 +1,6 @@
 @import "../../App.scss";
 
-.character-card {
+#individual-character-card {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -57,5 +57,51 @@
 
   .card-options {
     height: 100%;
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px rgba(175, 175, 175, 0.75) dotted;
+
+    .tooltip-text {
+      position: absolute;
+      width: 200px;
+      margin-top: -75px;
+      left: 50%;
+      margin-left: -100px;
+      margin-bottom: 25px;
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(5px);
+      color: white;
+      text-align: center;
+      font-weight: 800;
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 10 !important;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0.1s ease-out, opacity 0.1s ease-out;
+
+      &::after {
+        content: " ";
+        position: absolute;
+        top: 105.5%;
+        right: 50%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+
+        opacity: 1;
+        transition: visibility 0.1s ease-out, opacity 0.1s ease-out;
+      }
+    }
+
+    &:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
+    }
   }
 }
