@@ -32,7 +32,7 @@ export const NPCCardsContainer = ({
     if (NPCs) {
       return orderByInitiative().map((npc, i) => {
         return (
-          <div className="npc-card-container" key={Math.random()}>
+          <div className="npc-card-container" key={npc.name + i}>
             <NPCCard
               npc={npc}
               NPCs={NPCs}

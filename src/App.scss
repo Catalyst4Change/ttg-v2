@@ -72,12 +72,12 @@ p {
   background-repeat: no-repeat;
   overflow: hidden;
 
-  display: flex;
-  flex-direction: row;
-
   font-size: 16px;
   letter-spacing: normal;
-
+  #host-screen {
+    display: flex;
+    flex-direction: row;
+  }
   #navbar {
     color: white;
     margin: 10px 5px 10px 10px;
@@ -239,7 +239,7 @@ p {
     z-index: 10 !important;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0.5s ease-out, opacity 0.5s ease-out;
+    transition: visibility 0.1s ease-out, opacity 0.1s ease-out;
 
     &::after {
       content: " ";
@@ -252,7 +252,7 @@ p {
       border-color: transparent black transparent transparent;
 
       opacity: 1;
-      transition: visibility 0.5s ease-out, opacity 0.5s ease-out;
+      transition: visibility 0.1s ease-out, opacity 0.1s ease-out;
     }
   }
 

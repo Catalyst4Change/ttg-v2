@@ -20,7 +20,7 @@ export const BasicsForm = ({
 
   return (
     <form onSubmit={handleSubmit} className="form-basics column center">
-      <h2>Character Basics:</h2>
+      <h3>The Basics:</h3>
       <input
         required
         className="form-input"
@@ -52,7 +52,7 @@ export const BasicsForm = ({
         value={charImage}
         onChange={(e) => setCharImage(e.target.value)}
       />
-      <div className="row space-evenly">
+      <div className="row space-evenly max-headroom">
         <button
           className="option-button negative"
           type="button"

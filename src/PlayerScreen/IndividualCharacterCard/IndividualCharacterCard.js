@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useRef, Children } from "react";
-import { CharAttributes } from "../CharAttributes/CharAttributes";
-import { CharBasics } from "../CharBasics/CharBasics";
-import { CharHealth } from "../CharHealth/CharHealth";
-import { CharStats } from "../CharStats/CharStats";
-import { CharMasteries } from "../CharMasteries/CharMasteries";
-import { CharPractices } from "../CharPractices/CharPractices";
-import { CardOptionsMenu } from "../CardOptionsMenu/CardOptionsMenu";
-import "./PlayerCharacterCard.scss";
-import "../../../App.scss";
+import { CharAttributes } from "../../PlayerCardsContainer/PlayerCharacterCard/CharAttributes/CharAttributes";
+import { CharBasics } from "../../PlayerCardsContainer/PlayerCharacterCard/CharBasics/CharBasics";
+import { CharHealth } from "../../PlayerCardsContainer/PlayerCharacterCard/CharHealth/CharHealth";
+import { CharStats } from "../../PlayerCardsContainer/PlayerCharacterCard/CharStats/CharStats";
+import { CharMasteries } from "../../PlayerCardsContainer/PlayerCharacterCard/CharMasteries/CharMasteries";
+import { CharPractices } from "../../PlayerCardsContainer/PlayerCharacterCard/CharPractices/CharPractices";
+import { CardOptionsMenu } from "../../PlayerCardsContainer/PlayerCharacterCard/CardOptionsMenu/CardOptionsMenu";
+import "../../App.scss";
+import "./IndividualCharacterCard.scss";
 
-export const PlayerCharacterCard = ({
+export const IndividualCharacterCard = ({
   playerIndex,
   character,
   playerCharacters,

@@ -5,6 +5,9 @@ import { NPCCardsContainer } from "./NPCCardsContainer/NPCCardsContainer";
 import { PCMenu } from "./NavBar/PCMenu";
 import { NPCMenu } from "./NavBar/NPCMenu";
 import { stockPlayerCharacters } from "./PlayerCardsContainer/StockPlayerCharacters";
+import useMediaQuery from "./Components/MediaQuery";
+import { HostScreen } from "./HostScreen/HostScreen";
+import { PlayerScreen } from "./PlayerScreen/PlayerScreen";
 
 export const App = () => {
   if (
@@ -17,6 +20,9 @@ export const App = () => {
   const [playerCharacters, setPlayerCharacters] = useState(
     JSON.parse(localStorage.getItem("characters"))
   );
+  // const [singlePlayer, setSinglePlayer] = useState(
+  //   JSON.parse(localStorage.getItem("single-player"))
+  // );
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
   const [NPCs, setNPCs] = useState(
     JSON.parse(localStorage.getItem("npcs")) || []
@@ -33,11 +39,12 @@ export const App = () => {
   };
 
   const addPlayerCharacter = (newChar) => {
-    setPlayerCharacters([...playerCharacters, newChar]);
+    setPlayerCharacters([newChar, ...playerCharacters]);
     setDeployNewCharacterForm(false);
   };
 
   const deletePlayerCharacter = (event) => {
+    console.log(event);
     const indexToRemove = parseInt(event.target.value);
 
     const removeCharacter = playerCharacters.filter((char, index) => {
@@ -50,45 +57,27 @@ export const App = () => {
 
   return (
     <main id="App">
-      {/* header */}
-      <section id="navbar">
-        <img
-          src="https://ksr-ugc.imgix.net/assets/026/882/491/c474dc36ddd0310a4452832349605ee4_original.png?ixlib=rb-4.0.2&crop=faces&w=1552&h=873&fit=crop&v=1571337733&auto=format&frame=1&q=92&s=5c3d6e29ebb16dc578f23186defd251f"
-          alt="Space King's Logo"
-        />
-        <PCMenu setDeployNewCharacterForm={setDeployNewCharacterForm} />
-        <NPCMenu addNPC={addNPC} setDeployNewNPCForm={setDeployNewNPCForm} />
-        <div className="creator-credit column center">
-          <h3>
-            Space Kings is property of{" "}
-            <a href="https://supertry.itch.io/">Super∴Try Studios</a>{" "}
-          </h3>
-          <br />
-          <h3>
-            Character Tracker created by <br />
-            <a className="catalyst" href="http://catalyst.sex">
-              CATALYST
-            </a>{" "}
-          </h3>
-        </div>
-      </section>
-      <section id="cards-section" className="column">
-        <PlayerCardsContainer
+      {useMediaQuery("(min-width: 700px)") ? (
+        <HostScreen
           playerCharacters={playerCharacters}
           setPlayerCharacters={setPlayerCharacters}
-          addPlayerCharacter={addPlayerCharacter}
-          deletePlayerCharacter={deletePlayerCharacter}
-          deployNewCharacterForm={deployNewCharacterForm}
-          setDeployNewCharacterForm={setDeployNewCharacterForm}
-        />
-        <NPCCardsContainer
-          addNPC={addNPC}
           NPCs={NPCs}
           setNPCs={setNPCs}
+          addNPC={addNPC}
+          deployNewCharacterForm={deployNewCharacterForm}
           deployNewNPCForm={deployNewNPCForm}
           setDeployNewNPCForm={setDeployNewNPCForm}
+          addPlayerCharacter={addPlayerCharacter}
+          deletePlayerCharacter={deletePlayerCharacter}
         />
-      </section>
+      ) : (
+        <PlayerScreen
+          addPlayerCharacter={addPlayerCharacter}
+          playerCharacters={playerCharacters}
+          setPlayerCharacters={setPlayerCharacters}
+          deletePlayerCharacter={deletePlayerCharacter}
+        />
+      )}
     </main>
   );
 };

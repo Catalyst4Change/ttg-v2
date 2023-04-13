@@ -80,8 +80,8 @@ export const NewPlayerCharacterForm = ({
 
   return (
     <main className="new-form-container">
-      {/* create character */}
-      <section id="0" className="column center">
+      <section id="0" className="new-form column center">
+        <h2>New Player Character</h2>
         {formPage === 0 && (
           <BasicsForm
             playerName={playerName}

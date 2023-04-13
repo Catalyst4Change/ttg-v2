@@ -28,9 +28,9 @@ body {
  * Render the `main` element consistently in IE.
  */
 
-main {
+/* main {
   display: block;
-}
+} */
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -174,7 +174,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -184,7 +185,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
