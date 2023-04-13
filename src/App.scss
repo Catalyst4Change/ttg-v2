@@ -47,6 +47,10 @@ p {
   text-align: center;
 }
 
+.greyscale {
+  filter: grayscale(1);
+}
+
 .row {
   width: 100%;
   display: flex;
@@ -118,8 +122,14 @@ p {
 
 .form-stepper {
   all: unset;
+  height: 40px;
+  width: 40px;
+
   img {
     pointer-events: none;
+  }
+  &:hover {
+    scale: 110%;
   }
 }
 
@@ -131,11 +141,6 @@ p {
   align-items: center;
   text-align: center;
   margin-top: 10px;
-  .form-stepper {
-    &:hover {
-      scale: 110%;
-    }
-  }
 }
 
 .form-button {

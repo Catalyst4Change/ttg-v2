@@ -134,7 +134,7 @@ export const IndividualCharacterCard = ({
   };
 
   return (
-    <main className="character-card">
+    <main id="individual-character-card">
       <div className="basics">
         <CharBasics
           playerName={playerName}

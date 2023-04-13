@@ -1,9 +1,5 @@
 import "./App.scss";
 import React, { useState, useEffect } from "react";
-import { PlayerCardsContainer } from "./PlayerCardsContainer/PlayerCardsContainer";
-import { NPCCardsContainer } from "./NPCCardsContainer/NPCCardsContainer";
-import { PCMenu } from "./NavBar/PCMenu";
-import { NPCMenu } from "./NavBar/NPCMenu";
 import { stockPlayerCharacters } from "./PlayerCardsContainer/StockPlayerCharacters";
 import useMediaQuery from "./Components/MediaQuery";
 import { HostScreen } from "./HostScreen/HostScreen";
@@ -20,9 +16,6 @@ export const App = () => {
   const [playerCharacters, setPlayerCharacters] = useState(
     JSON.parse(localStorage.getItem("characters"))
   );
-  // const [singlePlayer, setSinglePlayer] = useState(
-  //   JSON.parse(localStorage.getItem("single-player"))
-  // );
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
   const [NPCs, setNPCs] = useState(
     JSON.parse(localStorage.getItem("npcs")) || []
@@ -65,6 +58,7 @@ export const App = () => {
           setNPCs={setNPCs}
           addNPC={addNPC}
           deployNewCharacterForm={deployNewCharacterForm}
+          setDeployNewCharacterForm={setDeployNewCharacterForm}
           deployNewNPCForm={deployNewNPCForm}
           setDeployNewNPCForm={setDeployNewNPCForm}
           addPlayerCharacter={addPlayerCharacter}

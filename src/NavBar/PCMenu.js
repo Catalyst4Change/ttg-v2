@@ -10,7 +10,6 @@ export const PCMenu = ({ setDeployNewCharacterForm, setDeployNewNPCForm }) => {
   return (
     <main className="navbar">
       <b>Create new:</b>
-
       <button
         className="option-button sidebar"
         onClick={deployPlayerCharacterForm}
