@@ -17,7 +17,6 @@ export const CharHealth = ({
   const [healthBar, setHealthBar] = useState(["☹️"]);
 
   const healthRatio = Math.round((currentHealth / maxHealth) * 100) / 100;
-  console.log("healthRatio", healthRatio);
 
   useEffect(() => {
     let red = [];

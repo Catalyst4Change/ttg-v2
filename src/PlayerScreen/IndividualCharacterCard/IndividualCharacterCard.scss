@@ -1,0 +1,61 @@
+@import "../../App.scss";
+
+.character-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: auto;
+  height: min-content;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+
+  background-color: rgba($primary-color, 0.5);
+  backdrop-filter: blur(5px);
+
+  hr {
+    width: 100%;
+    border-color: $primary-color;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .basics {
+    height: 100%;
+  }
+
+  .health {
+    height: 100%;
+  }
+
+  .attributes {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+  }
+
+  .stats {
+    height: 100%;
+  }
+
+  .masteries {
+    height: 100%;
+  }
+
+  .practices {
+    height: 100%;
+  }
+
+  .notes-area {
+    min-height: fit-content;
+    textarea {
+      width: 95%;
+      height: 50px;
+    }
+  }
+
+  .card-options {
+    height: 100%;
+  }
+}

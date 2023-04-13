@@ -7,6 +7,7 @@ import { NPCMenu } from "./NavBar/NPCMenu";
 import { stockPlayerCharacters } from "./PlayerCardsContainer/StockPlayerCharacters";
 import useMediaQuery from "./Components/MediaQuery";
 import { HostScreen } from "./HostScreen/HostScreen";
+import { PlayerScreen } from "./PlayerScreen/PlayerScreen";
 
 export const App = () => {
   if (
@@ -19,6 +20,9 @@ export const App = () => {
   const [playerCharacters, setPlayerCharacters] = useState(
     JSON.parse(localStorage.getItem("characters"))
   );
+  // const [singlePlayer, setSinglePlayer] = useState(
+  //   JSON.parse(localStorage.getItem("single-player"))
+  // );
   const [deployNewCharacterForm, setDeployNewCharacterForm] = useState(false);
   const [NPCs, setNPCs] = useState(
     JSON.parse(localStorage.getItem("npcs")) || []
@@ -35,11 +39,12 @@ export const App = () => {
   };
 
   const addPlayerCharacter = (newChar) => {
-    setPlayerCharacters([...playerCharacters, newChar]);
+    setPlayerCharacters([newChar, ...playerCharacters]);
     setDeployNewCharacterForm(false);
   };
 
   const deletePlayerCharacter = (event) => {
+    console.log(event);
     const indexToRemove = parseInt(event.target.value);
 
     const removeCharacter = playerCharacters.filter((char, index) => {
@@ -66,7 +71,12 @@ export const App = () => {
           deletePlayerCharacter={deletePlayerCharacter}
         />
       ) : (
-        <h1>phone</h1>
+        <PlayerScreen
+          addPlayerCharacter={addPlayerCharacter}
+          playerCharacters={playerCharacters}
+          setPlayerCharacters={setPlayerCharacters}
+          deletePlayerCharacter={deletePlayerCharacter}
+        />
       )}
     </main>
   );
