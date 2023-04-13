@@ -84,13 +84,13 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
   };
 
   const updateNPCNotes = (event) => {
-    const newNotes = event.target.value;
+    const updatedNotes = event.target.value;
     setNPCs(
       NPCs.map((character, i) => {
         if (i === NPCindex) {
           const updatedCharacter = {
             ...character,
-            notes: newNotes,
+            notes: updatedNotes,
           };
           return updatedCharacter;
         }
@@ -139,13 +139,18 @@ export const NPCCard = ({ npc, NPCs, setNPCs, deleteNPC, NPCindex }) => {
         </div>
       )}
       <hr></hr>
-      <span className="flavor column center">{flavorText}</span> <hr></hr>
-      <textarea
-        className="npc-notes"
-        value={notes}
-        placeholder="Notes..."
-        onChange={(event) => updateNPCNotes(event)}
-      ></textarea>
+      <span className="flavor column center">{flavorText}</span>
+      <hr></hr>
+
+      <form className="notes-area column center">
+        <textarea
+          value={notes}
+          className="npc-notes"
+          placeholder="Notes..."
+          onChange={(event) => updateNPCNotes(event)}
+        ></textarea>
+      </form>
+
       <button
         className="option-button secondary"
         value={NPCindex}

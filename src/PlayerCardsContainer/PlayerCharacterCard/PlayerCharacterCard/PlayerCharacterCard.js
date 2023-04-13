@@ -117,8 +117,8 @@ export const PlayerCharacterCard = ({
     );
   };
 
-  const updateNotes = (e) => {
-    const updatedNotes = e.target.value;
+  const updateNotes = (event) => {
+    const updatedNotes = event.target.value;
     setPlayerCharacters(
       playerCharacters.map((character, i) => {
         if (i === playerIndex) {
@@ -133,7 +133,7 @@ export const PlayerCharacterCard = ({
     );
   };
 
-  const healthRatio = (currentHealth / maxHealth).toFixed(2);
+  const healthRatio = parseInt((currentHealth / maxHealth).toFixed(2));
 
   return (
     <main className="character-card">
@@ -174,15 +174,16 @@ export const PlayerCharacterCard = ({
       <div className="practices ">
         <CharPractices chosenPractices={chosenPractices} />
       </div>
+
       <hr></hr>
-      <div className="notes-area column center">
+      <form className="notes-area column center">
         <textarea
           value={notes}
           className="char-notes-text"
           placeholder="Notes..."
           onChange={(event) => updateNotes(event)}
         ></textarea>
-      </div>
+      </form>
 
       <div className="card-options">
         <CardOptionsMenu

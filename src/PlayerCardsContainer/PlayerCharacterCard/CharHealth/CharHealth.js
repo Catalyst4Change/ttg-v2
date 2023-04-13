@@ -141,7 +141,7 @@ export const CharHealth = ({
   };
 
   const displayCondition = () => {
-    if (healthRatio == 0.0) {
+    if (healthRatio === 0.0) {
       setCondition("DEAD :(");
     } else if (healthRatio > 0.0 && healthRatio <= 0.33) {
       setCondition("Unconscious");
