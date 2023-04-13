@@ -52,7 +52,7 @@ export const BasicsForm = ({
         value={charImage}
         onChange={(e) => setCharImage(e.target.value)}
       />
-      <div className="row space-evenly">
+      <div className="row space-evenly max-headroom">
         <button
           className="option-button negative"
           type="button"

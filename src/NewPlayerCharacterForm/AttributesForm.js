@@ -54,7 +54,7 @@ export const AttributesForm = ({
 
   return (
     <main className="column center">
-      <h3>Add {attributesPoints} Points to Attributes:</h3>
+      <h2>Add {attributesPoints} Points to Attributes:</h2>
 
       <div className="form-attribute-stepper ">
         <button

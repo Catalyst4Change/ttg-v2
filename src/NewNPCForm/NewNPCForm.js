@@ -111,104 +111,109 @@ export const NewNPCForm = ({ setDeployNewNPCForm, addNPC, NPCs }) => {
 
   return (
     <main className="new-form-container column center">
-      <h2>New NPC</h2>
-      <form onSubmit={(event) => submitNewNPC(event)} className="column center">
-        <input
-          required
-          className="form-input"
-          type="text"
-          placeholder="Character's Name"
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-        />
-        <div className="form-attribute-stepper down">
-          <img
-            className="form-stepper"
-            src={chevDown}
-            name="health"
-            onClick={healthStepDown}
+      <section className="new-form column center">
+        <h2>New NPC</h2>
+        <form
+          onSubmit={(event) => submitNewNPC(event)}
+          className="column center"
+        >
+          <input
+            required
+            className="form-input"
+            type="text"
+            placeholder="Character's Name"
+            value={type}
+            onChange={(e) => setType(e.target.value)}
           />
-          <div>
-            <h3 className="tooltip">
-              Health:{" "}
-              <span className="tooltip-text">
-                How much damage this NPC takes before being deaded.
-              </span>
-            </h3>{" "}
-            <b>{health}</b>
+          <div className="form-attribute-stepper down">
+            <img
+              className="form-stepper"
+              src={chevDown}
+              name="health"
+              onClick={healthStepDown}
+            />
+            <div>
+              <h3 className="tooltip">
+                Health:{" "}
+                <span className="tooltip-text">
+                  How much damage this NPC takes before being deaded.
+                </span>
+              </h3>{" "}
+              <b>{health}</b>
+            </div>
+            <img
+              className="form-stepper"
+              src={chevUp}
+              name="health"
+              onClick={healthStepUp}
+            />
           </div>
-          <img
-            className="form-stepper"
-            src={chevUp}
-            name="health"
-            onClick={healthStepUp}
-          />
-        </div>
-        <div className="form-attribute-stepper ">
-          <img
-            className="form-stepper"
-            src={chevDown}
-            name="power"
-            onClick={powerStepDown}
-          />
-          <div>
-            <h3 className="tooltip">
-              Power:
-              <span className="tooltip-text">
-                How many cards this NPC flips on an action/attack.
-              </span>
-            </h3>{" "}
-            <b>{power}</b>
+          <div className="form-attribute-stepper ">
+            <img
+              className="form-stepper"
+              src={chevDown}
+              name="power"
+              onClick={powerStepDown}
+            />
+            <div>
+              <h3 className="tooltip">
+                Power:
+                <span className="tooltip-text">
+                  How many cards this NPC flips on an action/attack.
+                </span>
+              </h3>{" "}
+              <b>{power}</b>
+            </div>
+            <img
+              className="form-stepper"
+              src={chevUp}
+              name="power"
+              onClick={powerStepUp}
+            />
           </div>
-          <img
-            className="form-stepper"
-            src={chevUp}
-            name="power"
-            onClick={powerStepUp}
-          />
-        </div>
-        <div className="form-attribute-stepper ">
-          <img
-            className="form-stepper"
-            src={chevDown}
-            name="initiative"
-            onClick={initiativeStepDown}
-          />
-          <div>
-            <h3 className="tooltip">
-              Initiative:
-              <span className="tooltip-text">
-                When this character acts in combat.
-              </span>
-            </h3>{" "}
-            <b>{initiative}</b>
+          <div className="form-attribute-stepper ">
+            <img
+              className="form-stepper"
+              src={chevDown}
+              name="initiative"
+              onClick={initiativeStepDown}
+            />
+            <div>
+              <h3 className="tooltip">
+                Initiative:
+                <span className="tooltip-text">
+                  When this character acts in combat.
+                </span>
+              </h3>{" "}
+              <b>{initiative}</b>
+            </div>
+            <img
+              className="form-stepper"
+              src={chevUp}
+              name="initiative"
+              onClick={initiativeStepUp}
+            />
           </div>
-          <img
-            className="form-stepper"
-            src={chevUp}
-            name="initiative"
-            onClick={initiativeStepUp}
+          <div className="combat-traits-container">
+            {displayCombatTraitsSelection()}
+          </div>
+          <textarea
+            className="npc-flavor-text"
+            placeholder="Description"
+            value={flavorText}
+            onChange={(event) => setFlavorText(event.target.value)}
           />
-        </div>
-        <div className="combat-traits-container">
-          {displayCombatTraitsSelection()}
-        </div>
-        <textarea
-          className="npc-flavor-text"
-          placeholder="Description"
-          value={flavorText}
-          onChange={(event) => setFlavorText(event.target.value)}
-        />
-        <p></p>
-        <div className="row space-evenly">
-          <button className="option-button negative" onClick={handleCancel}>
-            BACK
-          </button>
-          <button className="option-button positive" type="submit">
-            DEPLOY
-          </button>
-        </div>
-      </form>
+          <p></p>
+          <div className="row space-evenly">
+            <button className="option-button negative" onClick={handleCancel}>
+              CLOSE
+            </button>
+            <button className="option-button positive" type="submit">
+              DEPLOY
+            </button>
+          </div>
+        </form>
+      </section>
     </main>
   );
 };

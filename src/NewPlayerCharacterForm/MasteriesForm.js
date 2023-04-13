@@ -86,7 +86,7 @@ export const MasteriesForm = ({
 
   return (
     <main className="column center">
-      <h3>Choose {remainingMasteries()} Skill Masteries:</h3>
+      <h2>Choose {remainingMasteries()} Skill Masteries:</h2>
       <p className="center">
         Masteries are skills you have perfected and give you <b>four</b> points
         toward a related action.

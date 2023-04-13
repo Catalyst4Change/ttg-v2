@@ -90,7 +90,7 @@ export const PracticesForm = ({
 
   return (
     <div className="column center">
-      <h3>Choose {remainingPractices()} Skill Practices</h3>
+      <h2>Choose {remainingPractices()} Skill Practices</h2>
       <p className="center">
         Practices are skills you dabble in. They give you <b>two</b> points
         toward a related action.
