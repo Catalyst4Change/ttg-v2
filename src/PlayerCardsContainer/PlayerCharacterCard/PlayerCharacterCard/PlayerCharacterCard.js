@@ -133,8 +133,6 @@ export const PlayerCharacterCard = ({
     );
   };
 
-  const healthRatio = parseInt((currentHealth / maxHealth).toFixed(2));
-
   return (
     <main className="character-card">
       <div className="basics">
@@ -150,7 +148,6 @@ export const PlayerCharacterCard = ({
         <CharHealth
           maxHealth={maxHealth}
           currentHealth={currentHealth}
-          healthRatio={healthRatio}
           playerIndex={playerIndex}
           playerCharacters={playerCharacters}
           setPlayerCharacters={setPlayerCharacters}

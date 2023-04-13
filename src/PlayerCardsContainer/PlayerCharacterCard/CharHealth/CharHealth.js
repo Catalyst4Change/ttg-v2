@@ -9,13 +9,15 @@ import redDotImage from "../../../Assets/Images/icons8-red-circle-96.png";
 export const CharHealth = ({
   maxHealth,
   currentHealth,
-  healthRatio,
   playerIndex,
   playerCharacters,
   setPlayerCharacters,
 }) => {
   const [condition, setCondition] = useState("Healthy (+1)");
   const [healthBar, setHealthBar] = useState(["☹️"]);
+
+  const healthRatio = Math.round((currentHealth / maxHealth) * 100) / 100;
+  console.log("healthRatio", healthRatio);
 
   useEffect(() => {
     let red = [];
@@ -53,18 +55,6 @@ export const CharHealth = ({
     bar = red.concat(yellow, green);
     setHealthBar(bar);
   }, [maxHealth]);
-
-  // useEffect(() => {
-  //   const healthDifferential = Math.abs(maxHealth - currentHealth);
-  //   console.log("healthDifferential", healthDifferential);
-  //   if (healthDifferential) {
-  //     const reducedHealth = () => {
-  //       return healthBar.slice(0, -healthDifferential);
-  //     };
-  //     console.log("reducedHealth", reducedHealth());
-  //     setHealthBar(reducedHealth);
-  //   }
-  // }, []);
 
   const addHealth = () => {
     if (currentHealth < maxHealth) {
@@ -131,6 +121,7 @@ export const CharHealth = ({
             const updatedCharacter = {
               ...character,
               currentHealth: currentHealth - 1,
+              healthRatio: maxHealth / (currentHealth - 1),
             };
             return updatedCharacter;
           }
