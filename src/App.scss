@@ -72,12 +72,12 @@ p {
   background-repeat: no-repeat;
   overflow: hidden;
 
-  display: flex;
-  flex-direction: row;
-
   font-size: 16px;
   letter-spacing: normal;
-
+  #host-screen {
+    display: flex;
+    flex-direction: row;
+  }
   #navbar {
     color: white;
     margin: 10px 5px 10px 10px;
