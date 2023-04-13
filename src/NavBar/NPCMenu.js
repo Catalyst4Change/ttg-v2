@@ -2,7 +2,16 @@ import React from "react";
 import "../App.scss";
 import { StockNPCs } from "../NPCCardsContainer/StockNPCs";
 
-export const NPCMenu = ({ addNPC, setDeployNewNPCForm }) => {
+export const NPCMenu = ({
+  addNPC,
+  setDeployNewNPCForm,
+  setDeployNewCharacterForm,
+}) => {
+  const deployNPCForm = () => {
+    setDeployNewNPCForm(true);
+    setDeployNewCharacterForm(false);
+  };
+
   const generateNPCButtons = () => {
     return StockNPCs.map((npc, i) => {
       return (
@@ -19,10 +28,7 @@ export const NPCMenu = ({ addNPC, setDeployNewNPCForm }) => {
 
   return (
     <main id="NPC-menu" className="navbar">
-      <button
-        className="option-button sidebar"
-        onClick={() => setDeployNewNPCForm(true)}
-      >
+      <button className="option-button sidebar" onClick={deployNPCForm}>
         NPC
       </button>
       <b>Deploy NPC:</b>

@@ -54,7 +54,7 @@ export const AttributesForm = ({
 
   return (
     <main className="column center">
-      <h2>Add {attributesPoints} Points to Attributes:</h2>
+      <h3>Add {attributesPoints} Points to Attributes:</h3>
 
       <div className="form-attribute-stepper ">
         <button
@@ -70,7 +70,7 @@ export const AttributesForm = ({
             className="chevron"
           />
         </button>
-        <div>
+        <div className="attribute">
           <span className="tooltip">
             Brawn:
             <span className="tooltip-text">
@@ -107,7 +107,7 @@ export const AttributesForm = ({
             className="chevron"
           />
         </button>
-        <div>
+        <div className="attribute">
           <span className="tooltip">
             Agility:
             <span className="tooltip-text">
@@ -143,7 +143,7 @@ export const AttributesForm = ({
             className="chevron"
           />
         </button>
-        <div>
+        <div className="attribute">
           <span className="tooltip">
             Wit:
             <span className="tooltip-text">
@@ -179,7 +179,7 @@ export const AttributesForm = ({
             className="chevron"
           />
         </button>
-        <div>
+        <div className="attribute">
           <span className="tooltip">
             Intelligence:
             <span className="tooltip-text">
@@ -216,7 +216,7 @@ export const AttributesForm = ({
             className="chevron"
           />
         </button>
-        <div>
+        <div className="attribute">
           <span className="tooltip">
             Charm:
             <span className="tooltip-text">
@@ -253,7 +253,7 @@ export const AttributesForm = ({
             className="chevron"
           />
         </button>
-        <div>
+        <div className="attribute">
           <span className="tooltip">
             Presence:
             <span className="tooltip-text">
