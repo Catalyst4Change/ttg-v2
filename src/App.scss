@@ -23,6 +23,9 @@ h3 {
 //   display: none;
 // }
 
+label {
+}
+
 .custom-checkbox {
   display: inline-block;
   width: 20px;
@@ -54,6 +57,14 @@ p {
 }
 
 .center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.center-x {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: center;

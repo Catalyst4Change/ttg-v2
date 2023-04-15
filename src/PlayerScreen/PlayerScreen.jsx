@@ -1,6 +1,7 @@
 import React from "react";
 import { NewPlayerCharacterForm } from "../NewPlayerCharacterForm/NewPlayerCharacterForm";
 import "../App.scss";
+import "../NewPlayerCharacterForm/NewPlayerCharacterForm.scss";
 import "./PlayerScreen.scss";
 import { IndividualCharacterCard } from "./IndividualCharacterCard/IndividualCharacterCard";
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../App.scss";
 import "./NewPlayerCharacterForm.scss";
+import questionMark from "../Assets/Images/icons8-question-24.png";
 
 export const MasteriesForm = ({
   skillCheckboxes,
@@ -38,7 +39,7 @@ export const MasteriesForm = ({
     return skills.map((skill, i) => {
       return (
         <div className="checkbox-selection" key={i}>
-          <label className="tooltip">
+          <label>
             <input
               type="checkbox"
               id={i}
@@ -47,8 +48,11 @@ export const MasteriesForm = ({
               onChange={(event) => checkSkill(event)}
             />{" "}
             {skill.name}
-            <span className="tooltip-text">{skill.text}</span>
           </label>
+          <span className="tooltip">
+            <img className="question-mark" src={questionMark} />
+            <span className="tooltip-text">{skill.text}</span>
+          </span>
         </div>
       );
     });

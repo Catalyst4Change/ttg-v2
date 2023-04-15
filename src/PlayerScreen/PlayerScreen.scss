@@ -24,18 +24,6 @@
       background-color: rgb(255, 255, 255, 0.5);
       backdrop-filter: blur(5px);
     }
-
-    .choose-skills {
-      margin: 10px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 10px;
-      row-gap: 10px;
-
-      .checkbox-selection {
-        text-align: left;
-      }
-    }
   }
 
   .player-card-container {
