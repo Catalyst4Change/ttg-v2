@@ -4,6 +4,7 @@ import { stockPlayerCharacters } from "./PlayerCardsContainer/StockPlayerCharact
 import useMediaQuery from "./Components/MediaQuery";
 import { HostScreen } from "./HostScreen/HostScreen";
 import { PlayerScreen } from "./PlayerScreen/PlayerScreen";
+import { StarField } from "./Components/StarField";
 
 export const App = () => {
   if (
@@ -50,6 +51,9 @@ export const App = () => {
 
   return (
     <main id="App">
+      <div id="background">
+        <StarField />
+      </div>
       {useMediaQuery("(min-width: 700px)") ? (
         <HostScreen
           playerCharacters={playerCharacters}

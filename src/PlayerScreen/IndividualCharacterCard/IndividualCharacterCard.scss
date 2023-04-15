@@ -1,11 +1,10 @@
 @import "../../App.scss";
 
 #individual-character-card {
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: auto;
   height: min-content;
   color: white;
   margin: 5px;
