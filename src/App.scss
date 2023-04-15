@@ -19,6 +19,18 @@ h3 {
   margin: 0;
 }
 
+// input[type="checkbox"] {
+//   display: none;
+// }
+
+.custom-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid darkgray;
+  border-radius: 6px;
+}
+
 option {
   font-size: 2em;
 }
@@ -70,12 +82,11 @@ p {
 }
 
 #App {
-  margin-top: -100vh;
   font-size: 16px;
   letter-spacing: normal;
 
   #background {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
@@ -107,25 +118,6 @@ p {
   #cards-section {
     max-width: 85vw;
   }
-
-  // #starfield {
-  //   border: 1px white solid;
-  //   margin: auto;
-  //   width: 100vw;
-  //   background-color: black;
-  //   &::before {
-  //     content: "";
-  //     width: random($limit: 5px);
-  //     height: width;
-  //     background-color: white;
-  //     border-radius: 50%;
-  //     position: absolute;
-  //     top: random($limit: 100%) -50%;
-  //     left: random($limit: 100%) -50%;
-
-  //     animation: star-fly 5s infinite;
-  //   }
-  // }
 }
 
 .card-options {
@@ -254,15 +246,16 @@ p {
   .tooltip-text {
     position: absolute;
     width: 200px;
-    top: -25px;
-    left: 120%;
+    top: 200%;
+    left: 50%;
+    margin-left: -100px; /* Use half of the width to center the tooltip */
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     text-align: center;
     font-weight: 800;
     padding: 10px;
     border-radius: 10px;
-    z-index: 10 !important;
+    z-index: 2 !important;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.1s ease-out, opacity 0.1s ease-out;
@@ -270,12 +263,12 @@ p {
     &::after {
       content: " ";
       position: absolute;
-      top: 35px;
-      right: 100%;
-      margin-top: -5px;
+      bottom: 100%; /* At the top of the tooltip */
+      left: 50%;
+      margin-left: -5px;
       border-width: 5px;
       border-style: solid;
-      border-color: transparent black transparent transparent;
+      border-color: transparent transparent black transparent;
 
       opacity: 1;
       transition: visibility 0.1s ease-out, opacity 0.1s ease-out;
@@ -283,6 +276,8 @@ p {
   }
 
   &:hover .tooltip-text {
+    z-index: 2 !important;
+
     visibility: visible;
     opacity: 1;
     transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
